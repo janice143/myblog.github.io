@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【原生javascript项目】Canvas 08 - iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="作者：©Iaine 万一简介：30-day vanilla js coding challenge (30 Day Challenge)是 Wes Bos 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。本项目属于第8天项目，为了更有挑战性，我尝试实现了 移动端绘图 、画笔样式选择的功能。 Have fun with t"><meta property="og:type" content="blog"><meta property="og:title" content="【原生javascript项目】Canvas 08"><meta property="og:url" content="https://janice143.github.io/myblog.github.io/2022/01/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Canvas-08/"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:description" content="作者：©Iaine 万一简介：30-day vanilla js coding challenge (30 Day Challenge)是 Wes Bos 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。本项目属于第8天项目，为了更有挑战性，我尝试实现了 移动端绘图 、画笔样式选择的功能。 Have fun with t"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://janice143.github.io/myblog.github.io/img/og_image.png"><meta property="article:published_time" content="2022-01-07T12:13:07.000Z"><meta property="article:modified_time" content="2022-01-08T13:50:39.450Z"><meta property="article:author" content="iaine"><meta property="article:tag" content="原生javascript项目"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myblog.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://janice143.github.io/myblog.github.io/2022/01/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Canvas-08/"},"headline":"【原生javascript项目】Canvas 08","image":["https://janice143.github.io/myblog.github.io/img/og_image.png"],"datePublished":"2022-01-07T12:13:07.000Z","dateModified":"2022-01-08T13:50:39.450Z","author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":"https://janice143.github.io/img/logo.svg"}},"description":"作者：©Iaine 万一简介：30-day vanilla js coding challenge (30 Day Challenge)是 Wes Bos 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。本项目属于第8天项目，为了更有挑战性，我尝试实现了 移动端绘图 、画笔样式选择的功能。 Have fun with t"}</script><link rel="canonical" href="https://janice143.github.io/myblog.github.io/2022/01/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Canvas-08/"><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><script data-ad-client="NO ADD" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/"><img src="/myblog.github.io/img/logo.svg" alt="iaine&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">Home</a><a class="navbar-item" href="/myblog.github.io/archives">Archives</a><a class="navbar-item" href="/myblog.github.io/categories">Categories</a><a class="navbar-item" href="/myblog.github.io/tags">Tags</a><a class="navbar-item" href="/myblog.github.io/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-07T12:13:07.000Z" title="2022/1/7 下午8:13:07">2022-01-07</time>发表</span><span class="level-item"><time dateTime="2022-01-08T13:50:39.450Z" title="2022/1/8 下午9:50:39">2022-01-08</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">8 分钟读完 (大约1130个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">【原生javascript项目】Canvas 08</h1><div class="content"><p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：30-day vanilla js coding challenge <a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">(30 Day Challenge)</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。本项目属于第8天项目，为了更有挑战性，我尝试实现了 <strong>移动端绘图</strong> 、<strong>画笔样式选择</strong>的功能。</p>
+<p>Have fun with the website! ♪(^∇^*)</p>
+<p>网页效果：<a href="https://janice143.github.io/myCanvas/">https://janice143.github.io/myCanvas/</a> （画了个嗅嗅，一不小心暴露自己是个魔法师啦，哈哈）</p>
+<p>![](E:\webbb\iainesBlog\source\images\【原生javascript项目】Canvas 08.png)</p>
+<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>利用html5 中的canvas实现的画板。在<strong>电脑端</strong>可利用鼠标移动点击进行绘图，在<strong>移动端</strong>可以通过触摸移动实现绘图。绘图的笔<strong>颜色</strong>、<strong>粗细</strong>可以调节，选中<strong>橡皮擦</strong>可对局部区域进行修改，<strong>清屏</strong>按钮可以一键清屏。</p>
+<p>项目重点</p>
+<ul>
+<li><p>canvas</p>
+<ul>
+<li>window.innerWidth</li>
+<li>lineJoin、lineWidth、lineCap </li>
+<li>strokeColor </li>
+<li>beginPath、moveTo、lineTo、stroke()</li>
+</ul>
+</li>
+<li><p>鼠标事件</p>
+<ul>
+<li>mousemove: <em>e</em>.offsetX, <em>e</em>.offsetY</li>
+<li>mouseup</li>
+<li>mouseout</li>
+<li>mousedown</li>
+</ul>
+</li>
+<li><p>触摸事件</p>
+<ul>
+<li>touchmove</li>
+<li>touchend</li>
+<li>touchcancel</li>
+<li>touchstart</li>
+<li>touch坐标计算的坐标偏移问题</li>
+</ul>
+</li>
+<li><p><em>input</em>标签的change事件</p>
+<ul>
+<li>this.value</li>
+<li>this.name</li>
+<li>this.checked</li>
+<li>滑块input线性过渡变成非线性过渡</li>
+</ul>
+</li>
+<li><p>css的flex容器属性</p>
+<ul>
+<li><em>display</em>:flex</li>
+<li><em>align-items</em>: center 竖直居中</li>
+<li> <em>justify-content</em>: center 水平居中</li>
+</ul>
+</li>
+</ul>
+<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h4><ol>
+<li>三个input控件<ul>
+<li>颜色 type=”color”</li>
+<li>粗细 type=”range”</li>
+<li>橡皮擦 type=”checkbox”</li>
+</ul>
+</li>
+<li>canvas标签设置画布</li>
+<li>清屏按钮 type=”button”</li>
+</ol>
+<h4 id="Js部分"><a href="#Js部分" class="headerlink" title="Js部分"></a>Js部分</h4><ul>
+<li>获取<code>canvas</code>标签，并设定宽度和高度；获取四个input元素</li>
+<li>利用<code>getContext()</code>获取渲染上下文，存储在变量<code>ctx</code>中。<ul>
+<li>在二维渲染上下文中，左上点坐标为(0,0)，向右（x轴）向下（y轴）为正</li>
+</ul>
+</li>
+<li>设置初始值<ul>
+<li>初始化画笔颜色（<code>ctx.StrokeStyle</code>）粗细（<code>ctx.lineWidth</code>），橡皮擦不选中(<code>eraserChecked = false</code>)；</li>
+<li>设置lineCap(线的末端形状）为圆形，lineJoin（两条线段连接处形状）为圆形</li>
+</ul>
+</li>
+<li> 编写<code>updateValue()</code>函数</li>
+<li>三个控件input发生改变时，触发事件，调用该函数，更新画笔三个初始值。</li>
+<li>编写<code>draw()</code>函数<ul>
+<li>设定一个用于标记绘画状态的变量，画或者不画（true or false)</li>
+<li>判断是鼠标事件还是触摸事件，返回当前鼠标点和触摸点的坐标</li>
+<li>赋值新的画笔参数</li>
+<li>绘制前调用<code>beginPath()</code>，设定路径起点、终点</li>
+</ul>
+</li>
+<li>编写<code>clearCanvas()</code>函数<ul>
+<li>清屏的原理就是在画布上画满一个白色矩阵</li>
+</ul>
+</li>
+<li>所有input的监听事件，控件中的change事件，清屏是click事件</li>
+</ul>
+<h4 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h4><p>使用over-flow:hidden来设置页面不动，这点在移动端触摸时显得必不可少。</p>
+<h2 id="项目知识点"><a href="#项目知识点" class="headerlink" title="项目知识点"></a>项目知识点</h2><h4 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/html/html5_canvas.asp">Canvas</a></h4><ul>
+<li>创建 Canvas 元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过 JavaScript 来绘制</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基本样式属性<ul>
+<li>颜色<code>：strokeStyle</code>：线条描边的颜色，<code>fillStyle</code>：填充的颜色</li>
+<li>线型：<code>lineCap</code>：笔触的形状；<code>lineJoin</code>：线条相较的方式；<code>lineWidth</code>：线条的宽度</li>
+</ul>
+</li>
+<li>路径绘制<ul>
+<li><code>beginPath()</code>：新建一条路径</li>
+<li><code>stroke()</code>：绘制轮廓</li>
+<li><code>moveTo()</code>：绘制操作的起点</li>
+<li><code>lineTo()</code>：路径的终点</li>
+</ul>
+</li>
+</ul>
+<h4 id="触摸屏端坐标偏移问题"><a href="#触摸屏端坐标偏移问题" class="headerlink" title="触摸屏端坐标偏移问题"></a>触摸屏端坐标偏移问题</h4><p>使用鼠标事件在canvas画布上画画，非常容易就能获取到画布上的坐标，使用（e.offsetX，e.offsetY）就行。但是对于移动端的触摸屏，必须利用【页面上的坐标】-【画布左上角的坐标】=【画布上的坐标】公式去计算当前触摸位置坐标。</p>
+<p>changedTouches[0].clientX表示当前触摸点在页面上的坐标，e.target.offsetLeft表示画布偏离页面左上角的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = e.changedTouches[<span class="number">0</span>].clientX -e.target.offsetLeft;</span><br><span class="line">y = e.changedTouches[<span class="number">0</span>].clientY-e.target.offsetTop;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>JS30的第8个项目圆满完成啦，虽然对原项目做了一些改进，但是整体上也实现了一些我自己的独特功能。PS：发现自己真的很喜欢编程，fun with front end development.希望自己能力越来越强，实现自己的程序员梦想。</p>
+<p>感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#56;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x31;&#56;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a>.</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【原生javascript项目】Canvas 08</p><p><a href="https://janice143.github.io/myblog.github.io/2022/01/07/【原生javascript项目】Canvas-08/">https://janice143.github.io/myblog.github.io/2022/01/07/【原生javascript项目】Canvas-08/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>iaine</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-01-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-01-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">原生javascript项目</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/myblog.github.io/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/myblog.github.io/img/alipayCode.jpg" alt="支付宝"></span></a><a class="button donate" href="/myblog.github.io/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/myblog.github.io/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/myblog.github.io/img/wechatCode.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myblog.github.io/2022/01/06/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91-Fun-dictionary-06/"><span class="level-item">【原生javascript项目】 Fun dictionary 06</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="Iaine."></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Iaine.</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">1</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="/myblog.github.io/"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/myblog.github.io/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T12:13:07.000Z">2022-01-07</time></p><p class="title"><a href="/myblog.github.io/2022/01/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Canvas-08/">【原生javascript项目】Canvas 08</a></p><p class="categories"><a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-05T16:20:45.000Z">2022-01-06</time></p><p class="title"><a href="/myblog.github.io/2022/01/06/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91-Fun-dictionary-06/">【原生javascript项目】 Fun dictionary 06</a></p><p class="categories"><a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-17T12:10:40.000Z">2021-11-17</time></p><p class="title"><a href="/myblog.github.io/2021/11/17/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91-Flex-Panel-05/">【原生javascript项目】 Flex Panel 05</a></p><p class="categories"><a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-15T11:30:39.000Z">2021-11-15</time></p><p class="title"><a href="/myblog.github.io/2021/11/15/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C-04/">【原生javascript项目】数组操作 04</a></p><p class="categories"><a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-13T03:43:56.000Z">2021-11-13</time></p><p class="title"><a href="/myblog.github.io/2021/11/13/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Image-Procession-with-Javascipt-03/">【原生javascript项目】Image Procession with Javascipt 03</a></p><p class="categories"><a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">7</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="NO ADD" data-ad-slot="NO ADD" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/"><img src="/myblog.github.io/img/logo.svg" alt="iaine&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
