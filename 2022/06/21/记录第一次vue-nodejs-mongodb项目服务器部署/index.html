@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>记录第一次vue-nodejs-mongodb项目服务器部署 - iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="记录自己第一次部署项目，中间遇到很多errors，但好在花了两天时间成功部署了。先放出部署成功的项目链接 👉👉👉      师大Buy 校园闲置交易平台     👈👈👈 （先注册一个账号使用即可体验） 流程本项目包含三个子项目  前台展示 后台管理 后端nodejs服务器+mongodb数据库  大概流程  开发好前端与后端程序  购买服务器（和域名）  安全组、开放端口与设置规则"><meta property="og:type" content="blog"><meta property="og:title" content="记录第一次vue-nodejs-mongodb项目服务器部署"><meta property="og:url" content="https://janice143.github.io/myblog.github.io/2022/06/21/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:description" content="记录自己第一次部署项目，中间遇到很多errors，但好在花了两天时间成功部署了。先放出部署成功的项目链接 👉👉👉      师大Buy 校园闲置交易平台     👈👈👈 （先注册一个账号使用即可体验） 流程本项目包含三个子项目  前台展示 后台管理 后端nodejs服务器+mongodb数据库  大概流程  开发好前端与后端程序  购买服务器（和域名）  安全组、开放端口与设置规则"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_1.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_2.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_3.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_4.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_5.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_6.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_7.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_8.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_9.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_10.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_11.png?raw=true"><meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_12.png?raw=true"><meta property="article:published_time" content="2022-06-21T07:12:49.000Z"><meta property="article:modified_time" content="2022-06-21T07:19:01.620Z"><meta property="article:author" content="iaine"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/server_1.png?raw=true"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://janice143.github.io/myblog.github.io/2022/06/21/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/"},"headline":"记录第一次vue-nodejs-mongodb项目服务器部署","image":[],"datePublished":"2022-06-21T07:12:49.000Z","dateModified":"2022-06-21T07:19:01.620Z","author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":"记录自己第一次部署项目，中间遇到很多errors，但好在花了两天时间成功部署了。先放出部署成功的项目链接 👉👉👉      师大Buy 校园闲置交易平台     👈👈👈 （先注册一个账号使用即可体验） 流程本项目包含三个子项目  前台展示 后台管理 后端nodejs服务器+mongodb数据库  大概流程  开发好前端与后端程序  购买服务器（和域名）  安全组、开放端口与设置规则"}</script><link rel="canonical" href="https://janice143.github.io/myblog.github.io/2022/06/21/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/"><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-06-21T07:12:49.000Z" title="2022/6/21 下午3:12:49">2022-06-21</time>发表</span><span class="level-item"><time dateTime="2022-06-21T07:19:01.620Z" title="2022/6/21 下午3:19:01">2022-06-21</time>更新</span><span class="level-item">36 分钟读完 (大约5420个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">记录第一次vue-nodejs-mongodb项目服务器部署</h1><div class="content"><p>记录自己第一次部署项目，中间遇到很多errors，但好在花了两天时间成功部署了。先放出部署成功的项目链接</p>
+<p>👉👉👉      <a target="_blank" rel="noopener" href="http://101.34.27.188:8080/">师大Buy 校园闲置交易平台</a>     👈👈👈</p>
+<p>（先注册一个账号使用即可体验）</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>本项目包含三个子项目</p>
+<ol>
+<li>前台展示</li>
+<li>后台管理</li>
+<li>后端nodejs服务器+mongodb数据库</li>
+</ol>
+<p>大概流程</p>
+<ul>
+<li><p>开发好前端与后端程序</p>
+</li>
+<li><p>购买服务器（和域名）</p>
+</li>
+<li><p>安全组、开放端口与设置规则</p>
+</li>
+<li><p>xshell操作</p>
+</li>
+<li><p>服务器上安装 和配置node，mongodb 所需环境</p>
+</li>
+<li><p>nginx设置代理</p>
+</li>
+<li><p>上传项目代码到服务器上</p>
+</li>
+<li><p>启动 express 服务器</p>
+</li>
+</ul>
+<h2 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h2><p>我的服务器信息：</p>
+<ul>
+<li>腾讯云轻量服务器</li>
+<li>运算组件：2核CPU、2GB内存 (通用型-2核2G-40G-300G)</li>
+<li>系统盘：40GB SSD云硬盘 (通用型-2核2G-40G-300G)</li>
+<li>流量包：300GB/月流量包 (通用型-2核2G-40G-300G)</li>
+<li>地域：上海</li>
+<li>镜像：CentOS 8</li>
+</ul>
+<p>买好服务器后可以进入控制台，对服务器进行操作。可以尝试一下开机关机，之后最重要的是重置密码，这个密码后面通过xshell登录的时候经常用到，所以要记住。</p>
+<h2 id="安全组、开放端口与设置规则"><a href="#安全组、开放端口与设置规则" class="headerlink" title="安全组、开放端口与设置规则"></a>安全组、开放端口与设置规则</h2><p>在腾讯云控制台的搜索框中搜索安全组，打开<code>云服务器 -网络安全-安全组</code>。里面可以设置一些安全组规则，意思就是这里可以打开一些端口，以便项目使用。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_1.png?raw=true"></p>
+<p>一开始可以新建安全组，使用一些默认的安全组规则。下面这张图展示就是默认的安全组规则，可以看到他已经放通了22,80等端口可以使用。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_2.png?raw=true"></p>
+<p>本项目中的三个项目分别使用了8080（前台），9528(后台)，3000（后端），27017（数据库）端口，所以要用到这些端口，我们就得自己去开放，因为默认的安全组这些端口是没有开放的。</p>
+<p>开放这些端口的时候，需要在安全组里添加（可以在原来默认的安全组里新添，也可以新建安全组），也需要在服务器的防火墙里添加，只有这两个地方都放通了，端口才能访问。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_3.png?raw=true"></p>
+<h2 id="登录和操作服务器"><a href="#登录和操作服务器" class="headerlink" title="登录和操作服务器"></a>登录和操作服务器</h2><h3 id="xshell操作"><a href="#xshell操作" class="headerlink" title="xshell操作"></a>xshell操作</h3><p>我电脑是windows系统，所以安装了xshell来登录服务器。如果是 mac系统，好像可以直接在终端，通过<code>ssh root@公网IP</code>命令行连接到服务器。因为我没用过，所以这里只讲xshell如何登录和操纵。</p>
+<p>安装xshell的时候记得顺带安装xftp，可以用来上传文件，不仅如此，我还发现可以用来浏览文件夹，甚至修改编辑文件，很好用！</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_4.png?raw=true"></p>
+<p>打开xshell的时候，会弹出一个会话框，选择新建一个会话，然后命名一下，点击连接，这时候会弹出一个输入密码的对话框，输入一开始你在浏览器上的服务器控制台上重置的密码，就登录了。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_5.png?raw=true"></p>
+<p><em>centos</em>是基于linux建立的操作系统，所以用的指令和linux一样。而linux指令其实和DOS是一样的，只是命令的表达上可能有点儿不一样，所以遇到这个黑框不要害怕。</p>
+<p>下面说一下xshell里面常用的linux指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd 进入目录</span><br><span class="line">ls 查看当前目录下的文件</span><br><span class="line">mkdir  创建文件夹</span><br><span class="line">mv 移动或重命名</span><br><span class="line">rm -rf  删除整个文件夹</span><br></pre></td></tr></table></figure>
+
+<p>大概知道这些你就有了部署项目的基础了，中途如果遇到其他的需要，可以上网查看。</p>
+<p>你可以先试试<code>ls</code>，看看当前文件夹里有什么文件，这感觉就好像是在windows系统上浏览文件夹，只不过在windows上是可视化的操作界面。</p>
+<h3 id="xftp使用"><a href="#xftp使用" class="headerlink" title="xftp使用"></a>xftp使用</h3><p>xftp是个很好用的可视化界面，一开始我是看别人说用来上传文件的，但是后来我用的时候，我发现它很好用来浏览文件，找回了使用windows一样的感觉。</p>
+<p>当你进入xftp软件的时候，首先也会弹出一个会话框，新建会话，重命名，然后连接，输入密码。和使用xshell一样。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_6.png?raw=true"></p>
+<p>要传什么文件给服务器，先在右框中选择文件夹（新建文件夹），找好存放的位置后，在左框中浏览你电脑的文件，找到对应的文件后右键 传输。</p>
+<p>值得注意的是，在连接服务器后，初始文件夹的位置是/root，你可以从xftp软件的右框中看到，也可以在xshell里面<code>ls</code>看到。</p>
+<p>在xftp软件上右框的文件夹中有 … (三个点)，点击一下，可以返回上一级，你会发现，这里有很多初始文件夹。知道这些文件夹的存在，对于我们下一步的操作很重要，这里暂时放开，我们继续后面。</p>
+<h2 id="服务器上安装node，mongodb"><a href="#服务器上安装node，mongodb" class="headerlink" title="服务器上安装node，mongodb"></a>服务器上安装node，mongodb</h2><p>浏览到这里，我们已经知道一些基本的xshell指令，知道如何通过xshell登录服务器，通过xftp上传文件。下面我们开始在服务器上安装项目所需环境。</p>
+<p>一般在新服务器创建后，建议先升级一下 CentOS：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在升级之后，我的yum指令就下载不了东西了，报错<code>Fix Failed to download metadata for repo</code>，<a target="_blank" rel="noopener" href="https://techglimpse.com/failed-metadata-repo-appstream-centos-8/">解决办法</a>是</p>
+<p><strong>Step 1:</strong> Go to the <code>/etc/yum.repos.d/</code> directory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@autocontroller ~]# cd /etc/yum.repos.d/</span><br></pre></td></tr></table></figure>
+
+<p><strong>Step 2:</strong> Run the below commands</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@autocontroller ~]# sed -i &#x27;s/mirrorlist/#mirrorlist/g&#x27; /etc/yum.repos.d/CentOS-*</span><br><span class="line">[root@autocontroller ~]# sed -i &#x27;s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g&#x27; /etc/yum.repos.d/CentOS-*</span><br></pre></td></tr></table></figure>
+
+<p>**Step 3:**现在yum就可以使用了</p>
+<h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><p>网上的博客描写安装Nodejs很多，甚至还不一样，很容易踩坑，但是我推荐看<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903605040857095">这篇博客</a>，另外我也在这讲一下步骤。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 安装wget</span></span><br><span class="line">yum -y install wget</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 切换到/usr/local/src目录，选择这个文件夹存放nodejs</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 去nodejs下载官网复制下载链接，我的服务器是centos 8, 64位，所以我选择了</span></span><br><span class="line">https://nodejs.org/dist/v16.15.1/node-v16.15.1-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4 使用 wget 安装方式</span></span><br><span class="line">wget https://nodejs.org/dist/v16.15.1/node-v16.15.1-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这时候这个压缩包就在当前文件夹下，现在需要解压它</span></span><br><span class="line"><span class="comment"># 5 解压</span></span><br><span class="line">xz -d node-v16.15.1-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v16.15.1-linux-x64.tar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6 建立软连接</span></span><br><span class="line">ln -s /node-v16.15.1-linux-x64/bin/node /usr/<span class="built_in">local</span>/bin</span><br><span class="line">ln -s /node-v16.15.1-linux-x64/bin/npm /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这时候你可以切换到/usr/local/bin目录，看看有没有npm，node文件夹，有的话说明成功了</span></span><br><span class="line"><span class="comment"># 7 试试node,npms是否能使用</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印出了版本好就说明没问题</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h3><p>推荐看<a target="_blank" rel="noopener" href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-red-hat/#verify-that-mongodb-has-started-successfully">官网的步骤</a>  （有官方看官方，否则看别人的博客很容易踩坑）</p>
+<p>官网给出了如何在centos上下载mongodb 5，我也在这里写出步骤</p>
+<h4 id="1-配置yum"><a href="#1-配置yum" class="headerlink" title="1 配置yum"></a>1 配置yum</h4><p>xftp的作用来了，打开该软件，在<code>/etc/yum.repos.d</code>文件夹下创建<code>mongodb-org-5.0.repo</code>文件，选择记事本打开，粘贴下面代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mongodb-org-5.0]</span><br><span class="line">name=MongoDB Repository</span><br><span class="line">baseurl=https://repo.mongodb.org/yum/redhat/<span class="variable">$releasever</span>/mongodb-org/5.0/x86_64/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc</span><br></pre></td></tr></table></figure>
+
+<p>这个操作就好像告诉yum去指定的baseurl去下载资源，不配置的话yum不指导哪里找资源下载。</p>
+<h4 id="2-安装mongodb安装包"><a href="#2-安装mongodb安装包" class="headerlink" title="2 安装mongodb安装包"></a>2 安装mongodb安装包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y mongodb-org</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-验证安装结果"><a href="#3-验证安装结果" class="headerlink" title="3 验证安装结果"></a>3 验证安装结果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep mongodb</span><br></pre></td></tr></table></figure>
+
+<p>如果输出很多Mongodb相关的包时，说明你的服务器已经有这些包了</p>
+<h4 id="4-data目录和log目录"><a href="#4-data目录和log目录" class="headerlink" title="4 data目录和log目录"></a>4 data目录和log目录</h4><p>默认情况下，MongoDB 会创建一下<code>mongod</code>用户，该用户会使用data和log目录</p>
+<ul>
+<li><code>/var/lib/mongo</code> (the data directory)</li>
+<li><code>/var/log/mongodb</code> (the log directory)</li>
+</ul>
+<p>我们这里就使用它默认的一个位置来存放mongodb的data和log。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_7.png?raw=true"></p>
+<h4 id="5-启动MongoDB服务"><a href="#5-启动MongoDB服务" class="headerlink" title="5 启动MongoDB服务"></a>5 启动MongoDB服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mongod.service</span><br></pre></td></tr></table></figure>
+
+<p>我这里启动报错，后来我看到了<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/823288/mongodb-loads-but-breaks-returning-status-14#comment1255871_823288">这篇文章</a>，（看高赞回答），我发现权限错误，我的<code>/tmp/mongodb-27017.lock</code>所有者是root，需要改为mongod。</p>
+<blockquote>
+<p>permission settings on <code>/var/lib/mongodb</code> and <code>/tmp/mongodb-27017.lock</code> are wrong. You will have to change the owner to monogdb user</p>
+</blockquote>
+<p>在xshell输入一下指令即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R mongod:mongod /var/lib/mongodb</span><br><span class="line">chown mongod:mongod /tmp/mongodb-27017.sock</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="6-验证服务开启"><a href="#6-验证服务开启" class="headerlink" title="6 验证服务开启"></a>6 验证服务开启</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行: mongo</span><br><span class="line">输出： MongoDB shell version v5.0.9</span><br><span class="line">connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&amp;gssapiServiceName=mongodb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>到现在我们已经完成了部署难点的很大一部分。下面我们看看怎么在服务器运行我们三个项目</p>
+<h2 id="nginx设置代理"><a href="#nginx设置代理" class="headerlink" title="nginx设置代理"></a>nginx设置代理</h2><p>不需要懂nginx原理，我们可以先使用它看看。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/431796992">这篇文章</a>，我这里也引用一下</p>
+<h3 id="先查看服务器是否有nginx"><a href="#先查看服务器是否有nginx" class="headerlink" title="先查看服务器是否有nginx"></a>先查看服务器是否有nginx</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="查看nginx安装目录"><a href="#查看nginx安装目录" class="headerlink" title="查看nginx安装目录"></a>查看nginx安装目录</h3><p>命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h3><p><strong>启动</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+
+<p>直接输入nginx即可启动服务，打开浏览器，访问服务器公网地址，出现如下界面则代表启动成功。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_8.png?raw=true"></p>
+<p>这里访问默认的是80端口，因为nginx服务就是默认的80端口，如果不能访问，大致有几种原因：</p>
+<ul>
+<li>nginx未启动</li>
+<li>服务器安全组未加入80端口</li>
+<li>nginx配置错误</li>
+</ul>
+<p><strong>停止</strong></p>
+<p>停止nginx服务，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<p>此时访问浏览器则无法访问。</p>
+<p><strong>重启</strong></p>
+<p>重启nginx服务，一般用于修改配置文件之后，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h3><p>nginx启动后，在浏览器上输入公网地址，就可以打开默认的一个html页面。</p>
+<p>但是这个页面和端口都是默认的，如果需要显示我们自己的页面，就需要配置nginx，配置文件为<code>/etc/nginx/nginx.conf</code>，使用xftp找到该文件夹，并打开编辑。</p>
+<p>也可以在xshell上cd找到并vim打开，但是这个很不方便，不能快速复制粘贴和定位。所以推荐使用我用xftp发现的隐藏功能。</p>
+<p>在配置文件中，重点看server 对象，要改的也是这个对象，我的配置如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="comment"># 默认端口</span></span><br><span class="line">   server &#123;</span><br><span class="line">       listen       80 default_server;</span><br><span class="line">       listen       [::]:80 default_server;</span><br><span class="line">       server_name  _;</span><br><span class="line">       root         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">       <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">       include /etc/nginx/default.d/*.conf;</span><br><span class="line">       location / &#123;</span><br><span class="line">       &#125;</span><br><span class="line">       error_page 404 /404.html;</span><br><span class="line">           location = /40x.html &#123;</span><br><span class="line">       &#125;</span><br><span class="line">       error_page 500 502 503 504 /50x.html;</span><br><span class="line">           location = /50x.html &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 前台展示的打开的服务代理</span></span><br><span class="line">server &#123;</span><br><span class="line">       listen       8080;</span><br><span class="line">       server_name  localhost;</span><br><span class="line">	root         /root/lan/schoolstore/frontshop/dist;</span><br><span class="line"></span><br><span class="line">       <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">       <span class="comment"># include /etc/nginx/default.d/*.conf;</span></span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">		root   /root/lan/schoolstore/frontshop/dist;</span><br><span class="line">           index  index.html;</span><br><span class="line">           try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ @router;</span><br><span class="line">           autoindex on;</span><br><span class="line">      &#125;</span><br><span class="line">   </span><br><span class="line">    location @router&#123;</span><br><span class="line">           rewrite ^.*$ /index.html last;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       location /api/ &#123;</span><br><span class="line">           proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">           proxy_pass http://0.0.0.0:3000;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       gzip on;</span><br><span class="line"></span><br><span class="line">       gzip_buffers 32 4k;</span><br><span class="line"></span><br><span class="line">       gzip_comp_level 6;</span><br><span class="line"></span><br><span class="line">       gzip_min_length 200;</span><br><span class="line"></span><br><span class="line">       gzip_types text/css text/xml application/javascript;</span><br><span class="line"></span><br><span class="line">       gzip_vary on;</span><br><span class="line"></span><br><span class="line">       <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line">       <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">       <span class="comment">#</span></span><br><span class="line">       error_page   500 502 503 504  /50x.html;</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台管理的服务代理</span></span><br><span class="line">server &#123;</span><br><span class="line">       listen       9528;</span><br><span class="line">       server_name  localhost;</span><br><span class="line">	root         /root/lan/schoolstore/cms/dist;</span><br><span class="line"></span><br><span class="line">       <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">       <span class="comment"># include /etc/nginx/default.d/*.conf;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># 找到要渲染的页面</span></span><br><span class="line">       location / &#123;</span><br><span class="line">           <span class="comment"># try_files $uri $uri/ /index.html;</span></span><br><span class="line">		root   /root/lan/schoolstore/cms/dist;</span><br><span class="line">           index  index.html;</span><br><span class="line">           try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ @router;</span><br><span class="line">           autoindex on;</span><br><span class="line">      &#125;</span><br><span class="line">   <span class="comment"># 找到路由</span></span><br><span class="line">    location @router&#123;</span><br><span class="line">           rewrite ^.*$ /index.html last;</span><br><span class="line">       &#125;</span><br><span class="line">      <span class="comment"># 后端数据</span></span><br><span class="line">       location /api/ &#123;</span><br><span class="line">           proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">           proxy_pass http://0.0.0.0:3000;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       gzip on;</span><br><span class="line"></span><br><span class="line">       gzip_buffers 32 4k;</span><br><span class="line"></span><br><span class="line">       gzip_comp_level 6;</span><br><span class="line"></span><br><span class="line">       gzip_min_length 200;</span><br><span class="line"></span><br><span class="line">       gzip_types text/css text/xml application/javascript;</span><br><span class="line"></span><br><span class="line">       gzip_vary on;</span><br><span class="line"></span><br><span class="line">       <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line">       <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">       <span class="comment">#</span></span><br><span class="line">       error_page   500 502 503 504  /50x.html;</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>主要就是修改root 和 location。</p>
+<p>我开了两个代理的：前台展示打开的服务代理8080，和管理后台打开的服务代9528，这个项目是分开端口访问的。<br>修改配置文件后 执行<code> nginx -s reload</code>，如果项目已经上传，理论上访问ip:8080可以打开前台展示项目，访问ip:9528，可以打开后台展示项目。但是我们现在没讲到上传文件。所以会访问不成功，而80端口我还保留了默认的页面，还是可以访问到的，不妨试一试。</p>
+<h2 id="上传项目代码到服务器"><a href="#上传项目代码到服务器" class="headerlink" title="上传项目代码到服务器"></a>上传项目代码到服务器</h2><p>主要有三个项目的文件需要上传：前台，后台，后端</p>
+<p>我们先把后端部署好，前台上传比较容易，并且后端部署好后，前台部署可以拿到数据。</p>
+<h3 id="在服务器上使用nodejs"><a href="#在服务器上使用nodejs" class="headerlink" title="在服务器上使用nodejs"></a>在服务器上使用nodejs</h3><p>不着急直接上传nodejs文件，我们先看看服务器上nodejs怎么使用，因为一开始对于一个服务器小白来说，我们要上传什么东西都不知道，要不要打包也不知道，上传后端和前台一样也不知道。所以带着这些疑问，我们先上网搜搜，怎么在服务器上使用nodejs。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/50775.html">文章</a> ，主要看【步骤二：部署测试项目】，本文这里也给出步骤，主要是参考了这篇文章。</p>
+<p>1 打开vscode，在自己电脑里新建一个example.js文件，复制一下代码，然后node example.js就可以在<a target="_blank" rel="noopener" href="http://localhost:3000/%E7%9C%8B%E5%88%B0%C2%B7%60hello">http://localhost:3000/看到·`hello</a> word`</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> hostname = <span class="string">&#x27;0.0.0.0&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123; </span><br><span class="line">    res.statusCode = <span class="number">200</span>;</span><br><span class="line">    res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>);</span><br><span class="line">    res.end(<span class="string">&#x27;Hello World\n&#x27;</span>);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">server.listen(port, hostname, <span class="function">() =&gt;</span> &#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Server running at http://<span class="subst">$&#123;hostname&#125;</span>:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这是在自己电脑运行的效果，现在我们要想这个example.js文件放到服务器上，然后再服务器上运行，最后在自己电脑的浏览器上输入对应网址，可以看到同样的<code>hello world</code>。</p>
+<p>2 把example.js文件通过xftp上传到服务器上的/root文件夹下。然后再xshell中切换到该文件夹。通过<code>ls</code>指令可以看到该js文件，输入一以下指令运行该js文件。（和在自己电脑的控制台上一样）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node example.js</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器并访问<code>http://&lt;ECS实例公网IP地址&gt;:&lt;项目端口号&gt;</code>。本示例中，&lt;项目端口号&gt;为3000。你会发现该文件运行了同样效果。</p>
+<p><strong>这就是node在服务器上的使用，总的来说，其实和在自己电脑运行一样，也就是说我们要把js文件上传到服务器，如果项目大的话，会有很多文件夹，还会有node modules，所以这些也要上传。这些文件都有，node js文件就可以运行了！</strong></p>
+<h3 id="在服务器上部署Node-js-MongoDB-项目"><a href="#在服务器上部署Node-js-MongoDB-项目" class="headerlink" title="在服务器上部署Node.js + MongoDB 项目"></a>在服务器上部署Node.js + MongoDB 项目</h3><p>我的后端项目还用到了数据库，刚才我们只学到node项目怎么部署，但是node+mongodb呢？现在我们来看看</p>
+<p>参考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-oTdaFDvLo4">教学视频</a></p>
+<p>下面的讲解是假设你已经知道了怎么在自己电脑上开发node+mongodb项目，如果不知道建议先掌握这部分知识，再来看服务器上的部署。</p>
+<p>重点是在node 项目文件里设置Mongodb数据库连接，这个链接怎么看呢？在xshell里输入mongo就可以看到，</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_9.png?raw=true"></p>
+<p>图中红色框就是你的数据库的连接地址。但是在node项目里，？后面的字符串不需要写进入，同时还要也一个明确的数据库名称，我的数据库连接如下图所示。</p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_10.png?raw=true"></p>
+<p>处理好mongodb的连接地址，下面的步骤其实和Node项目一样，接下来我们真正开始讲解本项目的部署。</p>
+<h3 id="上传本项目后端代码"><a href="#上传本项目后端代码" class="headerlink" title="上传本项目后端代码"></a>上传本项目后端代码</h3><p>有的博客说可以用git上传，大概的意思就是服务器其实也是一台电脑，在这台里面通过git拉取项目，前提是你已经在自己的电脑里把项目文件git到了github上。但是这样很复杂，服务器这台电脑还需要配置git使用，不然就会没有权限，拉取不到项目文件。我弄了一会没弄出来我就另辟蹊径了。</p>
+<p>我的方式：</p>
+<p>1 在自己电脑里把项目上传到github上，忽略node modules等开发文件，(我的电脑使用git很久了，已经配置好了，如果第一次使用，也是要配置的，但是在可视化的windows上配置应该比centos上配置容易点)。</p>
+<p>2 上传之后在git clone拉取下来</p>
+<p>3 把新文件同xftp上传到服务器上</p>
+<p>4 xshell切换到项目文件下，输入<code>node install</code>下载项目所需包</p>
+<p>5 node server.js文件运行即可</p>
+<h4 id="pm2使用"><a href="#pm2使用" class="headerlink" title="pm2使用"></a>pm2使用</h4><blockquote>
+<p> PM2 是一个守护进程管理器，它将帮助您管理和保持您的应用程序在线</p>
+</blockquote>
+<p>其实说到这里后端项目就已经部署好了，但是很多博客都介绍了pm2这个工具，这个工具可以替代node server.js，同样让后端启动，但是不同的是，pm2的使用可以保证项目永久运行在服务器上，且不会一报错后端服务器就挂了，而且运行中还可以进行其他操作。</p>
+<p>1 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
+
+<p>2 切换当前工作目录到项目server.js文件夹中，执行指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start server.js</span><br></pre></td></tr></table></figure>
+
+<p>pm2的其他操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 stop server.js // 关闭</span><br><span class="line">pm2 list //查看所用已启动项目</span><br></pre></td></tr></table></figure>
+
+
+
+<p>到现在为止后端已经部署完毕了</p>
+<h3 id="上传本项目前端代码"><a href="#上传本项目前端代码" class="headerlink" title="上传本项目前端代码"></a>上传本项目前端代码</h3><p>前端代码上传比较容易，参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/431796992">文章</a></p>
+<p>我的项目是vue项目，所以npm run build打包出一个dist文件夹即可。然后把这个文件夹上传到服务器。此时无需重启nginx，刷新浏览器，可以看到我们的网站已经部署成功了</p>
+<p><strong>前台</strong></p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_11.png?raw=true"></p>
+<p><strong>后台</strong></p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/server_12.png?raw=true"></p>
+<h2 id="本项目有关地址"><a href="#本项目有关地址" class="headerlink" title="本项目有关地址"></a>本项目有关地址</h2><p>部署项目重点参考了三篇文章</p>
+<p>1 <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017143278">服务器小白的我,是如何成功将 node+mongodb 项目部署在服务器上并进行性能优化的</a></p>
+<p>2 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7004678485788590111#heading-14">记录react+node+mongodb项目部署到服务器的过程</a></p>
+<p>3 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/431796992">前端Vue项目打包部署实战教程</a></p>
+<p>非常推荐看这三篇，少走很多弯路。</p>
+<p>我的个人博客地址，里面偶尔会做一些笔记</p>
+<p><a href="https://janice143.github.io/myblog.github.io/">https://janice143.github.io/myblog.github.io/</a></p>
+<p>本项目部署地址</p>
+<p><a target="_blank" rel="noopener" href="http://101.34.27.188:8080/#/home">http://101.34.27.188:8080/#/home</a></p>
+<p>我的github项目</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">https://github.com/janice143?tab=repositories</a></p>
+<p>一些bug清单，附带解决问题的网站</p>
+<p>1 <a target="_blank" rel="noopener" href="https://qdmana.com/2022/03/202203131953219539.html">nginx配置500内部错误</a></p>
+<p>2 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/92134">ECS服务器部署Nodejs出现错误Error: Listen EADDRNOTAVAIL</a></p>
+<p>3 mongodb的导入json文件</p>
+<p><code>mongoimport --jsonArray --db schoolstore --collection categories --file cat.json</code></p>
+<p>4 <a target="_blank" rel="noopener" href="https://techglimpse.com/failed-metadata-repo-appstream-centos-8/">linux服务器升级后，yum安装出错</a></p>
+<hr>
+<p>前端小菜鸟，研二在校生（马上要研三了），非科班，物电学院，专业你猜</p>
+<p>大二接触前端，但是有了专业课老师上课要抽同学讲课，然后我就学了一下简单的三件套，做了个转盘抽签网页，没做出来，但是我再网上找了代码改了改弄出来了。这是我第一次的前端开发 😁😁😁</p>
+<p>大二大三是人生巅峰，拿国奖，发SCI了，觉得自己有搞研究的天分，准备本专业考研了。</p>
+<p>到了研究生发现自己不适合读博，想找工作，不想当物理老师，不想从事本专业，然后又开始拿起前端三件套，进阶前端之路了。I have no idea what I’m doing…</p>
+<p>最近提前批、秋招要来了，好紧张，我要冲去找工作了！</p>
+<p>祝我好运！</p>
+<p>have fun here!</p>
+<p>对了，后面还有很多文章想写的，等我有时间都会给它写了！</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>记录第一次vue-nodejs-mongodb项目服务器部署</p><p><a href="https://janice143.github.io/myblog.github.io/2022/06/21/记录第一次vue-nodejs-mongodb项目服务器部署/">https://janice143.github.io/myblog.github.io/2022/06/21/记录第一次vue-nodejs-mongodb项目服务器部署/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>iaine</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-06-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-06-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/myblog.github.io/img/alipayCode.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/myblog.github.io/img/wechatCode.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myblog.github.io/2022/05/26/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95-JS%E3%80%91%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/"><span class="level-item">【前端面试-JS】基础面试题</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "ENec8ViIgSHlHHrH1cxbyJpC-gzGzoHsz",
+            appKey: "XAFjYEEaHPO7WaCVYRqXgy9f",
+            
+            avatar: "mm",
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">51</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-21T07:12:49.000Z">2022-06-21</time></p><p class="title"><a href="/myblog.github.io/2022/06/21/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">记录第一次vue-nodejs-mongodb项目服务器部署</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-26T06:49:41.000Z">2022-05-26</time></p><p class="title"><a href="/myblog.github.io/2022/05/26/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95-JS%E3%80%91%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/">【前端面试-JS】基础面试题</a></p><p class="categories"><a href="/myblog.github.io/categories/js/">js</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-20T02:30:30.000Z">2022-05-20</time></p><p class="title"><a href="/myblog.github.io/2022/05/20/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95-VUE%E3%80%91VUE%E5%90%88%E9%9B%86/">【前端面试-VUE】VUE合集</a></p><p class="categories"><a href="/myblog.github.io/categories/vue/">vue</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-04T13:56:41.000Z">2022-05-04</time></p><p class="title"><a href="/myblog.github.io/2022/05/04/%E3%80%90nodejs%E3%80%91%E5%9F%BA%E4%BA%8EEJS+Node.js+MongoDB%E7%9A%84%E5%85%A8%E6%A0%88%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%EF%BC%88%E5%85%A8%E8%8B%B1%E6%96%87%EF%BC%89/">【nodejs】基于EJS+Node.js+MongoDB的全栈电商平台（全英文）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-15T13:45:42.000Z">2022-04-15</time></p><p class="title"><a href="/myblog.github.io/2022/04/15/%E3%80%90ejs%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E3%80%91%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%94%A8ejs/">【ejs模板引擎】第一次用ejs</a></p><p class="categories"><a href="/myblog.github.io/categories/ejs-js/">ejs.js</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
+                            	var now = new Date();
+                                function createtime() {
+                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
+                                    now.setTime(now.getTime()+250);
+                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
+                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                                }
+                                setInterval("createtime()",250);
+                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
