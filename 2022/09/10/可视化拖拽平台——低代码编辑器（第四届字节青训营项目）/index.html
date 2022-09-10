@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="青训营前端结业项目答辩汇报文档 一、项目介绍 项目名称：字节青训营Low-Code项目 团队：six god 项目服务地址 http:&amp;#x2F;&amp;#x2F;18.222.123.50:82 Github 地址: https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;giraffecat&amp;#x2F;LowCode  1.1 项目背景及意义在前端开发中，组件化思想是一个非常重要的思想。前端组件化开发可以很大程度地降低系统中各个功能的耦合性，提高"><meta property="og:type" content="blog"><meta property="og:title" content="iaine&#039;s blog"><meta property="og:url" content="http://iainespace.work/portfolio/2022/09/10/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:description" content="青训营前端结业项目答辩汇报文档 一、项目介绍 项目名称：字节青训营Low-Code项目 团队：six god 项目服务地址 http:&amp;#x2F;&amp;#x2F;18.222.123.50:82 Github 地址: https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;giraffecat&amp;#x2F;LowCode  1.1 项目背景及意义在前端开发中，组件化思想是一个非常重要的思想。前端组件化开发可以很大程度地降低系统中各个功能的耦合性，提高"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFiMTk2NzEwYzk3MDQ0MzA1MmE4Y2VlYjBmY2VmZjFfNVB0TWNTUmMySk5JSzh3dG16M1poUnVBY29KRW9ncXdfVG9rZW46Ym94Y25XREptcTZiS3hDOTBvMEU2OXhyeEJkXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MjI4ZGIyN2MxZjljZGE1MTFjYmJiOGZjYTc4ZDJjYWNfdzNLYklFV290YmZ3SGZIMERqaDRPOFlrZ1IyNEpVcW5fVG9rZW46Ym94Y25NZGM4ZnViWUJsTGxQSEw1TXVXRm5jXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MzljNzA5NjcyZWM2NzRjYjFmNzQ4NWExMWZjMGJhOTZfQUFiRGRyN2pBQ1ZVd0Rzb3I0aXlteEtGcEpqZGNSdkdfVG9rZW46Ym94Y25OWGxmZ1RHT01xeE41a0dZWXdYd1ZiXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=OGQ2MTgxZTlkZWVjZmYzM2RhMTRjNmRkZTNmMWZlZWZfeWlFTFJOWTRBcXZLc3V3TkxhMG0wM3paNU94TkpsWDdfVG9rZW46Ym94Y25NTWVqRkFZNDdaTThobjVuU1JyOTRmXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MzFkZjA1ZTY3NmU4NTM3ZmVlNzhiN2U0YjkyMWZmNzdfNnVWTTVQb2FPN1hQOUN1ZkJUaFo2cnpEeHlLZWpKSHlfVG9rZW46Ym94Y25zRng3N3EyZkF4N09aVE4wU0dNMDJkXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="og:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MTNlMWY3ODBjNDllOWEyM2VjZjVkZGIxYWIzNTg5MjVfeTRlZkFRUm1HbW5zeTlmZzlGQ2l3aFYzaDNlVk1jMXhfVG9rZW46Ym94Y25GejdMa3VJWm9oejRXRUd1M3FPaW1oXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><meta property="article:published_time" content="2022-09-10T06:00:10.872Z"><meta property="article:modified_time" content="2022-09-10T06:16:52.869Z"><meta property="article:author" content="iaine"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFiMTk2NzEwYzk3MDQ0MzA1MmE4Y2VlYjBmY2VmZjFfNVB0TWNTUmMySk5JSzh3dG16M1poUnVBY29KRW9ncXdfVG9rZW46Ym94Y25XREptcTZiS3hDOTBvMEU2OXhyeEJkXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://iainespace.work/portfolio/2022/09/10/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/"},"headline":"iaine's blog","image":[],"datePublished":"2022-09-10T06:00:10.872Z","dateModified":"2022-09-10T06:16:52.869Z","author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":"青训营前端结业项目答辩汇报文档 一、项目介绍 项目名称：字节青训营Low-Code项目 团队：six god 项目服务地址 http:&#x2F;&#x2F;18.222.123.50:82 Github 地址: https:&#x2F;&#x2F;github.com&#x2F;giraffecat&#x2F;LowCode  1.1 项目背景及意义在前端开发中，组件化思想是一个非常重要的思想。前端组件化开发可以很大程度地降低系统中各个功能的耦合性，提高"}</script><link rel="canonical" href="http://iainespace.work/portfolio/2022/09/10/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/"><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-09-10T06:00:10.872Z" title="2022/9/10 下午2:00:10">2022-09-10</time>发表</span><span class="level-item"><time dateTime="2022-09-10T06:16:52.869Z" title="2022/9/10 下午2:16:52">2022-09-10</time>更新</span><span class="level-item">17 分钟读完 (大约2569个字)</span></div></div><div class="content"><p>青训营前端结业项目答辩汇报文档</p>
+<h1 id="一、项目介绍"><a href="#一、项目介绍" class="headerlink" title="一、项目介绍"></a>一、项目介绍</h1><blockquote>
+<p>项目名称：字节青训营Low-Code项目</p>
+<p>团队：six god</p>
+<p>项目服务地址 <a target="_blank" rel="noopener" href="http://18.222.123.50:82/">http://18.222.123.50:82</a></p>
+<p>Github 地址: <a target="_blank" rel="noopener" href="https://github.com/giraffecat/LowCode">https://github.com/giraffecat/LowCode</a></p>
+</blockquote>
+<h3 id="1-1-项目背景及意义"><a href="#1-1-项目背景及意义" class="headerlink" title="1.1 项目背景及意义"></a>1.1 项目背景及意义</h3><p>在前端开发中，组件化思想是一个非常重要的思想。前端组件化开发可以很大程度地降低系统中各个功能的耦合性，提高代码复用率，例如像Bootstrap、elementUI等这些UI组件库，这些组件库对前端工程化、以及降低代码的维护难度，具有很大的帮助。</p>
+<p>低代码平台解决的最大问题就是复用，除此之外，对于开发人员来说，这个平台能够显著提升开发效率，甚至还能让不具备编码技能的设计人员实现页面的构建和代码的产出。为了满足这些业务的需求，我们团队搭建了一款针对于H5页面开发的Low-Code平台，支持组件拖拽、配置、页面预览等多种功能，可快速实现页面的可视化搭建。</p>
+<h3 id="1-2-低代码平台概要"><a href="#1-2-低代码平台概要" class="headerlink" title="1.2 低代码平台概要"></a>1.2 低代码平台概要</h3><p>低代码平台主要是由「物料组件区」、「画布区」、「属性编辑区」这三个部分组成的。其中物料组件区负责展示可拖拽的组件，画布组件区负责渲染组件，对其进行可视化展示，属性编辑器负责修改选中组件的属性。针对这三者的职责，我们大概设计出了所需要实现的基本功能：</p>
+<p>对于物料组件区，保证其是可拖拽的，并且能与画布区进行交互；对于画布区，可看成这是一个巨大的容器，具有对组件数据的渲染功能；对于属性编辑器，需要获取组件的实时数据，实现与对应组件的联动逻辑。</p>
+<p>为了实现这些功能，本团队基于Vue.js框架以及element ui 组件库，采用JSON schema和vuex的全局数据管理和联动方案，以及vuedraggable插件实现组件的拖拽，为低代码平台提供一种可行的解决思路。</p>
+<h1 id="二、项目分工"><a href="#二、项目分工" class="headerlink" title="二、项目分工"></a>二、项目分工</h1><p>本团队共有5人，大部分是准研三的学生。在队长的合理安排和明确分工下，各个成员各司其职，最终共同完成了本项目的主要功能。</p>
+<p>整体页面展示图：</p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFiMTk2NzEwYzk3MDQ0MzA1MmE4Y2VlYjBmY2VmZjFfNVB0TWNTUmMySk5JSzh3dG16M1poUnVBY29KRW9ncXdfVG9rZW46Ym94Y25XREptcTZiS3hDOTBvMEU2OXhyeEJkXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<h1 id="三、项目实现"><a href="#三、项目实现" class="headerlink" title="三、项目实现"></a>三、项目实现</h1><p>项目服务地址 <a href="http://18.222.123.50:82。">http://18.222.123.50:82。</a></p>
+<h3 id="3-1-技术选型"><a href="#3-1-技术选型" class="headerlink" title="3.1 技术选型"></a>3.1 技术选型</h3><p>项目采用 Vue2 + VueRouter + VueX + ElementUI实现，同时采用vuedraggable插件实现组件的拖拽。</p>
+<h3 id="3-2-架构设计"><a href="#3-2-架构设计" class="headerlink" title="3.2 架构设计"></a>3.2 架构设计</h3><p>整个项目架构可以分为四个部分，分别是顶部菜单栏、物料组件区、画布区、属性配置区。</p>
+<ol>
+<li><h4 id="顶部菜单栏"><a href="#顶部菜单栏" class="headerlink" title="顶部菜单栏"></a>顶部菜单栏</h4></li>
+</ol>
+<p>主要实现的是页面管理功能，包括添加、清除、删除操作，以及调整画布大小、渲染、Github第三方登录功能。</p>
+<ol start="2">
+<li><h4 id="物料组件区"><a href="#物料组件区" class="headerlink" title="物料组件区"></a>物料组件区</h4></li>
+</ol>
+<p>展示了一些基本的常用的可拖拽式的物料组件。其中包括两个容器组件，以及其他组件。</p>
+<ol start="3">
+<li><h4 id="画布区"><a href="#画布区" class="headerlink" title="画布区"></a>画布区</h4></li>
+</ol>
+<p>渲染拖拽过来的物料组件，通过根据属性编辑区数据来实时更新渲染内容。同时可以实现组件的选中，对选中的组件进行删除和复制操作。</p>
+<ol start="4">
+<li><h4 id="属性编辑区"><a href="#属性编辑区" class="headerlink" title="属性编辑区"></a>属性编辑区</h4></li>
+</ol>
+<p>可以可视化选中组件的属性，调节属性的参数，更好后的参数可以传给画布进行实时的渲染。</p>
+<h3 id="3-3-项目代码介绍"><a href="#3-3-项目代码介绍" class="headerlink" title="3.3 项目代码介绍"></a>3.3 项目代码介绍</h3><p>主要从要解决的5个核心问题来介绍本项目的代码。</p>
+<ol>
+<li><h4 id="可拖拽组件是如何初始化的？"><a href="#可拖拽组件是如何初始化的？" class="headerlink" title="可拖拽组件是如何初始化的？"></a>可拖拽组件是如何初始化的？</h4></li>
+</ol>
+<p>我们定义一套JSON格式数据规范来描述组件的属性值，主要包括name（名称）, icon（图标）, fields（样式）属性，其中fields属性有包含label（名称）, type（类型）, value（值）属性。</p>
+<p>以button组件为例：</p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MjI4ZGIyN2MxZjljZGE1MTFjYmJiOGZjYTc4ZDJjYWNfdzNLYklFV290YmZ3SGZIMERqaDRPOFlrZ1IyNEpVcW5fVG9rZW46Ym94Y25NZGM4ZnViWUJsTGxQSEw1TXVXRm5jXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<p>JSON数据在全局自动数据注册函数（registerSchema.js）的作用下，将物料数据全部信息存储在全局变量$initializing、 $fields上。所以左侧的物料组件是通过遍历$initializing数据展示的。</p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MzljNzA5NjcyZWM2NzRjYjFmNzQ4NWExMWZjMGJhOTZfQUFiRGRyN2pBQ1ZVd0Rzb3I0aXlteEtGcEpqZGNSdkdfVG9rZW46Ym94Y25OWGxmZ1RHT01xeE41a0dZWXdYd1ZiXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=OGQ2MTgxZTlkZWVjZmYzM2RhMTRjNmRkZTNmMWZlZWZfeWlFTFJOWTRBcXZLc3V3TkxhMG0wM3paNU94TkpsWDdfVG9rZW46Ym94Y25NTWVqRkFZNDdaTThobjVuU1JyOTRmXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<p>$initializing、 $fields在后续的可视化拖拽页面中也扮演着渲染与物料配置之间的纽带。</p>
+<ol start="2">
+<li><h4 id="画布是如何渲染的？"><a href="#画布是如何渲染的？" class="headerlink" title="画布是如何渲染的？"></a>画布是如何渲染的？</h4></li>
+</ol>
+<p>前提要把物件拖拽到画布中。本项目选择了vuedraggable插件来实现组件的拖拽。</p>
+<p>vuedraggable一款基于Sortable.js实现的vue拖拽插件。支持移动设备。可以在不同组件间拖拽，使用起来也很简单，总之是一款非常优秀的vue拖拽组件。每个组件其实都是一个vuedraagable容器。</p>
+<blockquote>
+<p>Options 表示draggable 列表配置项，group用于分组（相同的组之间可以相互拖拽），sort定义是否可以拖拽(false 不可以拖拽到当前组)，animation定义动画时间</p>
+<p>clone事件，handleClone用来将组件的Json数据深度拷贝到渲染数据中</p>
+</blockquote>
+<p>当从物料区选择组件拖拽到画布上时，首先会将组件的元数据进行深度拷贝，插入到当前的渲染物料数据中。画布组件一直处于watch的监视状态，一旦有组件掉落，就会触发widgets属性（我们用来描述整个画布中组件的所有数据）的更新。有了最新的widgets数据，就可以对其中和UI组件相关的属性进行渲染。</p>
+<pre><code>watch: &#123;    widgets: &#123;      handler(val) &#123;        // console.log(&quot;widgets&quot;, val)        this.list = val;      &#125;,      immediate: true,      deep: true,    &#125;,    list: &#123;      handler(val) &#123;        this.$emit(&quot;update:widgets&quot;, val);      &#125;,      immediate: true,      deep: true,    &#125;,  &#125;,
+</code></pre>
+<p>同时，画布还有选中组件的功能，主要是功能给每个组件设置click事件触发，当被点击时，会加上选中的样式，显示出工具栏。</p>
+<ol start="3">
+<li><h4 id="属性编辑器是如何实现数据联动的？"><a href="#属性编辑器是如何实现数据联动的？" class="headerlink" title="属性编辑器是如何实现数据联动的？"></a>属性编辑器是如何实现数据联动的？</h4></li>
+</ol>
+<p>为画布上的组件添加点击事件，使其能够在点击时设置右侧属性编辑面板的内容，同时改变属性编辑区的数据，会触发选中组组件的样式更新。所以这里很重要的是属性编辑区和画布区组件的通信。</p>
+<p>层级很复杂，我们使用适用于多层组件通信的方案provide/inject，属性编辑区组件直接传递给选中组件一个this，这样选中组件可以实时获取到属性编辑区组件最新的值，而且属性编辑区组件也能拿到选中组件的数据。</p>
+<p>如下面的代码所示：</p>
+<pre><code>// 属性编辑区组件&#123;provide() &#123;    return &#123;      chontrol: this, // inject响应式监听    &#125;;  &#125;,  data() &#123;    return &#123;      widgets: [],      curComponent: undefined,    &#125;;  &#125; &#125;  // 在选中组件中，选中物料setcurComponent(cmp) &#123;  this.show = true; // 选中样式可见  this.chontrol.curComponent = cmp; // 设置当前组件的数据curComponent  &#125;
+</code></pre>
+<p>可以看到我们的属性编辑区的面板，对于同一样类型的属性，我们采用相同的模板来进行可视化操作。这是本项目的一个特色之一，就是我们抽象了出数组、图片上传、对象、跳转等十多个的属性编辑组件，组件的类型记录在物料组件的JSON数据type属性中。这样可以便于更好地规范和管理组件数据，同时提高开发效率，后期新增物料组件时，可以通过拖拽属性编辑组件，直接导出物料组件的JSON数据，避免了繁琐的手动编辑数据工作。</p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MzFkZjA1ZTY3NmU4NTM3ZmVlNzhiN2U0YjkyMWZmNzdfNnVWTTVQb2FPN1hQOUN1ZkJUaFo2cnpEeHlLZWpKSHlfVG9rZW46Ym94Y25zRng3N3EyZkF4N09aVE4wU0dNMDJkXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<ol start="4">
+<li><h4 id="页面管理如何实现？"><a href="#页面管理如何实现？" class="headerlink" title="页面管理如何实现？"></a>页面管理如何实现？</h4></li>
+</ol>
+<p>利用状态管理仓库vuex来管理一些经常用到、且容易变动的数据，比如pages数据, widgets数据。画布中每一次的变动（widgets对象改变），都会触发仓库中widgets数据更新，而pages数据是一个对象数组，记录了每一个页面的widgets， id, name的值。</p>
+<p><img src="https://izrq7ytia1.feishu.cn/space/api/box/stream/download/asynccode/?code=MTNlMWY3ODBjNDllOWEyM2VjZjVkZGIxYWIzNTg5MjVfeTRlZkFRUm1HbW5zeTlmZzlGQ2l3aFYzaDNlVk1jMXhfVG9rZW46Ym94Y25GejdMa3VJWm9oejRXRUd1M3FPaW1oXzE2NjI3ODk1MzU6MTY2Mjc5MzEzNV9WNA"></p>
+<pre><code>watch: &#123;    widgets: &#123;      handler(val) &#123;        // 更新此时的widgets        this.$store.commit(&quot;setWidgets&quot;, val);        // 更新pages中的widgets        this.$store.commit(&quot;updateWidgets&quot;, val);      &#125;,      immediate: true,      deep: true,    &#125;,  &#125;,    mounted() &#123;    this.newPage();    eventBus.$on(&#39;updateCurPage&#39;,(cur)=&gt;&#123;      this.curPage = cur
+          &#125;)  &#125;,
+</code></pre>
+<p>必要的时候，用全局事件总线辅助。</p>
+<ol start="5">
+<li><h4 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h4></li>
+</ol>
+<p>基本和画布数据的可视化一样，但是值得注意的是，这里的组件的点击事件不再是选中。</p>
+<p>isPreview判断当前的操作是预览还是编辑状态。</p>
+<h1 id="四、测试结果"><a href="#四、测试结果" class="headerlink" title="四、测试结果"></a>四、测试结果</h1><p>功能测试：</p>
+<ol>
+<li><p>组件拖动、嵌套正常</p>
+</li>
+<li><p>组件基本属性编辑正常</p>
+</li>
+<li><p>当前画布清空、预览正常</p>
+</li>
+<li><p>画布新建、删除、切换正常</p>
+</li>
+<li><p>点击按钮后在自定义页面间跳转正常</p>
+</li>
+<li><p>图片上传正常</p>
+</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="http://iainespace.work/portfolio/2022/09/10/可视化拖拽平台——低代码编辑器（第四届字节青训营项目）/">http://iainespace.work/portfolio/2022/09/10/可视化拖拽平台——低代码编辑器（第四届字节青训营项目）/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>iaine</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-09-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-09-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/myblog.github.io/img/alipayCode.jpg" alt="支付宝"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myblog.github.io/2022/09/06/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%200de67f7704f34eb2973d077b0ca2e7df/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "ENec8ViIgSHlHHrH1cxbyJpC-gzGzoHsz",
+            appKey: "XAFjYEEaHPO7WaCVYRqXgy9f",
+            
+            avatar: "mm",
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">57</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-10T06:00:10.872Z">2022-09-10</time></p><p class="title"><a href="/myblog.github.io/2022/09/10/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-06T12:36:27.764Z">2022-09-06</time></p><p class="title"><a href="/myblog.github.io/2022/09/06/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%200de67f7704f34eb2973d077b0ca2e7df/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T04:21:46.000Z">2022-08-20</time></p><p class="title"><a href="/myblog.github.io/2022/08/20/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%91%E5%B8%83npm/">第一次发布npm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T12:33:33.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue-cli3%E4%BD%BF%E7%94%A8-webpack-bundle-analyzer%E6%8F%92%E4%BB%B6/">第一次在vue-cli3 使用 webpack-bundle-analyzer 插件</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T07:58:48.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue3-vite%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">vue3+vite项目性能优化</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
+                            	var now = new Date();
+                                function createtime() {
+                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
+                                    now.setTime(now.getTime()+250);
+                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
+                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                                }
+                                setInterval("createtime()",250);
+                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
