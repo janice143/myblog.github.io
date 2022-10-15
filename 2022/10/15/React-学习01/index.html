@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>React 学习01 - iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="React学习学习链接：  Learn React for free B站****尚硅谷React教程（2022加更，B站超火react教程）**  两个学习链接一个是英文，一个是中文。两个我都在用，对比了一下，国内的教程一般时间很长，但是基本都是干货，知识是直接投喂的，重难点也会讲得很清楚。国外的教程更侧重趣味性，看的过程需要自主思考，边看边操练，讲的过程中是对CSS和JS的整个运用，不仅仅是学"><meta property="og:type" content="blog"><meta property="og:title" content="React 学习01"><meta property="og:url" content="http://iainespace.work/portfolio/2022/10/15/React-%E5%AD%A6%E4%B9%A001/"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:description" content="React学习学习链接：  Learn React for free B站****尚硅谷React教程（2022加更，B站超火react教程）**  两个学习链接一个是英文，一个是中文。两个我都在用，对比了一下，国内的教程一般时间很长，但是基本都是干货，知识是直接投喂的，重难点也会讲得很清楚。国外的教程更侧重趣味性，看的过程需要自主思考，边看边操练，讲的过程中是对CSS和JS的整个运用，不仅仅是学"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://iainespace.work/portfolio/2022/10/15/React-%E5%AD%A6%E4%B9%A001/!%5B%5D(https://github.com/janice143/myblog.github.io/blob/master/images/react_life.png?raw=true)"><meta property="article:published_time" content="2022-10-15T08:37:35.000Z"><meta property="article:modified_time" content="2022-10-15T08:42:07.670Z"><meta property="article:author" content="iaine"><meta property="article:tag" content="React"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="!%5B%5D(https://github.com/janice143/myblog.github.io/blob/master/images/react_life.png?raw=true)"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://iainespace.work/portfolio/2022/10/15/React-%E5%AD%A6%E4%B9%A001/"},"headline":"React 学习01","image":[],"datePublished":"2022-10-15T08:37:35.000Z","dateModified":"2022-10-15T08:42:07.670Z","author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":"React学习学习链接：  Learn React for free B站****尚硅谷React教程（2022加更，B站超火react教程）**  两个学习链接一个是英文，一个是中文。两个我都在用，对比了一下，国内的教程一般时间很长，但是基本都是干货，知识是直接投喂的，重难点也会讲得很清楚。国外的教程更侧重趣味性，看的过程需要自主思考，边看边操练，讲的过程中是对CSS和JS的整个运用，不仅仅是学"}</script><link rel="canonical" href="http://iainespace.work/portfolio/2022/10/15/React-%E5%AD%A6%E4%B9%A001/"><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-15T08:37:35.000Z" title="2022/10/15 下午4:37:35">2022-10-15</time>发表</span><span class="level-item"><time dateTime="2022-10-15T08:42:07.670Z" title="2022/10/15 下午4:42:07">2022-10-15</time>更新</span><span class="level-item">8 分钟读完 (大约1211个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">React 学习01</h1><div class="content"><h1 id="React学习"><a href="#React学习" class="headerlink" title="React学习"></a>React学习</h1><p>学习链接：</p>
+<ol>
+<li><strong><strong><a target="_blank" rel="noopener" href="https://scrimba.com/learn/learnreact#">Learn React for free</a></strong></strong></li>
+<li>B站****<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wy4y1D7JT">尚硅谷<em>React教程</em>（2022加更，B站超火<em>react教程</em>）</a>**</li>
+</ol>
+<p>两个学习链接一个是英文，一个是中文。两个我都在用，对比了一下，国内的教程一般时间很长，但是基本都是干货，知识是直接投喂的，重难点也会讲得很清楚。国外的教程更侧重趣味性，看的过程需要自主思考，边看边操练，讲的过程中是对CSS和JS的整个运用，不仅仅是学习react，除此之外，国外的教学视频一般更短一点，一般是通过做小demo学习框架知识，哦！对了，没有做笔记的过程。</p>
+<p>react 17文档：<a target="_blank" rel="noopener" href="https://17.reactjs.org/docs/getting-started.html">https://17.reactjs.org/docs/getting-started.html</a></p>
+<p>react 18文档：<a target="_blank" rel="noopener" href="https://reactjs.org/docs/getting-started.html">https://reactjs.org/docs/getting-started.html</a></p>
+<h3 id="组件定义的两种方式"><a href="#组件定义的两种方式" class="headerlink" title="组件定义的两种方式"></a>组件定义的两种方式</h3><ol>
+<li><p>函数：适用于简单组件的定义（简单组件就是没有state响应式）</p>
+<p> function Welcome(props) {<br>   return <h1>Hello, {props.name}</h1>;<br> }</p>
+</li>
+<li><p>类：适用于有state的组件</p>
+<p> class Welcome extends React.Component {<br>   render() {</p>
+<pre><code> return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;
+</code></pre>
+<p>   }<br> }</p>
+</li>
+</ol>
+<h3 id="利用Vite工具工程化"><a href="#利用Vite工具工程化" class="headerlink" title="利用Vite工具工程化"></a>利用Vite工具工程化</h3><ol>
+<li><code>npm create vite@latest</code></li>
+<li><code>npm install</code></li>
+</ol>
+<h3 id="react脚手架创建react-app"><a href="#react脚手架创建react-app" class="headerlink" title="react脚手架创建react app"></a>react脚手架创建react app</h3><pre><code>npx create-react-app my-app
+cd my-app
+npm start
+</code></pre>
+<h3 id="组件实例的三大核心属性"><a href="#组件实例的三大核心属性" class="headerlink" title="组件实例的三大核心属性"></a>组件实例的三大核心属性</h3><ol>
+<li><strong>props</strong></li>
+</ol>
+<p>理解：组件使用是的自定义属性，有点像vue的子组件的props属性</p>
+<ul>
+<li><p>props属性是只读的，组件内部无法修改props属性值（和Vue一样，父组件到子组件的数据是单向流动的）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://17.reactjs.org/docs/typechecking-with-proptypes.html">props类型限制的方式</a></p>
+<p>  import PropTypes from ‘prop-types’;<br>  class Greeting extends React.Component {</p>
+<pre><code>render() &#123;
+  return (
+    &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;
+  );
+&#125;
+</code></pre>
+<p>  }<br>  Greeting.propTypes = {</p>
+<pre><code>name: PropTypes.string
+</code></pre>
+<p>  };<br>  Greeting.defaultProps = {</p>
+<pre><code>name: &quot;Lucus&quot;
+</code></pre>
+<p>  };</p>
+<p>  // 可以写成静态方法/属性<br>  class Greeting extends React.Component {</p>
+<pre><code>  static propTypes = &#123;
+    name: PropTypes.string
+  &#125;;
+  static defaultProps = &#123;
+    name: &quot;Lucus&quot;
+  &#125;;
+  render() &#123;
+    return (
+      &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;
+    );
+  &#125;
+</code></pre>
+<p>  }</p>
+</li>
+<li><p>扩展属性</p>
+<p>  const person = {</p>
+<pre><code>    name: &#39;Jace&#39;,
+    age: 18,
+    sex: &quot;男&quot;
+&#125;
+</code></pre>
+<p>  ReactDOM.render(&lt;Person {…person} /&gt;, root)</p>
+</li>
+</ul>
+<ol>
+<li><strong>state</strong></li>
+</ol>
+<p>理解：响应式状态，是一个对象，里面的数据是响应式的，有点像Vue的data</p>
+<pre><code>class Clock extends React.Component &#123;
+  constructor(props) &#123;
+    super(props);
+    this.state = &#123;date: new Date()&#125;;
+  &#125;
+
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is &#123;this.state.date.toLocaleTimeString()&#125;.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  &#125;
+&#125;
+
+// 简写形式，不写构造函数
+class Clock extends React.Component &#123;
+  state = &#123;date: new Date()&#125;
+
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is &#123;this.state.date.toLocaleTimeString()&#125;.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  &#125;
+&#125;
+</code></pre>
+<ul>
+<li><p>state中的数据不能直接改变，而是通过setState({})</p>
+</li>
+<li><p>组件中自定义方法中的this为undefined，</p>
+<p>解决方式1：bind强制绑定；</p>
+<p>解决方式2：箭头函数（写成赋值语句+箭头函数的形式<code>tick=()⇒&#123;&#125;</code>）</p>
+<p>类里面可以直接写赋值语句，无需关键字声明，相当于给类添加一个属性；并不是所有组件的自定义方法中的this为undefined，要看谁调用，如果是事件处理回调的，那就是Undefined，因为类默认会开启严格模式，这时候This不指向window，而是undefined.</p>
+</li>
+</ul>
+<ol>
+<li><strong>refs</strong></li>
+</ol>
+<p>理解：标签可以用ref属性标识自己，换句话说，可以通过访问refs属性获取节点</p>
+<p>使用方法：</p>
+<ul>
+<li><p><code>creatRef</code>创建：使用<code>this.myRef.current</code> 获取</p>
+<p>  this.myRef = React.createRef();</p>
+<div ref={this.myRef} /> // 已有标签可以添加ref
+  <CustomTextInput ref={this.textInput} /> // 通过类创建的自定义组件也可以添加ref，但是函数创建的组件不行，因为没有实例</li>
+<li><p>回调函数形式</p>
+<p>  this.inputElement = null<br>  &lt;input</p>
+<pre><code>  type=&quot;text&quot;
+  ref=&#123;el =&gt; this.inputElement = el&#125;
+/&gt;
+</code></pre>
+<p>  // 上述的写法为内联形式，在页面更新的时候会调用两次，第一次是null，第二次才是节点el<br>  // 这是因为react每次render的时候，都要重新创建新的实例，所以react要先清空ref的值，然重新赋值<br>  // 可以通过绑定函数的形式避免这个问题，但是影响不大<br>  this.inputElement = null<br>  setTextInputRef = element =&gt; {</p>
+<pre><code>this.textInput = element;
+</code></pre>
+<p>  };<br>  &lt;input</p>
+<pre><code>type=&quot;text&quot;
+ref=setTextInputRef
+</code></pre>
+<p>  /&gt;</p>
+</li>
+<li><p>字符串形式（不推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`&lt;input ref=&quot;input1&quot;/&gt;</span><br><span class="line">  this.refs.input1获取`</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p><code>onXxx</code> 的形式，如<code>onClick, onChange, onFoucs</code> 。为了更好的兼容，所以没有直接使用原生JS事件。</p>
+<p>通过<code>event.target</code> 获取该事件的DOM元素对象，能不使用ref，则不使用。</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>17版本以下的声明周期（18版本有些不一样）</p>
+<p><img src="!%5B%5D(https://github.com/janice143/myblog.github.io/blob/master/images/react_life.png?raw=true)"></p>
+<ol>
+<li><strong>初始化阶段:</strong> 由ReactDOM.render()触发—初次渲染<ol>
+<li>constructor()</li>
+<li>componentWillMount() // 即将挂载</li>
+<li>render()</li>
+<li>componentDidMount() // 挂载完毕</li>
+</ol>
+</li>
+<li><strong>更新阶段:</strong> 由组件内部this.setSate()或父组件重新render触发<ol>
+<li>shouldComponentUpdate() // 返回true或者false控制组件是否更新（是否继续后面的流程）</li>
+<li>componentWillUpdate() //组件即将更新</li>
+<li>render()</li>
+<li>componentDidUpdate() // 组件已经更新</li>
+</ol>
+</li>
+<li><strong>卸载组件:</strong> 由ReactDOM.unmountComponentAtNode()触发<ol>
+<li>componentWillUnmount()</li>
+</ol>
+</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>React 学习01</p><p><a href="http://iainespace.work/portfolio/2022/10/15/React-学习01/">http://iainespace.work/portfolio/2022/10/15/React-学习01/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>iaine</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-10-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-10-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/myblog.github.io/tags/React/">React</a></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/myblog.github.io/img/alipayCode.jpg" alt="支付宝"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myblog.github.io/2022/09/17/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/"><span class="level-item">记录第二次vue-nodejs-mongodb项目服务器部署</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "ENec8ViIgSHlHHrH1cxbyJpC-gzGzoHsz",
+            appKey: "XAFjYEEaHPO7WaCVYRqXgy9f",
+            
+            avatar: "mm",
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">58</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-15T08:37:35.000Z">2022-10-15</time></p><p class="title"><a href="/myblog.github.io/2022/10/15/React-%E5%AD%A6%E4%B9%A001/">React 学习01</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T14:19:15.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">记录第二次vue-nodejs-mongodb项目服务器部署</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T13:43:03.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/">可视化拖拽平台——低代码编辑器（第四届字节青训营项目）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T04:21:46.000Z">2022-08-20</time></p><p class="title"><a href="/myblog.github.io/2022/08/20/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%91%E5%B8%83npm/">第一次发布npm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T12:33:33.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue-cli3%E4%BD%BF%E7%94%A8-webpack-bundle-analyzer%E6%8F%92%E4%BB%B6/">第一次在vue-cli3 使用 webpack-bundle-analyzer 插件</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/React/"><span class="tag">React</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
+                            	var now = new Date();
+                                function createtime() {
+                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
+                                    now.setTime(now.getTime()+250);
+                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
+                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                                }
+                                setInterval("createtime()",250);
+                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
