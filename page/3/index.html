@@ -1,458 +1,514 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="iaine&#039;s blog"><meta property="og:url" content="http://iainespace.work/portfolio"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://iainespace.work/myblog.github.io/img/og_image.png"><meta property="article:author" content="iaine"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myblog.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://iainespace.work/portfolio"},"headline":"iaine's blog","image":["http://iainespace.work/myblog.github.io/img/og_image.png"],"author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":""}</script><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-25T03:27:22.000Z" title="2022/3/25 上午11:27:22">2022-03-25</time>发表</span><span class="level-item"><time dateTime="2022-03-25T03:35:14.431Z" title="2022/3/25 上午11:35:14">2022-03-25</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/">前端面试基础</a></span><span class="level-item">2 分钟读完 (大约226个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91-%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81-04/">【前端面试基础--HTML】 实体编码 04</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaineisalsoyan </a><br>嘿，我又开始新的系列学习了！😊😊😊（上一系列的学习是30 天原生js编程挑战）。这次我开始准备面试题库了，和我一起进步吧！哦，对了，本系列的学习来源是 <a target="_blank" rel="noopener" href="https://q.shanyue.tech/fe/">山月大佬的博客</a>，他非常用心得整理了一份大厂面试题的项目，推荐大家去看看！</p>
-<p>Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<h1 id="什么是-HTML-的实体编码-HTML-Entity-Encode"><a href="#什么是-HTML-的实体编码-HTML-Entity-Encode" class="headerlink" title="什么是 HTML 的实体编码 (HTML Entity Encode)"></a>什么是 HTML 的实体编码 (HTML Entity Encode)</h1><p>一段以连字号（&amp;）开头、以分号（;）结尾的字符串。用以显示不可见字符及保留字符 (如 HTML 标签)。</p>
-<p>例如：</p>
-<ul>
-<li>不可分的空格:＆nbsp;</li>
-<li><code>&lt;</code>(小于符号):＆lt;</li>
-<li><code>&gt;</code>(大于符号):＆gt;</li>
-<li>＆(与符号):＆amp;</li>
-<li>″(双引号):＆quot;</li>
-<li>‘(单引号):’＆apos;</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-25T03:19:41.000Z" title="2022/3/25 上午11:19:41">2022-03-25</time>发表</span><span class="level-item"><time dateTime="2022-03-25T03:27:02.258Z" title="2022/3/25 上午11:27:02">2022-03-25</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/">前端面试基础</a></span><span class="level-item">2 分钟读完 (大约252个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91Data-Url-03/">【前端面试基础--HTML】Data Url 03</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaineisalsoyan </a><br>嘿，我又开始新的系列学习了！😊😊😊（上一系列的学习是30 天原生js编程挑战）。这次我开始准备面试题库了，和我一起进步吧！哦，对了，本系列的学习来源是 <a target="_blank" rel="noopener" href="https://q.shanyue.tech/fe/">山月大佬的博客</a>，他非常用心得整理了一份大厂面试题的项目，推荐大家去看看！</p>
-<p>Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<h2 id="什么是Data-URL"><a href="#什么是Data-URL" class="headerlink" title="什么是Data URL?"></a>什么是Data URL?</h2><p>Data URL 是将图片转换为 base64 直接嵌入到了网页中，使用<code>&lt;img src=&quot;data:[MIME type];base64&quot;/&gt;</code>这种方式引用图片，不需要再发请求获取图片</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>base64 编码后的图片会比原来的体积大三分之一左右。</li>
-<li>Data URL 形式的图片不会缓存下来，每次访问页面都要被下载一次。可以将 Data URL 写入到 CSS 文件中随着 CSS 被缓存下来。</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-25T02:28:05.000Z" title="2022/3/25 上午10:28:05">2022-03-25</time>发表</span><span class="level-item"><time dateTime="2022-03-25T02:49:55.200Z" title="2022/3/25 上午10:49:55">2022-03-25</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/">前端面试基础</a></span><span class="level-item">2 分钟读完 (大约277个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91%E4%B8%80%E9%94%AE%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD-02/">【前端面试基础--HTML】一键复制功能 02</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaineisalsoyan </a><br>嘿，我又开始新的系列学习了！😊😊😊（上一系列的学习是30 天原生js编程挑战）。这次我开始准备面试题库了，和我一起进步吧！哦，对了，本系列的学习来源是 <a target="_blank" rel="noopener" href="https://q.shanyue.tech/fe/">山月大佬的博客</a>，他非常用心得整理了一份大厂面试题的项目，推荐大家去看看！</p>
-<p>Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<h2 id="一键复制功能描述"><a href="#一键复制功能描述" class="headerlink" title="一键复制功能描述"></a>一键复制功能描述</h2><p>在一些博客网站中，可以看到代码区域的右上角会有一个复制的按钮，点击之后，可以迅速将代码框中的代码复制到剪切板上。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1Clipboard-API"><a href="#1Clipboard-API" class="headerlink" title="1Clipboard API"></a>1<code>Clipboard</code> API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.clipboard.writeText(text);</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
 
-<h3 id="2-选中-复制"><a href="#2-选中-复制" class="headerlink" title="2 选中+复制"></a>2 选中+复制</h3><p>对于不支持 <code>Clipboard API</code> 的浏览器，使用选中+复制的API进行复制。</p>
-<ul>
-<li><h4 id="选中-Selection-API-Range-API"><a href="#选中-Selection-API-Range-API" class="headerlink" title="选中 Selection API+Range API"></a>选中 Selection API+Range API</h4></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line"><span class="keyword">const</span> range = <span class="built_in">document</span>.createRange();</span><br><span class="line"></span><br><span class="line"><span class="comment">// RangeAPI: 制造区域</span></span><br><span class="line">range.selectNodeContents(element);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Selection: 选中区域</span></span><br><span class="line">selection.addRange(range);</span><br><span class="line"></span><br><span class="line">selectedText = selection.toString();</span><br></pre></td></tr></table></figure>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="iaine" />
+  <meta name="description" content="" />
+  
+    <meta name="robots" content="noindex" />
+  
+  
+  <title>
+    
+     iaine&#39;s blog
+  </title>
 
-<ul>
-<li><h4 id="复制-execCommand"><a href="#复制-execCommand" class="headerlink" title="复制: execCommand"></a>复制: <code>execCommand</code></h4></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.execCommand(<span class="string">&quot;copy&quot;</span>);</span><br></pre></td></tr></table></figure>
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-24T11:08:14.000Z" title="2022/3/24 下午7:08:14">2022-03-24</time>发表</span><span class="level-item"><time dateTime="2022-03-24T13:50:22.355Z" title="2022/3/24 下午9:50:22">2022-03-24</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/">前端面试基础</a></span><span class="level-item">6 分钟读完 (大约835个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/24/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94HTML%E3%80%91%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD-01/">【前端面试基础——HTML】图片懒加载 01</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaineisalsoyan </a><br>嘿，我又开始新的系列学习了！😊😊😊（上一系列的学习是30 天原生js编程挑战）。这次我开始准备面试题库了，和我一起进步吧！</p>
-<p>Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<h2 id="什么是图片懒加载"><a href="#什么是图片懒加载" class="headerlink" title="什么是图片懒加载"></a>什么是图片懒加载</h2><p>浏览网页的时候，滑动页面到能看到图片的时候再加载图片。</p>
-<p>该功能实际可以拆分成两点：</p>
-<ol>
-<li>判断图片出现在了当前视口（因为这个时候需要显示图片）</li>
-<li>控制图片的加载</li>
-</ol>
-<h2 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h2><p>🤔 类似功能在JS30的项目里做过。参考<a target="_blank" rel="noopener" href="https://janice143.github.io/myblog.github.io/2022/01/30/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Slide-in-on-scroll-13/">【原生javascript项目】Slide in on scroll 13</a></p>
-<p>我们现在回忆一下该项目的技术点。当时做该项目的时候，主要通过Scroll事件+位置计算实现了，另外加了函数防抖功能。其中位置计算主要包括屏幕高度（视口高度）、屏幕滚定位置、图片顶部距页面距离、图片半高、图片底部位置。</p>
-<p>当屏幕滚动位置+屏幕高度之和 &gt; 图片顶部距页面距离+半高之和，移入图片；当屏幕滚动位置&lt;图片底部距离，移出图片。</p>
-<ul>
-<li>window的scroll事件<ul>
-<li><code>window.addEventListener(&#39;scroll&#39;)</code></li>
-</ul>
-</li>
-<li>一些位置（像素值）<ul>
-<li><code>window.scrollY</code>  文档当前垂直滚动的像素数</li>
-<li><code>window.innerHeight</code> viewport部分的高度</li>
-<li><code>sliderImage.offsetTop</code> 当前元素顶部相对于其 offsetParent 元素的顶部的距离</li>
-</ul>
-</li>
-<li><code>debounce</code> 的作用（函数防抖）<ul>
-<li> 降低事件监听的频率，使用了 Lodash 中的 debounce 方法</li>
-</ul>
-</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>🔖🔖🔖  速看在这里！！！</p>
-<table>
-<thead>
-<tr>
-<th>判断图片出现在当前视口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>scrollY</code>, <code>offsetTop</code>,<code>innerHeight</code>+ Scroll事件</td>
-</tr>
-<tr>
-<td>getBoundingClientRect API + Scroll事件</td>
-</tr>
-<tr>
-<td><strong>控制图片的加载</strong></td>
-</tr>
-<tr>
-<td><code>DataSet</code> API</td>
-</tr>
-<tr>
-<td><strong>一步到位的方法</strong></td>
-</tr>
-<tr>
-<td><code>IntersectionObserver</code> API</td>
-</tr>
-</tbody></table>
-<h3 id="1-判断图片出现在当前视口"><a href="#1-判断图片出现在当前视口" class="headerlink" title="1 判断图片出现在当前视口"></a>1 判断图片出现在当前视口</h3><ul>
-<li>位置计算 + Scroll事件</li>
-</ul>
-<blockquote>
-<p>这里出现的意思可以特指能看到图片一半的高度。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> slideInAt = (<span class="built_in">window</span>.scrollY + <span class="built_in">window</span>.innerHeight);</span><br><span class="line"><span class="keyword">const</span> imageBottom = sliderImage.offsetTop + sliderImage.height;</span><br><span class="line"><span class="keyword">const</span> isHalfShown = slideInAt &gt; (sliderImage.offsetTop + sliderImage.height / <span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> isNotScrolledPast = <span class="built_in">window</span>.scrollY &lt; imageBottom;</span><br></pre></td></tr></table></figure>
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-<p>知识点：<code>scrollY</code>, <code>offsetTop</code>,<code>innerHeight</code></p>
-<ul>
-<li>getBoundingClientRect API + Scroll事件</li>
-</ul>
-<p><strong>该方法返回元素的大小及其相对于视口的位置。</strong>有<code>top</code>,<code>left</code>,<code>bottom</code>,<code>right</code>等属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img.getBoundingClientRect().top &lt; <span class="built_in">document</span>.documentElement.clientHeight; <span class="comment">// 视口高度</span></span><br></pre></td></tr></table></figure>
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
 
-<blockquote>
-<p>the <code>document.documentElement</code> property gives you the <code>html</code> element, while the <code>document.body</code> property gives you the <code>body</code> element.</p>
-</blockquote>
-<h3 id="2-控制图片的加载"><a href="#2-控制图片的加载" class="headerlink" title="2 控制图片的加载"></a>2 控制图片的加载</h3><ul>
-<li><code>DataSet</code> API</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">&quot;shanyue.jpg&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
-<p>首先设置一个临时 Data 属性 <code>data-src</code>，控制加载时使用 <code>src</code> 代替 <code>data-src</code>，可利用 DataSet API 实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img.src = img.datset.src</span><br></pre></td></tr></table></figure>
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/myblog.github.io/js/fancybox.js"></script>
 
-<h3 id="3-一步到位的方法"><a href="#3-一步到位的方法" class="headerlink" title="3 一步到位的方法"></a>3 一步到位的方法</h3><ul>
-<li><code>IntersectionObserver</code> API</li>
-</ul>
-<p>异步监听元素是否到了当前视口或者其他元素</p>
-<p>一个能够监听元素是否到了当前视口的事件，一步到位</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observer = <span class="keyword">new</span> IntersectionObserver(<span class="function">(<span class="params">changes</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// changes: 目标元素集合</span></span><br><span class="line">  changes.forEach(<span class="function">(<span class="params">change</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// intersectionRatio</span></span><br><span class="line">    <span class="keyword">if</span> (change.isIntersecting) &#123;</span><br><span class="line">      <span class="keyword">const</span> img = change.target;</span><br><span class="line">      img.src = img.dataset.src;</span><br><span class="line">      observer.unobserve(img);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">observer.observe(img);</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><code>LazyLoading</code> 属性</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;shanyue.jpg&quot;</span> <span class="attr">loading</span>=<span class="string">&quot;lazy&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+  
 
-<p>不过目前浏览器兼容性不太好。</p>
-<h3 id="4-其他优化"><a href="#4-其他优化" class="headerlink" title="4 其他优化"></a>4 其他优化</h3><ul>
-<li><code>window.scroll</code> 事件可以加<strong>防抖节流</strong>。一般使用 <code>lodash.throttle</code> 。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.throttle(func, [(wait = <span class="number">0</span>)], [(options = &#123;&#125;)]);</span><br></pre></td></tr></table></figure>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-18T11:10:47.000Z" title="2022/3/18 下午7:10:47">2022-03-18</time>发表</span><span class="level-item"><time dateTime="2022-03-18T11:38:35.637Z" title="2022/3/18 下午7:38:35">2022-03-18</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/LeetCode/">LeetCode</a></span><span class="level-item">7 分钟读完 (大约992个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/18/%E3%80%90LeetCode%E3%80%91N-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">【LeetCode】N 皇后问题</a></h1><div class="content"><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>N 皇后问题是指在 n * n 的棋盘上要摆 n 个皇后。</p>
-<p>要求：任何两个皇后不同行，不同列也不在同一条斜线上，求给一个整数 n ，返回 n 皇后的摆法数。</p>
-<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：8</span><br><span class="line">返回值：92</span><br><span class="line"></span><br><span class="line">输入：4</span><br><span class="line">返回值：2</span><br></pre></td></tr></table></figure>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/myblog.github.io/js/activeNav.js"></script>
 
 
 
-<h2 id="题解思路"><a href="#题解思路" class="headerlink" title="题解思路"></a>题解思路</h2><p>看懂此题解之前，需要会做 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/4bcf3081067a4d028f95acee3ddcd2b1?tpId=295&tqId=701&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=/exam/oj">【BM55 没有重复项数字的全排列】</a>。</p>
-<p>如果BM55已经会做了，下面开始看本题解。</p>
-<h4 id="👇👇👇"><a href="#👇👇👇" class="headerlink" title="👇👇👇"></a>👇👇👇</h4><h4 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h4><ol>
-<li><p> n个皇后分别在1，2,3…n行的不同列处，列的下标用数组<code>arr</code>表示</p>
-</li>
-<li><p> 要确定皇后的位置，其实就是确定列的位置，因为行已经固定了</p>
-</li>
-<li><p> 进一步讲，也就是如何摆放 数组<code>arr</code>[0,1,2,3,…,n-1]</p>
-</li>
-<li><p> 如果没有【不在同一条斜线上】要求，这题其实只是单纯的全排列问题，代码很容易些出来</p>
-</li>
-<li><p> 但是对于【不在同一条斜线上】要求，全排列得到的<code>res</code>结果有些并不能用，比如说皇后的列位置不能这样排列：[0,1,2,3…,n-1]</p>
-</li>
-<li><p>所以现在问题变成了，在全排列的基础上，根据N皇后的问题，去除一些结果</p>
-</li>
-<li><p>下面开始声明一些变量</p>
-<ul>
-<li><p><code>arr</code>   n个皇后的列位置</p>
-</li>
-<li><p><code>res</code>   n皇后排列结果</p>
-</li>
-<li><p><code>ruler</code>   记录对应的列位置是否已经占用（也是是否有皇后），如果有，那么设为1，没有设为0</p>
-</li>
-<li><p><code>setPos</code>   哈希集合，标记正斜线（从左上到右下）位置，如果在相同正斜线上，坐标(x,y)满足 y-x 都相同</p>
-</li>
-<li><p><code>setCon</code>   哈希集合，标记反正斜线（从y右上到左下）位置，如果在相同反斜线上，坐标(x,y)满足 x+y 都相同</p>
-<ol start="8">
-<li>大致的代码思路如下所示</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">arr = [0,1,2,3,...,n-1]</span><br><span class="line">res = []</span><br><span class="line">ruler = [n]</span><br><span class="line">setPos = new Set()</span><br><span class="line">setPos = new Set()</span><br><span class="line"></span><br><span class="line">backtrack(路径, arr):</span><br><span class="line"><span class="code">    if 满足结束条件:</span></span><br><span class="line"><span class="code">        result.add(路径)</span></span><br><span class="line"><span class="code">        return</span></span><br><span class="line"><span class="code">    for 选择 in 选择列表(arr):</span></span><br><span class="line"><span class="code">        做选择</span></span><br><span class="line"><span class="code">        backtrack(路径, arr)</span></span><br><span class="line"><span class="code">        撤销选择</span></span><br><span class="line"><span class="code"> return res.length</span></span><br></pre></td></tr></table></figure>
+      <div class="flex-container">
+        <div class="container index">
+  <div class="post-list">
+    <!-- 遍历渲染文章 -->
+    
+      <div class="post-item" title="【前端面试基础--HTML】 实体编码 04">
+        <div class="time-m-d">2022-03-25</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91-%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81-04/">
+            
+              
+                <span>【前端面试基础--HTML】 实体编码 04</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【前端面试基础--HTML】Data Url 03">
+        <div class="time-m-d">2022-03-25</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91Data-Url-03/">
+            
+              
+                <span>【前端面试基础--HTML】Data Url 03</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【前端面试基础--HTML】一键复制功能 02">
+        <div class="time-m-d">2022-03-25</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/25/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80-HTML%E3%80%91%E4%B8%80%E9%94%AE%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD-02/">
+            
+              
+                <span>【前端面试基础--HTML】一键复制功能 02</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【前端面试基础——HTML】图片懒加载 01">
+        <div class="time-m-d">2022-03-24</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/24/%E3%80%90%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94HTML%E3%80%91%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD-01/">
+            
+              
+                <span>【前端面试基础——HTML】图片懒加载 01</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【LeetCode】N 皇后问题">
+        <div class="time-m-d">2022-03-18</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/18/%E3%80%90LeetCode%E3%80%91N-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">
+            
+              
+                <span>【LeetCode】N 皇后问题</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【原生javascript项目】JS30-总结">
+        <div class="time-m-d">2022-03-12</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/12/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91JS30-%E6%80%BB%E7%BB%93/">
+            
+              
+                <span>【原生javascript项目】JS30-总结</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【原生javascript项目】Whack A Mole 30">
+        <div class="time-m-d">2022-03-11</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Whack-A-Mole-30/">
+            
+              
+                <span>【原生javascript项目】Whack A Mole 30</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【原生javascript项目】Countdown Timer 29">
+        <div class="time-m-d">2022-03-11</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Countdown-Timer-29/">
+            
+              
+                <span>【原生javascript项目】Countdown Timer 29</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【原生javascript项目】Video Speed Controller 28">
+        <div class="time-m-d">2022-03-11</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Video-Speed-Controller-28/">
+            
+              
+                <span>【原生javascript项目】Video Speed Controller 28</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="【原生javascript项目】Click and drag 27">
+        <div class="time-m-d">2022-03-05</div>
+        <div class="title">
+          <a href="/myblog.github.io/2022/03/05/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Click-and-drag-27/">
+            
+              
+                <span>【原生javascript项目】Click and drag 27</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+  </div>
+  <nav class="post-navigation">
+    
+      <a href="/myblog.github.io/page/2/"><i class="iconfont icon-angleleft"></i></a>
+    
+    <span class="page-num">3 / 6</span>
+    
+      <a href="/myblog.github.io/page/4/"><i class="iconfont icon-angleright"></i></a>
+    
+  </nav>
+</div>
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/myblog.github.io/js/backtotop.js"></script>
 
 
 
-<h4 id="一些解释"><a href="#一些解释" class="headerlink" title="一些解释"></a>一些解释</h4><p>首先，N 个皇后肯定得在不同行，不同列处（由题意 “任何两个皇后不同行，不同列” 可知）。</p>
-<p>要实现这个方案，其实思路和 <code>BM55 全排列</code>一样。把N个皇后的列坐标定义成数组<code>arr = [0,1,2,...,n-1]</code>。然后全排列该数组即可，得到的排列方式<code>res</code>的长度，就是排列方案的总数。</p>
-<p>但是N皇后问题，还需要满足N 皇后不在同一条斜线上。这就更复杂了一点，需要对斜线位置进行判断。</p>
-<p>怎么判断呢？</p>
-<p>如果<code>setPos</code>里不包含正斜线位置，<code>setCon</code>里不包含反斜线位置，那么就是我们要的【满足结束条件】。</p>
-<p>在回溯函数里，我们先确定第0排皇后的列位置，然后回溯递归，确定第1排的皇后的列位置。</p>
-<p>所以每次回溯，坐标<code>(x,y)</code>其实是<code>(row,i)</code></p>
-<h4 id="最终的代码"><a href="#最终的代码" class="headerlink" title="最终的代码"></a>最终的代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr= <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>:n&#125;,<span class="function">(<span class="params">item, index</span>)=&gt;</span> index) <span class="comment">// 列的位置</span></span><br><span class="line"><span class="keyword">let</span> res = [];</span><br><span class="line"><span class="keyword">let</span> ruler = <span class="keyword">new</span> <span class="built_in">Array</span>(n).fill(<span class="number">0</span>);<span class="comment">//用来记录num的皇后下落后，对角线位置，如果在对角线位置，那么为1，否则0</span></span><br><span class="line"><span class="keyword">let</span> setPos = <span class="keyword">new</span> <span class="built_in">Set</span>();<span class="comment">//标记正对角线</span></span><br><span class="line"><span class="keyword">let</span> setCon = <span class="keyword">new</span> <span class="built_in">Set</span>();<span class="comment">// 标记反对角线</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> backTrace = <span class="function">(<span class="params">row,path</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(path.length === n)&#123;</span><br><span class="line">        res.push(path.slice());</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="comment">// i表示列</span></span><br><span class="line">    <span class="keyword">if</span>(ruler[i] == <span class="number">0</span> &amp;&amp; !setPos.has(i-row) &amp;&amp; !setCon.has(i + row))&#123; </span><br><span class="line">        path.push(arr[i]);</span><br><span class="line">        ruler[i] = <span class="number">1</span></span><br><span class="line">        setPos.add(i - row)</span><br><span class="line">        setCon.add(i + row)</span><br><span class="line">        backTrace(row+<span class="number">1</span>,path);</span><br><span class="line">        path.pop();</span><br><span class="line">        ruler[i] = <span class="number">0</span>;</span><br><span class="line">        setPos.delete(i - row)</span><br><span class="line">        setCon.delete(i + row)</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">backTrace(<span class="number">0</span>,[])</span><br><span class="line"><span class="keyword">return</span> res.length;</span><br></pre></td></tr></table></figure>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-12T13:47:12.000Z" title="2022/3/12 下午9:47:12">2022-03-12</time>发表</span><span class="level-item"><time dateTime="2022-03-14T07:39:25.329Z" title="2022/3/14 下午3:39:25">2022-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">16 分钟读完 (大约2362个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/12/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91JS30-%E6%80%BB%E7%BB%93/">【原生javascript项目】JS30-总结</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">iaineisalsoyan</a><br>简介：Atypical frond-end developer. 非典型前端开发者。</p>
-<p>完整指南在 <a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program">GitHub</a>，喜欢请 Star 哦♪(^∇^*)</p>
-<p>Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p><a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生JS编程挑战。</p>
-<p>项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是在不借助框架、库、编译器和引用的情况下，帮助初学者理解纯JavaScript语言。</p>
-<h2 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/01%20pianoHit">Drum kit（架子鼓模拟器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/02%20realTimeClock">JS and CSS Clock （网页时钟）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/03%20imageProcessionwithJS">CSS Variables （CSS变量）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/04%20arrayOperation">Array Cardio Day1 （数组操作1）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/05%20flexPanel">Flex Panel Gallery （Flex画廊面板）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/06%20AjaxTypeAhead">Type Ahead （异步输出）</a></li>
-<li>Array Cardio Day2 （数组操作2）</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/08%20canvas">Fun with HTML5 Canvas（有趣的HTML5画布）</a></li>
-<li>Dev Tools Domination （）</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/10%20goList">Hold Shift and Check Checkboxes （计划清单）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/11%20videoPlayer">Custom Video Player （自定义视频播放器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/12%20secretCode">Key Sequence Detection （字符串序列彩蛋检测）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/13%20slideinonScroll">Slide in on Scroll （滚动鼠标滚轮滑动显示）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/14%20JSreferenceVScopy">JavaScript References VS Copying （引用与拷贝）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/15%20localStorage">Local Storage （本地存储）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/16%20mouseMoveShadow">Mouse Move Shadow （随鼠标移动的文字阴影）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/17%20sortWithoutArticles">Sort with Articles （去掉冠词排列）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/18%20timeWithReduce">Adding up Times with Reduce （用Reduce实现时间累加器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/19%20webCamFun">Webcam Fun （有趣的网络摄像头）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/20%20speechDetection">Speech Detection （语音识别）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/21%20geoLocation">Geolocation （地理位置信息获取）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/22%20linkHighlighter">Follow along Link Highlighter （链接高亮显示）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/23%20speechSynthesis">Speech Synthesis （语音合成）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/24%20stickyNav">Sticky Nav （固定的导航栏）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/25%20eventCapture">Event Capture, Propagation, Bubbling and Once（事件捕捉，传播，冒泡与Once方法）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/26%20stripAlongNav">Stripe Follow along Nav （导航栏跟随移动显示特效）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/27%20clickAndDrag">Click and Drag （点击并拖拽）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/28%20VideoSpeedController">Video Speed Controller （视频速度控制器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/29%20CountdownTimer">Countdown Timer （倒计时计时器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/30%20WhackAMole">Whack A Mole（打地鼠小游戏）</a></li>
-</ol>
-<h2 id="用VUE实现的JS30"><a href="#用VUE实现的JS30" class="headerlink" title="用VUE实现的JS30"></a>用VUE实现的JS30</h2><p><em><strong>查看index-VUE.html文件</strong></em></p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/01%20pianoHit">Drum kit（架子鼓模拟器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/02%20realTimeClock">JS and CSS Clock （网页时钟）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/03%20imageProcessionwithJS">CSS Variables （CSS变量）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/05%20flexPanel">Flex Panel Gallery （Flex画廊面板）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/06%20AjaxTypeAhead">Type Ahead （异步输出）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/08%20canvas">Fun with HTML5 Canvas（有趣的HTML5画布）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/10%20goList">Hold Shift and Check Checkboxes （计划清单）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/11%20videoPlayer">Custom Video Player （自定义视频播放器）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/30%20WhackAMole">Whack A Mole（打地鼠小游戏）</a></li>
-</ol>
-<h2 id="社区内容-JavaScript30"><a href="#社区内容-JavaScript30" class="headerlink" title="社区内容#JavaScript30"></a>社区内容#JavaScript30</h2><p>Feel free to submit a PR adding a link to your own recaps, guides or reviews!</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://thesagittariusme.blogspot.com/search/label/JS30">Arjun Khode’s blog</a> about summaries for each day, including fixed glitches, bugs and extra features</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/nitishdayal/JavaScript30">Nitish Dayal’s Text Guides</a> are great for those who like reading over watching</li>
-<li><a target="_blank" rel="noopener" href="http://meredithunderell.com/tag/javascript30/">Meredith Underell’s</a> Quick Lessons Learned</li>
-<li><a target="_blank" rel="noopener" href="http://rowanweismiller.com/blog/javascript-30/">Rowan Weismiller’s</a> Recaps + Lessons Learned</li>
-<li><a target="_blank" rel="noopener" href="https://tfrommen.de/tag/javascript-30/">Thorsten Frommen</a> shares how he solved the exercises before viewing the answers</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">Soyaine 写的中文指南</a>包含了过程记录和难点解释</li>
-<li><a target="_blank" rel="noopener" href="https://freshman.tech/archive/#javascript30">Ayo Isaiah’s</a> Recaps and Lessons Learned</li>
-<li><a target="_blank" rel="noopener" href="https://stpcollabr8nlstn.github.io/JavaScript30/">Adriana Rios</a> shares her alternative solutions</li>
-<li><a target="_blank" rel="noopener" href="http://30daysofjs.michaeleinsohn.com/">Michael Einsohn</a> publishes each challenge after watching the video once</li>
-<li><a target="_blank" rel="noopener" href="https://medium.com/@mike_ekkel/javascript-30-a-30-day-vanilla-js-challenge-6a733fc9f62c#.9frjtaje9">Mike Ekkel</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/yhabib/JavaScript30">Yusef Habib</a> lessons and tricks learned, and a <a target="_blank" rel="noopener" href="https://yhabib.github.io/JavaScript30/">gh-page</a> to see working all the mini-projects.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/amelieyeh/JS30">Amelie Yeh</a> 30 lessons notes with things I’ve learned, and those important recaps. and directly view my demos <a target="_blank" rel="noopener" href="https://amelieyeh.github.io/JS30/">here</a> 🇹🇼😄</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/winar-jin/JavaScript30-Challenge">Winar</a>的JavaScript30天挑战，记录练习过程，重难点和其他的解决方案。🎨</li>
-<li><a target="_blank" rel="noopener" href="https://rayhatron.github.io/blog/">Rayhatron</a> - walkthroughs, recaps and lessons learned.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/andreidbr/JS30">Andrei Dobra</a> Full repo with lessons learned and a <a target="_blank" rel="noopener" href="https://andreidbr.github.io/JS30/">gh-page</a> with all the exercises.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/liyuechun/JavaScript30-liyuechun">从零到壹全栈部落</a>,春哥发起的从零到壹全栈部落，旨在带领大家一起学习，一起输出，文档化，代码化，中文视频化，全栈部落口号：输出是最好的学习方式。</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/usyyy/javascript/blob/master/JavaScript30/analysis.md">Usmaan Ali’s</a> summary of the technical skills learned from each project. He’s also posting them as separate blog posts <a target="_blank" rel="noopener" href="https://medium.com/@usyyy">here</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/afuh/js30">Axel</a>‘s lessons learned and a <a target="_blank" rel="noopener" href="https://afuh.github.io/js30/">showcase</a> with the projects.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/dwatow/JavaScript30">Chris</a> 中文實戰，目標描述、過程紀錄。</li>
-<li><a target="_blank" rel="noopener" href="https://miayam.github.io/">Muhammad D. Ramadhan’s</a> blog. He shamlesly mixed his personal life with 30 day JavaScript challenge so as to increase his learning retention. He also summarised the challenge on <a target="_blank" rel="noopener" href="https://miayam.github.io/js30">one single page</a>. Do not read his blog!</li>
-<li><a target="_blank" rel="noopener" href="https://blog.keitel.xyz/categories/javascript30/">Lee Keitel’s Blog</a> includes summaries of each lesson, what I learned from each one, and my thoughts about the topic taught and using them in the future.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/dustinhsiao21/Javascript30-dustin">Dustin Hsiao</a> 包含了各篇介紹、 效果Demo、各篇詳解及記錄過程，附上部分延伸閱讀及<a target="_blank" rel="noopener" href="https://dustinhsiao21.github.io/Javascript30-dustin/">gh-page</a>。</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/guahsu/JavaScript30">GuaHsu</a> - 紀錄各篇練習過程與心得，並嘗試擴充部分練習，也做了一個包含全部練習的<a target="_blank" rel="noopener" href="http://guahsu.io/JavaScript30/">介紹站</a>🇹🇼</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/misslild">Daniela</a>‘s completed challenges on <a target="_blank" rel="noopener" href="https://misslild.github.io/WesBos-30day-Coding-challenge/">GitHub Pages</a> and <a target="_blank" rel="noopener" href="https://codepen.io/collection/DapZeP/">Codepen</a> :raised_hands: :muscle: :+1:</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/guar47">Dmitrii Pashutskii’s</a> code of all challenges on <a target="_blank" rel="noopener" href="https://github.com/guar47/javascript30Summary">GitHub with Pages</a> and review <a target="_blank" rel="noopener" href="https://blog.dpashutskii.com/tag/javascript30/">blog posts</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/sabidhasan/javascript-30">Abid Hasan’s</a> completion of all challenges. This was awesome!! Learned so much! :+1:</li>
-<li><a target="_blank" rel="noopener" href="https://sky172839465.github.io/course/js30">Yusong Notes</a> Records Yusong JS 30 days note and demo :star2:</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Ding-Fan/javascript30">Ding’s Implementation</a> code and online demo</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/herminiotorres/JavaScript30">Herminio Torres</a> lessons and tricks learned, and a <a target="_blank" rel="noopener" href="https://herminiotorres.github.io/JavaScript30/">gh-page</a> to see working all the mini-projects.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/dimabory">Dmytro Borysovskyi</a> says many thanks to for the course to Wes 🤝 It was incredible challenge 👌 The full repository with code available <a target="_blank" rel="noopener" href="https://github.com/dimabory/dimabory.github.io/tree/gh-pages/src/components/JavaScript30Days">here</a> and demos can be reached by the link to <a target="_blank" rel="noopener" href="https://dimabory.github.io/#/js30days">gh-pages</a> 👍👍👍 </li>
-<li><a target="_blank" rel="noopener" href="https://github.com/akhilome/">Kizito</a>‘s follow along <a target="_blank" rel="noopener" href="https://github.com/akhilome/js30">repo</a> with <a target="_blank" rel="noopener" href="https://akhilome.github.io/js30">completed challenges</a> and <a target="_blank" rel="noopener" href="https://akhilome.github.io/js30/notes">notes</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/vanntile">VannTile</a>‘s <a target="_blank" rel="noopener" href="https://github.com/vanntile/JavaScript30">repository</a> and <a target="_blank" rel="noopener" href="https://vanntile.github.io/JavaScript30/">GitHub Pages showcase</a>. Thank you for a great ⌨️ experience.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Alex-K1m/js30-challenge">Alex Kim</a> completed all the challenges. You can check them out at <a target="_blank" rel="noopener" href="https://alex-k1m.github.io/js30-challenge/">github pages</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/seckela">Mikhail Thomas</a> created <a target="_blank" rel="noopener" href="https://github.com/seckela/js30plusplus">JS30++</a> to add another level of challenge ontop of this already great course.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/reymon359/JavaScript30">Ramon Morcillo</a> finished this awesome challenge!. You can see the showcase of his implementations on <a target="_blank" rel="noopener" href="https://reymon359.github.io/JavaScript30/">this link</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/sescobar99">Santiago Escobar</a>‘s <a target="_blank" rel="noopener" href="https://github.com/sescobar99/javascript30-challenge">repository</a> and <a target="_blank" rel="noopener" href="https://sescobar99.github.io/javascript30-challenge/">GitHub Pages showcase</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/a90100/JavaScript30">Harry Xie</a> 紀錄 30 天的練習筆記在 <a target="_blank" rel="noopener" href="https://github.com/a90100/JavaScript30">此連結</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://vanribeiro-30daysofjavascript.netlify.app/"> Van Ribeiro’s </a> about demos and recaps. On <a target="_blank" rel="noopener" href="https://github.com/vanribeiro/30days-Of-JavaScript">GitHub Repo</a> there’s a summary about what was learned and researched.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Mugilan-Codes">Mugilan</a> is currently doing this challenge. Check out his <a target="_blank" rel="noopener" href="https://github.com/Mugilan-Codes/javascript-30">Repo</a> and the <a target="_blank" rel="noopener" href="https://mugilan-codes.github.io/javascript-30/">Live Demo</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/eshanvohra">Eshan Vohra</a> is currently doing this challenge. Check out my repo <a target="_blank" rel="noopener" href="https://github.com/eshanvohra/JavaScript30">here</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/RegusAl">RegusAl</a> is currently doing this challenge. Check out my repo <a target="_blank" rel="noopener" href="https://github.com/RegusAl/JavaScript30">here</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://javascript30.ayushgupta.tech/">Ayush Gupta’s</a> implementation of JavaScript30 challenge with some add-ons &amp; updated design.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/filipkowal/JS30-05-Flex-Panels-Deactivate">filipkowal</a> Fix to flex panels (5th  day) so the panels deactivate when clicked on another one.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/MoSaif00">Mo. Saif’s</a>note on lessons learned and a <a target="_blank" rel="noopener" href="https://mosaif00.github.io/30-Days-JavaScript-Challenge/">gh-pages showcase</a> for the projects.</li>
-<li><a target="_blank" rel="noopener" href="https://stiaannel.co.za/my-projects/javascript30">Stiaannel’s</a> implementation of the Javascript30 challenge, with small design changes and a couple of extra features.</li>
-</ul>
-<h2 id="其他方法实现的JS30"><a href="#其他方法实现的JS30" class="headerlink" title="其他方法实现的JS30"></a>其他方法实现的JS30</h2><p>Here are some links of people who have done the tutorials, but in a different language or framework:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/tkjone/clojurescript-30">Thomas Mattacchione</a> JavaScript 30 written in ClojureScript</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/davefollett">Dave Follett’s</a> blog series, <a target="_blank" rel="noopener" href="https://davefollett.io/categories/a-new-vue-on-javascript30/">A New Vue on #JavaScript30</a>, where he explores re-implementing #JavaScript30 projects using <a target="_blank" rel="noopener" href="https://vuejs.org/">Vue</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/akinjide/JS30days">Akinjide Bankole</a> used Node.js with <a target="_blank" rel="noopener" href="http://jadelang.net/">Jade</a> to solve the exercises</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/adrienpoly/javascript30-stimulus">Adrien Poly</a> a modest attempt to convert Drum Kit, Video Player, Local Tapas, TypeHead to <a target="_blank" rel="noopener" href="https://stimulusjs.org/">Stimulus JS</a> framework in a Rails App.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/tricinel/TypeScript30">Bogdan Lazar</a> all the JavaScript 30 written in <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/">TypeScript</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/wwags33/JavaScript30">Will Wager</a> another <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/">TypeScript</a> implementation!</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/marcoSven">marcoSven</a> solution suggestion for <a target="_blank" rel="noopener" href="https://github.com/marcoSven/JavaScript30/blob/master/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/index-FINISHED.html">10 - Hold Shift and Check Checkboxes</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/almaclaine">ALMaclaine</a> Javascript 30 written in <a target="_blank" rel="noopener" href="https://github.com/ALMaclaine/Dart30">Dart 2.0</a>.</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-11T13:19:51.000Z" title="2022/3/11 下午9:19:51">2022-03-11</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:20:15.370Z" title="2022/3/11 下午9:20:15">2022-03-11</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Whack-A-Mole-30/">【原生javascript项目】Whack A Mole 30</a></h1><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-11T13:16:13.000Z" title="2022/3/11 下午9:16:13">2022-03-11</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:18:34.281Z" title="2022/3/11 下午9:18:34">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">6 分钟读完 (大约934个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Countdown-Timer-29/">【原生javascript项目】Countdown Timer 29</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第28天的“倒计时计时器”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/29%20CountdownTimer/index.htm">https://github.com/janice143/JavaScript30Program/tree/master/29%20CountdownTimer/index.htm</a></p>
-<p>**本项目的笔记内容选自 <a target="_blank" rel="noopener" href="https://github.com/dashnowords">大史不说话</a>**，他本人是JS30社区里的知名参与者，他的全部笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">这里</a>。</p>
-<p>本项目的笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/tree/master/29%20-%20Countdown%20Timer">这里</a>。</p>
-<h2 id="挑战任务"><a href="#挑战任务" class="headerlink" title="挑战任务"></a>挑战任务</h2><p>初始文档<code>index-start.html</code>中提供了一个倒计时控制器，从<code>html</code>文档的结构可以看出，顶部的按钮可以用来增加倒计时时间，常用的时间间隔已将参数绑定在<code>data-time</code>属性上;<code>display</code>类用来显示计时的结果。<br>本次编程挑战的任务是通过javascript代码基于当前时间生成一个倒计时，将<code>结束时间</code>和<code>剩余时间</code>分别显示在<code>diaplay__time-left</code>类标签和<code>display__end-time</code>类标签上。</p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>[<img src="https://github.com/soyaine/JavaScript30/raw/master/29%20-%20Countdown%20Timer/effect.png" alt="结果展示">](<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/blob/master/29">https://github.com/soyaine/JavaScript30/blob/master/29</a> - Countdown Timer/effect.png)</p>
-<h2 id="编程思路"><a href="#编程思路" class="headerlink" title="编程思路"></a>编程思路</h2><p>监听按点击事件<code>click</code>来为倒计时增加时间，使用<code>setInterval</code>函数每秒执行判断函数，若倒计时事件到，则清除当前计时器，若时间未到，则计算并刷新页面上应该显示的时间。</p>
-<h2 id="过程指南"><a href="#过程指南" class="headerlink" title="过程指南"></a>过程指南</h2><p>1.定义变量及获取需要操作的DOM元素的引用。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const endTime  = document.querySelector(&quot;.display__end-time&quot;);</span><br><span class="line">const leftTime = document.querySelector(&quot;.display__time-left&quot;);</span><br><span class="line">const buttons = document.querySelectorAll(&quot;button&quot;);</span><br><span class="line">const date = new Date();</span><br><span class="line">var left = 0;//剩余时间</span><br><span class="line">var end = 0;//结束时间</span><br><span class="line">var timer;//interval计时器</span><br><span class="line">leftTime.innerHTML = left;//未操作时，剩余时间显示0</span><br></pre></td></tr></table></figure>
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
 
-<p>2.为button绑定点击事件，当按钮点击时执行对应的回调函数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = Array.from(buttons);</span><br><span class="line">arr.map(function(item)&#123;</span><br><span class="line">    item.addEventListener(&#x27;click&#x27;,clickAction);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
 
-<p>3.监听表单的提交事件,注意表单的调用方式。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.customForm.addEventListener(&#x27;submit&#x27;,function(e)&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	updateTime(this.minutes.value*60);</span><br><span class="line">	updateTimer();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
 
-<p>4.点击后的回调函数中取得点击按钮传递的秒数，调用<code>updateTime()</code>函数更新页面显示结果，并调用<code>updateTimer()</code>来更新计时器相关动作.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function clickAction(e)&#123;</span><br><span class="line">	let deltaTime;</span><br><span class="line">	   	deltaTime = this.dataset.time;//取得data-time属性的值</span><br><span class="line">	   	updateTime(deltaTime);</span><br><span class="line"></span><br><span class="line">        //点击后更新计时器</span><br><span class="line">        updateTimer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
 
-<p>5.<code>updateTime()</code>函数用来更新和页面相关的显示信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> function updateTime(delta)&#123;</span><br><span class="line">	    left = left + parseInt(delta,0);</span><br><span class="line">        end = date.getTime() + left*1000;</span><br><span class="line">        leftTime.innerHTML = left;</span><br><span class="line">        endTime.innerHTML =new Date(end).toLocaleTimeString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
 
-<p>6.<code>updateTimer()</code>函数用来执行和设定每秒检查计时器是否需要继续工作的逻辑判断。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function updateTimer()&#123;</span><br><span class="line">	//清除以前的timer,如果不清除，新生成的定时器会和以前的定时器叠加在一起，均会生效。</span><br><span class="line">	if(timer)&#123;</span><br><span class="line">		clearInterval(timer);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // 设置新的Timer</span><br><span class="line">    timer = setInterval(function()&#123;</span><br><span class="line">	if(left == 0)&#123;</span><br><span class="line">		endTime.innerHTML = &#x27;End&#x27;;</span><br><span class="line">        clearInterval(timer);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		left -= 1;</span><br><span class="line">		leftTime.innerHTML = left;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
 
-<h2 id="延伸思考"><a href="#延伸思考" class="headerlink" title="延伸思考"></a>延伸思考</h2><p>本次代码中前后会定义定时器和清除定时器，另一种做法是定时器一直工作不清除，对应的按钮和表单只修改时间，不用调整定时器，当值发生变化后，下一秒定时器检测时就会开始倒计时，这样代码逻辑上会有所简化，感兴趣的朋友可以自行练习。</p>
-<blockquote>
-<p>JS30的第29个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#48;&#51;&#x31;&#48;&#53;&#x35;&#51;&#56;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#x31;&#x38;&#48;&#51;&#x31;&#48;&#53;&#x35;&#51;&#56;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-11T13:06:44.000Z" title="2022/3/11 下午9:06:44">2022-03-11</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:20:19.981Z" title="2022/3/11 下午9:20:19">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">4 分钟读完 (大约553个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Video-Speed-Controller-28/">【原生javascript项目】Video Speed Controller 28</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第27天的“视频播放速度控制器”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/28%20VideoSpeedController/index.htm">https://github.com/janice143/JavaScript30Program/tree/master/28%20VideoSpeedController/index.htm</a></p>
-<p>**本项目的笔记内容选自 <a target="_blank" rel="noopener" href="https://github.com/dashnowords">大史不说话</a>**，他本人是JS30社区里的知名参与者，他的全部笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">这里</a>。</p>
-<p>本项目的笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/tree/master/28%20-%20Video%20Speed%20Controller">这里</a>。</p>
-<h2 id="挑战任务"><a href="#挑战任务" class="headerlink" title="挑战任务"></a>挑战任务</h2><p>初始文档<code>index-start.html</code>中提供了一个视频播放区域（使用的是H5原生的控制器）以及一个表示播放速度的滑块区域，本次的编程任务需要实现的效果是当鼠标拖动滑块时，实时改变视频播放的速度。</p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>[<img src="https://github.com/soyaine/JavaScript30/raw/master/28%20-%20Video%20Speed%20Controller/effect.png" alt="结果展示">](<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/blob/master/28">https://github.com/soyaine/JavaScript30/blob/master/28</a> - Video Speed Controller/effect.png)</p>
-<h2 id="编程思路"><a href="#编程思路" class="headerlink" title="编程思路"></a>编程思路</h2><p>本次的编程任务难度系数较低，在右侧速度条上监听鼠标点击事件，调整滑块的高度来表示不同的填充百分比，即不同的播放速度，将速度赋值给video对象的<code>playbackRate</code>属性即可实时改变播放速度。难点在于高度的百分比转换。</p>
-<h2 id="过程指南"><a href="#过程指南" class="headerlink" title="过程指南"></a>过程指南</h2><p>本篇实现较为简单，不再分步骤讲解，示例代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speed = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.speed&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> speedBar = speed.querySelector(<span class="string">&quot;.speed-bar&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.flex&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeSpeed</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> height = e.offsetY;<span class="comment">//获取滑块的高度</span></span><br><span class="line">  <span class="keyword">const</span> percentage = e.offsetY / speed.offsetHeight;</span><br><span class="line">  <span class="keyword">const</span> min = <span class="number">0.5</span>;</span><br><span class="line">  <span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">  <span class="comment">//依据自定义播放速度范围和滑块高度百分比确定播放速率</span></span><br><span class="line">  <span class="keyword">const</span> playbackRate = percentage * (max - min) + min; </span><br><span class="line">  speedBar.style.height = <span class="built_in">Math</span>.round(percentage*<span class="number">100</span>) + <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">  speedBar.textContent = playbackRate.toFixed(<span class="number">2</span>) + <span class="string">&#x27;×&#x27;</span>;</span><br><span class="line">  video.playbackRate = playbackRate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">speed.addEventListener(<span class="string">&#x27;click&#x27;</span>,changeSpeed);</span><br></pre></td></tr></table></figure>
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
 
-<blockquote>
-<p>JS30的第28个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#56;&#48;&#51;&#x31;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#49;&#56;&#48;&#51;&#x31;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-05T07:13:56.000Z" title="2022/3/5 下午3:13:56">2022-03-05</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:26:48.140Z" title="2022/3/11 下午9:26:48">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">4 分钟读完 (大约589个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/05/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Click-and-drag-27/">【原生javascript项目】Click and drag 27</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第26天的“内容悬浮显示”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/27%20clickAndDrag/index.html">https://github.com/janice143/JavaScript30Program/tree/master/27%20clickAndDrag/index.html</a></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目为一个横向条幅，实现的特效是鼠标点击实现横向拖拽。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>e.pageX </code></li>
-<li><code>.scrollLeft</code></li>
-<li><code>.offsetLeft</code></li>
-<li> <code>e.preventDefault()</code></li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>编程思路为</p>
-<ol>
-<li>监听最外层items元素的<code>mousedown</code>事件，触发后添加<code>active</code>类名，此类名具有一定的CSS特效。记录此时的起点<code>startX</code> 以及 左边滚动的位置<code>scrollLeft</code>。</li>
-<li>监听鼠标移动<code>mousemove</code>事件，给<code>scrollLeft</code>赋值，即可调整元素在水平方向滚动的位置。</li>
-<li>鼠标离开<code>mouseleave</code>和不点击<code>mouseup</code>事件触发时，去掉<code>active</code>类名。</li>
-</ol>
-<ul>
-<li><p><code>mousedown</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">slider.addEventListener(<span class="string">&#x27;mousedown&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">true</span>;</span><br><span class="line">slider.classList.add(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">startX = e.pageX - slider.offsetLeft;</span><br><span class="line">scrollLeft = slider.scrollLeft;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p><code>mousemove</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">slider.addEventListener(<span class="string">&#x27;mousemove&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (!isDown) <span class="keyword">return</span>;  <span class="comment">// stop the fn from running</span></span><br><span class="line">e.preventDefault();</span><br><span class="line"><span class="keyword">const</span> x = e.pageX - slider.offsetLeft;</span><br><span class="line"><span class="keyword">const</span> walk = (x - startX) * <span class="number">3</span>;</span><br><span class="line">slider.scrollLeft = scrollLeft - walk;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p><code>mouseleave</code>和不点击<code>mouseup</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">slider.addEventListener(<span class="string">&#x27;mouseleave&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">false</span>;</span><br><span class="line">slider.classList.remove(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">slider.addEventListener(<span class="string">&#x27;mouseup&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">false</span>;</span><br><span class="line">slider.classList.remove(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="一些CSS样式"><a href="#一些CSS样式" class="headerlink" title="一些CSS样式"></a>一些CSS样式</h4><ol>
-<li><p><code>overflow</code>属性：控制元素溢出时的特性，主要有一下几个值</p>
-<ul>
-<li><code>visible</code> 默认值，溢出也是可见的，没有被裁剪</li>
-<li><code>hidden</code> 溢出的内容被裁剪，并且看不到</li>
-<li><code>scroll </code>溢出的内容被裁剪，但是可以添加滑块scrollbar看到溢出内容</li>
-<li><code>auto</code> 有点像<code>scroll</code></li>
-</ul>
-</li>
-<li><p><code>white-space</code>空格处理</p>
-<ul>
-<li><code>normal</code>表示合并空格，多个相邻空格合并成一个空格</li>
-<li><code>nowrap</code>不换行，经常和<code>overflow</code>,<code>text-overflow</code>一起使用</li>
-<li><code>pre</code>保留空格不换行，有几个空格算几个空格显示</li>
-<li><code>pre-wrap</code>的作用是保留空格</li>
-</ul>
-</li>
-<li><p>user-select：禁止用户用鼠标在页面上选中文字、图片等，也就是，让页面内容不可选</p>
-</li>
-</ol>
-<blockquote>
-<p>JS30的第27个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#51;&#x38;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#51;&#x38;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/myblog.github.io/page/2/">上一页</a></div><div class="pagination-next"><a href="/myblog.github.io/page/4/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/myblog.github.io/">1</a></li><li><a class="pagination-link" href="/myblog.github.io/page/2/">2</a></li><li><a class="pagination-link is-current" href="/myblog.github.io/page/3/">3</a></li><li><a class="pagination-link" href="/myblog.github.io/page/4/">4</a></li><li><a class="pagination-link" href="/myblog.github.io/page/5/">5</a></li><li><a class="pagination-link" href="/myblog.github.io/page/6/">6</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">58</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-15T08:37:35.000Z">2022-10-15</time></p><p class="title"><a href="/myblog.github.io/2022/10/15/React-%E5%AD%A6%E4%B9%A001/">React 学习01</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T14:19:15.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">记录第二次vue-nodejs-mongodb项目服务器部署</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T13:43:03.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/">可视化拖拽平台——低代码编辑器（第四届字节青训营项目）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T04:21:46.000Z">2022-08-20</time></p><p class="title"><a href="/myblog.github.io/2022/08/20/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%91%E5%B8%83npm/">第一次发布npm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T12:33:33.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue-cli3%E4%BD%BF%E7%94%A8-webpack-bundle-analyzer%E6%8F%92%E4%BB%B6/">第一次在vue-cli3 使用 webpack-bundle-analyzer 插件</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/React/"><span class="tag">React</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
-                            	var now = new Date();
-                                function createtime() {
-                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
-                                    now.setTime(now.getTime()+250);
-                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
-                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-                                }
-                                setInterval("createtime()",250);
-                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
             }
-        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
         },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
       });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/myblog.github.io/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+  
+<script src="/myblog.github.io/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

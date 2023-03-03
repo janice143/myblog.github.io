@@ -1,154 +1,405 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: Node.js - iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="iaine&#039;s blog"><meta property="og:url" content="http://iainespace.work/portfolio"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://iainespace.work/myblog.github.io/img/og_image.png"><meta property="article:author" content="iaine"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myblog.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://iainespace.work/portfolio"},"headline":"iaine's blog","image":["http://iainespace.work/myblog.github.io/img/og_image.png"],"author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":""}</script><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/myblog.github.io/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">Node.js</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-14T08:44:31.000Z" title="2022/4/14 下午4:44:31">2022-04-14</time>发表</span><span class="level-item"><time dateTime="2022-04-16T13:35:05.079Z" title="2022/4/16 下午9:35:05">2022-04-16</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/node-js/">node.js</a></span><span class="level-item">9 分钟读完 (大约1332个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/04/14/%E3%80%90NodeJS%E3%80%91node%E5%B0%8F%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E8%B4%AD%E7%89%A9%E8%BD%A6/">【NodeJS】node小项目——购物车</a></h1><div class="content"><h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>项目提供了初始的前端代码（放在public文件夹中），现在需要利用node.js来实现项目的后端部分。</p>
-<h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><h3 id="1-npm初始化"><a href="#1-npm初始化" class="headerlink" title="1 npm初始化"></a>1 npm初始化</h3><p>会生成一个<code>package.json</code>文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
 
-<p>npm是包管理工具，下载node的时候回顺带下载到npm。更多想了解的可以参考文档：<a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-npm.html">菜鸟教程</a></p>
-<h3 id="2-项目所需库"><a href="#2-项目所需库" class="headerlink" title="2 项目所需库"></a>2 项目所需库</h3><h4 id="2-1-介绍"><a href="#2-1-介绍" class="headerlink" title="2.1 介绍"></a>2.1 介绍</h4><p>这个项目需要用到<code>express</code>,<code>ejs</code>,<code>stripe</code>以及<code>dotenv </code>四个库。先大致说一下这几个库的用途。</p>
-<ul>
-<li><p><code>express</code>是用来创建服务器，以及接收请求和响应请求等；</p>
-<p>📖📖📖 官方文档：<a target="_blank" rel="noopener" href="https://www.expressjs.com.cn/guide/routing.html">https://www.expressjs.com.cn/guide/routing.html</a></p>
-</li>
-<li><p><code>ejs</code>是用一套模板引擎（或者叫模板语言），因为本项目需要陈列一些商品信息，这些信息我们用一个json文件管理，然后需要动态渲染出来，这时候就用到了<code>ejs</code>语言。</p>
-<p>📖📖📖 官方文档：<a target="_blank" rel="noopener" href="https://ejs.bootcss.com/">https://ejs.bootcss.com/</a></p>
-</li>
-<li><p><code>stripe</code>是stripe(一个支付服务平台，有点像国内的阿里)的一个线上支付工具包，另外stripe还提供了一些线上支付的接口，需要注册使用，才能获取到私密钥和公共密钥。</p>
-<p>📖📖📖 官方文档：<a target="_blank" rel="noopener" href="https://stripe.com/docs/payments?payments=popular">https://stripe.com/docs/payments?payments=popular</a></p>
-</li>
-<li><p><code>dotenv</code>用来管理环境变量的，stripe提供的接口中申请的私人密钥和公共密钥，其中私人密钥不能出现在生产环境中，只用来测试的时候用，所以需要管理我们的环境变量，让有些模块不会出现的生产环境中。</p>
-</li>
-</ul>
-<h4 id="2-2-安装"><a href="#2-2-安装" class="headerlink" title="2.2 安装"></a>2.2 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express ejs stripe dotenv --save</span><br></pre></td></tr></table></figure>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="iaine" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      标签 
+       : Node.js
+      
+      |
+    
+     iaine&#39;s blog
+  </title>
 
-<p><strong>注意</strong>：加上save会将该依赖存入到package.json 里的dependcies里，不加则不会。</p>
-<p>下载 dotenv (只在开发的时候下载来用，生产环境下是不需要的)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install dotenv -save-dev</span><br></pre></td></tr></table></figure>
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
 
-<p>有些模块只是在本地开发的时候用到，这些模块会在<code>devDependencies</code>，在生产环境这些模块不会被打入包内。</p>
-<p>在下载包的时候加上 <code>--also=dev</code>可配置。</p>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><p>本项目的大致思路是：</p>
-<ol>
-<li><p>新建server.js文件，利用express搭建 web 服务器</p>
-</li>
-<li><p>利用git clone<a target="_blank" rel="noopener" href="https://github.com/WebDevSimplified/Node.js-Stripe-Shopping-Cart">下载初始文件</a>，将初始文件里的public/fonts文件夹移动那当前项目文件夹中，然后删除多余初始文件，将fonts文件夹重命名为public</p>
-</li>
-<li><p>提供的初始文件是一个静态网页+少量的js交互。利用<code>app.use(express.static(&#39;public&#39;))</code>可查看</p>
-<p>当你点击导航栏的<code>STORE</code>，可以浏览商品页面，点击商品加入购物车，然后点击购买，会alert出“成功购买”的信息。这些是初始文件在js中设计好的，我们项目的就是搭建服务器，将商品信息动态地渲染到页面中。选择商品加入购物车后，在点击购买的时候，调用stripe的接口完成线上支付。</p>
-</li>
-<li><p>新建<code>items.json</code>文件，根据页面的商品信息，做一个简单的商品数据库，以便后期加入其他商品</p>
-</li>
-<li><p>新建<code>views</code>文件夹，把初始文件<code>store.html</code>移动到该文件夹中，然后把该文件后缀名改为<code>.ejs</code></p>
-</li>
-<li><p>利用ejs的语法在.ejs文件中修改对应的商品内容</p>
-</li>
-<li><p>在<code>server.js</code>文件中编写代码，将ejs文件渲染出来</p>
-</li>
-<li><p>注册stripe 官网的账号，在开发者测试中拿到密钥</p>
-</li>
-<li><p>新建.env文件，文件名为.env，开始配置环境变量，一个是公钥，一个是密钥（密钥是敏感信息，决不能外露，不然会被随意消费）</p>
-</li>
-<li><p>新建.gitignore文件，把环境配置文件.env写入里面，这样代码打包的时候就不会把环境配置这个文件打包</p>
-</li>
-<li><p>在server.js引入.env中的公钥和密钥</p>
-</li>
-<li><p>把公钥通过ejs文件传给store.js文件，下面我们开始修改store.js文件上的点击支付按钮的交互</p>
-</li>
-<li><p>在ejs文件中引入stripe的js文件（浏览器版本）</p>
-</li>
-<li><p>在store.js设置stripe的处理器</p>
-</li>
-<li><p>在server.js中设计app.post，发出支付请求</p>
-</li>
-</ol>
-<h3 id="expressJS-网络服务器框架"><a href="#expressJS-网络服务器框架" class="headerlink" title="expressJS 网络服务器框架"></a>expressJS 网络服务器框架</h3><h4 id="1-基本使用"><a href="#1-基本使用" class="headerlink" title="1 基本使用"></a>1 基本使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="comment">// respond with &quot;hello world&quot; when a GET request is made to the homepage</span></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-<p>编写完这段代码，然后在浏览器上输入localhost:3000，就可以看到页面上显示<code>hello world</code>字样。这说明我们成功搭建了一个node.js服务器。</p>
-<p>.env</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904153890684935">https://juejin.cn/post/6844904153890684935</a></p>
-<p>.gitignore</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/beiniao520/article/details/79500647">https://blog.csdn.net/beiniao520/article/details/79500647</a></p>
-<h4 id="过程页面的跳转恰好用的是res-render的方式，搭配上ejs模板引擎实现了页面的渲染。"><a href="#过程页面的跳转恰好用的是res-render的方式，搭配上ejs模板引擎实现了页面的渲染。" class="headerlink" title="过程页面的跳转恰好用的是res.render的方式，搭配上ejs模板引擎实现了页面的渲染。"></a>过程页面的跳转恰好用的是res.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=render&spm=1001.2101.3001.7020">render</a>的方式，搭配上ejs模板引擎实现了页面的渲染。</h4><h1 id="Node-Express框架中EJS模板引擎的使用"><a href="#Node-Express框架中EJS模板引擎的使用" class="headerlink" title="Node Express框架中EJS模板引擎的使用"></a>Node Express框架中EJS模板引擎的使用</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41162427/article/details/107864130">https://blog.csdn.net/weixin_41162427/article/details/107864130</a></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-14T06:18:47.000Z" title="2022/4/14 下午2:18:47">2022-04-14</time>发表</span><span class="level-item"><time dateTime="2022-04-15T13:46:12.734Z" title="2022/4/15 下午9:46:12">2022-04-15</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/node-js/">node.js</a></span><span class="level-item">4 分钟读完 (大约535个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/04/14/%E3%80%90NodeJS%E3%80%91%E7%AC%AC%E4%B8%80%E4%B8%AAnode-js-web%E6%9C%8D%E5%8A%A1%E5%99%A8/">【NodeJS】第一个node.js web服务器</a></h1><div class="content"><h2 id="1-📖📖📖-Node-js文档："><a href="#1-📖📖📖-Node-js文档：" class="headerlink" title="1 📖📖📖  Node.js文档："></a>1 📖📖📖  Node.js文档：</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v14.x/docs/api/synopsis.html">https://nodejs.org/dist/latest-v14.x/docs/api/synopsis.html</a></p>
-<p>官方文档对于初学者不太友好，有点难度，所以我又在网上其他文档看，比如下面这个</p>
-<p>👇👇👇</p>
-<p><a target="_blank" rel="noopener" href="https://rualc.com/frontend/nodejs-basic/#yi-ge-jian-dan-de-li-zi">Node.js 入门指南</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-http-server.html">菜鸟教程</a></p>
-<h2 id="2-第一个node-js代码：app-js"><a href="#2-第一个node-js代码：app-js" class="headerlink" title="2 第一个node.js代码：app.js"></a>2 第一个node.js代码：app.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.write(<span class="string">&#x27;Hello Node&#x27;</span>)</span><br><span class="line">    res.end()</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(port,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(error)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Something went wrong&#x27;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Server is listening on port&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
 
-<p>这个代码是基本结构。写好之后，在终端输入 <code>node app.js</code>，然后在浏览器里输入<code>localhost:3000</code>即可打开。</p>
-<ol>
-<li><strong>引入 required 模块：</strong>我们可以使用 <strong>require</strong> 指令来载入 Node.js 模块。</li>
-<li><strong>创建服务器：</strong>服务器可以监听客户端的请求，类似于 Apache 、Nginx 等 HTTP 服务器。</li>
-<li><strong>接收请求与响应请求</strong> 服务器很容易创建，客户端可以使用浏览器或终端发送 HTTP 请求，服务器接收请求后返回响应数据。</li>
-</ol>
-<h2 id="3-在node-js里引入html文件"><a href="#3-在node-js里引入html文件" class="headerlink" title="3 在node.js里引入html文件"></a>3 在node.js里引入html文件</h2><p>如果提前编写好了一个html文件，想要在web服务器打开，可以写一个app.js，然后用node.js编译。</p>
-<p>在app.js中需要引入fs内置模块。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">     <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    res.writeHead(<span class="number">200</span>,&#123;<span class="string">&#x27;Content-Type&#x27;</span>:<span class="string">&#x27;text/html&#x27;</span>&#125;)</span><br><span class="line">    fs.readFile(<span class="string">&#x27;index.html&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error,data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(error)&#123;</span><br><span class="line">            res.writeHead(<span class="number">404</span>)</span><br><span class="line">            res.write(<span class="string">&#x27;Error: File not found&#x27;</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            res.write(data)</span><br><span class="line">        &#125;</span><br><span class="line">        res.end()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(port,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(error)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Something went wrong&#x27;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Server is listening on port&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
-<h2 id="3-新式的写法——使用express框架"><a href="#3-新式的写法——使用express框架" class="headerlink" title="3 新式的写法——使用express框架"></a>3 新式的写法——使用express框架</h2><p>先用npm下载express的包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/myblog.github.io/js/fancybox.js"></script>
 
-<p>然后编写下面的代码就可以了</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;示例应用正在监听 3000 端口!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>好了，到这你就学会了使用Node.js实现一个web服务器！</p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">58</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-15T08:37:35.000Z">2022-10-15</time></p><p class="title"><a href="/myblog.github.io/2022/10/15/React-%E5%AD%A6%E4%B9%A001/">React 学习01</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T14:19:15.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">记录第二次vue-nodejs-mongodb项目服务器部署</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T13:43:03.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/">可视化拖拽平台——低代码编辑器（第四届字节青训营项目）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T04:21:46.000Z">2022-08-20</time></p><p class="title"><a href="/myblog.github.io/2022/08/20/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%91%E5%B8%83npm/">第一次发布npm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T12:33:33.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue-cli3%E4%BD%BF%E7%94%A8-webpack-bundle-analyzer%E6%8F%92%E4%BB%B6/">第一次在vue-cli3 使用 webpack-bundle-analyzer 插件</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/React/"><span class="tag">React</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
-                            	var now = new Date();
-                                function createtime() {
-                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
-                                    now.setTime(now.getTime()+250);
-                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
-                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-                                }
-                                setInterval("createtime()",250);
-                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/myblog.github.io/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
+
+<div class="container tag-details">
+  <div class="content-title">
+    <h2>
+      <span>Node.js</span>
+    </h2>
+  </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【NodeJS】node小项目——购物车">
+        <span class="time-m-d">2022-04-14</span>
+        <a href="/myblog.github.io/2022/04/14/%E3%80%90NodeJS%E3%80%91node%E5%B0%8F%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E8%B4%AD%E7%89%A9%E8%BD%A6/">
+          <span>【NodeJS】node小项目——购物车</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【NodeJS】第一个node.js web服务器">
+        <span class="time-m-d">2022-04-14</span>
+        <a href="/myblog.github.io/2022/04/14/%E3%80%90NodeJS%E3%80%91%E7%AC%AC%E4%B8%80%E4%B8%AAnode-js-web%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+          <span>【NodeJS】第一个node.js web服务器</span>
+        </a>
+      </div>
+    </div>
+  
+  <nav class="post-navigation">
+    
+    <span class="page-num">1 / 1</span>
+    
+  </nav>
+</div>
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/myblog.github.io/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
             }
-        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
         },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
       });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/myblog.github.io/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+  
+<script src="/myblog.github.io/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

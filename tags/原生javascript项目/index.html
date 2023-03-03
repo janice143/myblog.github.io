@@ -1,654 +1,479 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: 原生javascript项目 - iaine&#039;s blog</title><link rel="manifest" href="/myblog.github.io/manifest.json"><meta name="application-name" content="iaine"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="iaine"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="iaine&#039;s blog"><meta property="og:url" content="http://iainespace.work/portfolio"><meta property="og:site_name" content="iaine&#039;s blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://iainespace.work/myblog.github.io/img/og_image.png"><meta property="article:author" content="iaine"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myblog.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://iainespace.work/portfolio"},"headline":"iaine's blog","image":["http://iainespace.work/myblog.github.io/img/og_image.png"],"author":{"@type":"Person","name":"iaine"},"publisher":{"@type":"Organization","name":"iaine's blog","logo":{"@type":"ImageObject","url":{"text":"Iaine's page"}}},"description":""}</script><link rel="icon" href="/myblog.github.io/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myblog.github.io/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myblog.github.io/">Iaine&#039;s page</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myblog.github.io/">首页</a><a class="navbar-item" href="/myblog.github.io/archives">成就</a><a class="navbar-item" href="/myblog.github.io/categories">分类</a><a class="navbar-item" href="/myblog.github.io/tags">标签</a><a class="navbar-item" href="/myblog.github.io/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/janice143?tab=repositories"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/myblog.github.io/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">原生javascript项目</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-11T13:16:13.000Z" title="2022/3/11 下午9:16:13">2022-03-11</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:18:34.281Z" title="2022/3/11 下午9:18:34">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">6 分钟读完 (大约934个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Countdown-Timer-29/">【原生javascript项目】Countdown Timer 29</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第28天的“倒计时计时器”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/29%20CountdownTimer/index.htm">https://github.com/janice143/JavaScript30Program/tree/master/29%20CountdownTimer/index.htm</a></p>
-<p>**本项目的笔记内容选自 <a target="_blank" rel="noopener" href="https://github.com/dashnowords">大史不说话</a>**，他本人是JS30社区里的知名参与者，他的全部笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">这里</a>。</p>
-<p>本项目的笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/tree/master/29%20-%20Countdown%20Timer">这里</a>。</p>
-<h2 id="挑战任务"><a href="#挑战任务" class="headerlink" title="挑战任务"></a>挑战任务</h2><p>初始文档<code>index-start.html</code>中提供了一个倒计时控制器，从<code>html</code>文档的结构可以看出，顶部的按钮可以用来增加倒计时时间，常用的时间间隔已将参数绑定在<code>data-time</code>属性上;<code>display</code>类用来显示计时的结果。<br>本次编程挑战的任务是通过javascript代码基于当前时间生成一个倒计时，将<code>结束时间</code>和<code>剩余时间</code>分别显示在<code>diaplay__time-left</code>类标签和<code>display__end-time</code>类标签上。</p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>[<img src="https://github.com/soyaine/JavaScript30/raw/master/29%20-%20Countdown%20Timer/effect.png" alt="结果展示">](<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/blob/master/29">https://github.com/soyaine/JavaScript30/blob/master/29</a> - Countdown Timer/effect.png)</p>
-<h2 id="编程思路"><a href="#编程思路" class="headerlink" title="编程思路"></a>编程思路</h2><p>监听按点击事件<code>click</code>来为倒计时增加时间，使用<code>setInterval</code>函数每秒执行判断函数，若倒计时事件到，则清除当前计时器，若时间未到，则计算并刷新页面上应该显示的时间。</p>
-<h2 id="过程指南"><a href="#过程指南" class="headerlink" title="过程指南"></a>过程指南</h2><p>1.定义变量及获取需要操作的DOM元素的引用。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const endTime  = document.querySelector(&quot;.display__end-time&quot;);</span><br><span class="line">const leftTime = document.querySelector(&quot;.display__time-left&quot;);</span><br><span class="line">const buttons = document.querySelectorAll(&quot;button&quot;);</span><br><span class="line">const date = new Date();</span><br><span class="line">var left = 0;//剩余时间</span><br><span class="line">var end = 0;//结束时间</span><br><span class="line">var timer;//interval计时器</span><br><span class="line">leftTime.innerHTML = left;//未操作时，剩余时间显示0</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
 
-<p>2.为button绑定点击事件，当按钮点击时执行对应的回调函数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = Array.from(buttons);</span><br><span class="line">arr.map(function(item)&#123;</span><br><span class="line">    item.addEventListener(&#x27;click&#x27;,clickAction);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="iaine" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      标签 
+       : 原生javascript项目
+      
+      |
+    
+     iaine&#39;s blog
+  </title>
 
-<p>3.监听表单的提交事件,注意表单的调用方式。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.customForm.addEventListener(&#x27;submit&#x27;,function(e)&#123;</span><br><span class="line">	e.preventDefault();</span><br><span class="line">	updateTime(this.minutes.value*60);</span><br><span class="line">	updateTimer();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
 
-<p>4.点击后的回调函数中取得点击按钮传递的秒数，调用<code>updateTime()</code>函数更新页面显示结果，并调用<code>updateTimer()</code>来更新计时器相关动作.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function clickAction(e)&#123;</span><br><span class="line">	let deltaTime;</span><br><span class="line">	   	deltaTime = this.dataset.time;//取得data-time属性的值</span><br><span class="line">	   	updateTime(deltaTime);</span><br><span class="line"></span><br><span class="line">        //点击后更新计时器</span><br><span class="line">        updateTimer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-<p>5.<code>updateTime()</code>函数用来更新和页面相关的显示信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> function updateTime(delta)&#123;</span><br><span class="line">	    left = left + parseInt(delta,0);</span><br><span class="line">        end = date.getTime() + left*1000;</span><br><span class="line">        leftTime.innerHTML = left;</span><br><span class="line">        endTime.innerHTML =new Date(end).toLocaleTimeString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
 
-<p>6.<code>updateTimer()</code>函数用来执行和设定每秒检查计时器是否需要继续工作的逻辑判断。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function updateTimer()&#123;</span><br><span class="line">	//清除以前的timer,如果不清除，新生成的定时器会和以前的定时器叠加在一起，均会生效。</span><br><span class="line">	if(timer)&#123;</span><br><span class="line">		clearInterval(timer);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // 设置新的Timer</span><br><span class="line">    timer = setInterval(function()&#123;</span><br><span class="line">	if(left == 0)&#123;</span><br><span class="line">		endTime.innerHTML = &#x27;End&#x27;;</span><br><span class="line">        clearInterval(timer);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		left -= 1;</span><br><span class="line">		leftTime.innerHTML = left;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
-<h2 id="延伸思考"><a href="#延伸思考" class="headerlink" title="延伸思考"></a>延伸思考</h2><p>本次代码中前后会定义定时器和清除定时器，另一种做法是定时器一直工作不清除，对应的按钮和表单只修改时间，不用调整定时器，当值发生变化后，下一秒定时器检测时就会开始倒计时，这样代码逻辑上会有所简化，感兴趣的朋友可以自行练习。</p>
-<blockquote>
-<p>JS30的第29个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#48;&#51;&#x31;&#48;&#53;&#x35;&#51;&#56;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#x31;&#x38;&#48;&#51;&#x31;&#48;&#53;&#x35;&#51;&#56;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-11T13:06:44.000Z" title="2022/3/11 下午9:06:44">2022-03-11</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:20:19.981Z" title="2022/3/11 下午9:20:19">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">4 分钟读完 (大约553个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Video-Speed-Controller-28/">【原生javascript项目】Video Speed Controller 28</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第27天的“视频播放速度控制器”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/28%20VideoSpeedController/index.htm">https://github.com/janice143/JavaScript30Program/tree/master/28%20VideoSpeedController/index.htm</a></p>
-<p>**本项目的笔记内容选自 <a target="_blank" rel="noopener" href="https://github.com/dashnowords">大史不说话</a>**，他本人是JS30社区里的知名参与者，他的全部笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">这里</a>。</p>
-<p>本项目的笔记在<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/tree/master/28%20-%20Video%20Speed%20Controller">这里</a>。</p>
-<h2 id="挑战任务"><a href="#挑战任务" class="headerlink" title="挑战任务"></a>挑战任务</h2><p>初始文档<code>index-start.html</code>中提供了一个视频播放区域（使用的是H5原生的控制器）以及一个表示播放速度的滑块区域，本次的编程任务需要实现的效果是当鼠标拖动滑块时，实时改变视频播放的速度。</p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>[<img src="https://github.com/soyaine/JavaScript30/raw/master/28%20-%20Video%20Speed%20Controller/effect.png" alt="结果展示">](<a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30/blob/master/28">https://github.com/soyaine/JavaScript30/blob/master/28</a> - Video Speed Controller/effect.png)</p>
-<h2 id="编程思路"><a href="#编程思路" class="headerlink" title="编程思路"></a>编程思路</h2><p>本次的编程任务难度系数较低，在右侧速度条上监听鼠标点击事件，调整滑块的高度来表示不同的填充百分比，即不同的播放速度，将速度赋值给video对象的<code>playbackRate</code>属性即可实时改变播放速度。难点在于高度的百分比转换。</p>
-<h2 id="过程指南"><a href="#过程指南" class="headerlink" title="过程指南"></a>过程指南</h2><p>本篇实现较为简单，不再分步骤讲解，示例代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speed = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.speed&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> speedBar = speed.querySelector(<span class="string">&quot;.speed-bar&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.flex&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeSpeed</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> height = e.offsetY;<span class="comment">//获取滑块的高度</span></span><br><span class="line">  <span class="keyword">const</span> percentage = e.offsetY / speed.offsetHeight;</span><br><span class="line">  <span class="keyword">const</span> min = <span class="number">0.5</span>;</span><br><span class="line">  <span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">  <span class="comment">//依据自定义播放速度范围和滑块高度百分比确定播放速率</span></span><br><span class="line">  <span class="keyword">const</span> playbackRate = percentage * (max - min) + min; </span><br><span class="line">  speedBar.style.height = <span class="built_in">Math</span>.round(percentage*<span class="number">100</span>) + <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">  speedBar.textContent = playbackRate.toFixed(<span class="number">2</span>) + <span class="string">&#x27;×&#x27;</span>;</span><br><span class="line">  video.playbackRate = playbackRate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">speed.addEventListener(<span class="string">&#x27;click&#x27;</span>,changeSpeed);</span><br></pre></td></tr></table></figure>
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/myblog.github.io/js/fancybox.js"></script>
 
-<blockquote>
-<p>JS30的第28个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#56;&#48;&#51;&#x31;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#49;&#56;&#48;&#51;&#x31;&#x30;&#53;&#53;&#x33;&#56;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-05T07:13:56.000Z" title="2022/3/5 下午3:13:56">2022-03-05</time>发表</span><span class="level-item"><time dateTime="2022-03-11T13:26:48.140Z" title="2022/3/11 下午9:26:48">2022-03-11</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">4 分钟读完 (大约589个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/03/05/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Click-and-drag-27/">【原生javascript项目】Click and drag 27</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第26天的“内容悬浮显示”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/27%20clickAndDrag/index.html">https://github.com/janice143/JavaScript30Program/tree/master/27%20clickAndDrag/index.html</a></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目为一个横向条幅，实现的特效是鼠标点击实现横向拖拽。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>e.pageX </code></li>
-<li><code>.scrollLeft</code></li>
-<li><code>.offsetLeft</code></li>
-<li> <code>e.preventDefault()</code></li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>编程思路为</p>
-<ol>
-<li>监听最外层items元素的<code>mousedown</code>事件，触发后添加<code>active</code>类名，此类名具有一定的CSS特效。记录此时的起点<code>startX</code> 以及 左边滚动的位置<code>scrollLeft</code>。</li>
-<li>监听鼠标移动<code>mousemove</code>事件，给<code>scrollLeft</code>赋值，即可调整元素在水平方向滚动的位置。</li>
-<li>鼠标离开<code>mouseleave</code>和不点击<code>mouseup</code>事件触发时，去掉<code>active</code>类名。</li>
-</ol>
-<ul>
-<li><p><code>mousedown</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">slider.addEventListener(<span class="string">&#x27;mousedown&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">true</span>;</span><br><span class="line">slider.classList.add(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">startX = e.pageX - slider.offsetLeft;</span><br><span class="line">scrollLeft = slider.scrollLeft;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p><code>mousemove</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">slider.addEventListener(<span class="string">&#x27;mousemove&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (!isDown) <span class="keyword">return</span>;  <span class="comment">// stop the fn from running</span></span><br><span class="line">e.preventDefault();</span><br><span class="line"><span class="keyword">const</span> x = e.pageX - slider.offsetLeft;</span><br><span class="line"><span class="keyword">const</span> walk = (x - startX) * <span class="number">3</span>;</span><br><span class="line">slider.scrollLeft = scrollLeft - walk;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p><code>mouseleave</code>和不点击<code>mouseup</code>事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">slider.addEventListener(<span class="string">&#x27;mouseleave&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">false</span>;</span><br><span class="line">slider.classList.remove(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">slider.addEventListener(<span class="string">&#x27;mouseup&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">isDown = <span class="literal">false</span>;</span><br><span class="line">slider.classList.remove(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="一些CSS样式"><a href="#一些CSS样式" class="headerlink" title="一些CSS样式"></a>一些CSS样式</h4><ol>
-<li><p><code>overflow</code>属性：控制元素溢出时的特性，主要有一下几个值</p>
-<ul>
-<li><code>visible</code> 默认值，溢出也是可见的，没有被裁剪</li>
-<li><code>hidden</code> 溢出的内容被裁剪，并且看不到</li>
-<li><code>scroll </code>溢出的内容被裁剪，但是可以添加滑块scrollbar看到溢出内容</li>
-<li><code>auto</code> 有点像<code>scroll</code></li>
-</ul>
-</li>
-<li><p><code>white-space</code>空格处理</p>
-<ul>
-<li><code>normal</code>表示合并空格，多个相邻空格合并成一个空格</li>
-<li><code>nowrap</code>不换行，经常和<code>overflow</code>,<code>text-overflow</code>一起使用</li>
-<li><code>pre</code>保留空格不换行，有几个空格算几个空格显示</li>
-<li><code>pre-wrap</code>的作用是保留空格</li>
-</ul>
-</li>
-<li><p>user-select：禁止用户用鼠标在页面上选中文字、图片等，也就是，让页面内容不可选</p>
-</li>
-</ol>
-<blockquote>
-<p>JS30的第27个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#51;&#x38;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#53;&#53;&#51;&#x38;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-27T06:49:16.000Z" title="2022/2/27 下午2:49:16">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-03-05T07:59:12.136Z" title="2022/3/5 下午3:59:12">2022-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">8 分钟读完 (大约1130个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/27/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Strip-follow-along-nav-26/">【原生javascript项目】Strip follow along nav 26</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第26天的“内容悬浮显示”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/26%20stripAlongNav/index.html">https://github.com/janice143/JavaScript30Program/tree/master/26%20stripAlongNav/index.html</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_stripAlongNav.png?raw=true"></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目的网页主题是一个菜单栏，通过鼠标<code>mouseenter</code>进入每个菜单项目时，会显示出相应的隐藏扩展内容，当从一个菜单进入另一个菜单时，扩展内容的显示会有一个从上一个菜单平移到当前菜单的动态效果。</p>
-<p>本项目的难点在于适应大小的动态显示和平移效果。由于扩展内容包含的类型各不相同，而且显示要有一个从上一个菜单平移到当前菜单的动态效果，要做到用通用化的操作，根据扩展内容的具体大小动态显示出，是一件值得思考的事情。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>getBoundingClientRect()</code></li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><ul>
-<li><p>第一个菜单及其扩展内容</p>
-<p>包含<code>a</code>标签标记的标题；类名为<code>dropdown,dropdown1</code>的下拉菜单（一张图片和描述文本）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>About Me<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;dropdown dropdown1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bio&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://logo.clearbit.com/wesbos.com&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Wes Bos sure does love web development. He teaches things like JavaScript, CSS and BBQ. Wait. BBQ isn&#x27;t part of web development. It should be though!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>第二个菜单及其扩展内容</p>
-<p>包含<code>a</code>标签标记的标题；类名为<code>dropdown,dropdown2</code>的下拉菜单（类型相同的列表）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>Courses<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;dropdown courses&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>RFB<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://ReactForBeginners.com&quot;</span>&gt;</span>React For Beginners<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>ES6<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://ES6.io&quot;</span>&gt;</span>ES6 For Everyone<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>NODE<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://LearnNode.com&quot;</span>&gt;</span>Learn Node<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>STPU<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://SublimeTextBook.com&quot;</span>&gt;</span>Sublime Text Power User<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>WTF<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://Flexbox.io&quot;</span>&gt;</span>What The Flexbox?!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>GRID<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://CSSGrid.io&quot;</span>&gt;</span>CSS Grid<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>LRX<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://LearnRedux.com&quot;</span>&gt;</span>Learn Redux<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>CLPU<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://CommandLinePowerUser.com&quot;</span>&gt;</span>Command Line Power User<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span>MMD<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://MasteringMarkdown.com&quot;</span>&gt;</span>Mastering Markdown<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>第三个菜单及其扩展内容</p>
-<p>包含<code>a</code>标签标记的标题；类名为<code>dropdown,dropdown3</code>的下拉菜单（类型相同的列表）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>Other Links<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;dropdown dropdown3&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://twitter.com/wesbos&quot;</span>&gt;</span>Twitter<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://facebook.com/wesbos.developer&quot;</span>&gt;</span>Facebook<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://wesbos.com&quot;</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://wesbos.com/courses&quot;</span>&gt;</span>Course Catalog<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>白背景</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;dropdownBackground&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;arrow&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h4><ul>
-<li><p><code>trigger-enter</code>类名。效果是显示下拉菜单，但是此时下拉菜单的不透明度还是为0，所以还是看不到下拉菜单</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trigger-enter</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p><code>trigger-enter-active</code>类名。效果是将下拉菜单的不透明度设置为1</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trigger-enter-active</span> <span class="selector-class">.dropdown</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p><code>dropBackgorund</code>类名。设置背景图片的样式，<u>也是本项目难点的实现机制，通过移动背景白版，来实现一个动态平移的过程。</u></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdownBackground</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">50px</span> <span class="number">100px</span> <span class="built_in">rgba</span>(<span class="number">50</span>,<span class="number">50</span>,<span class="number">93</span>,.<span class="number">1</span>), <span class="number">0</span> <span class="number">15px</span> <span class="number">35px</span> <span class="built_in">rgba</span>(<span class="number">50</span>,<span class="number">50</span>,<span class="number">93</span>,.<span class="number">15</span>), <span class="number">0</span> <span class="number">5px</span> <span class="number">15px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>, opacity <span class="number">0.1s</span>, transform <span class="number">0.2s</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p><code>open</code>类名。将背景图片的不透明度设置为1</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdownBackground</span><span class="selector-class">.open</span> &#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><ul>
-<li><p>鼠标进入导航栏项目时。</p>
-<ul>
-<li>给对应的项目添加类名<code>trigger-enter</code>，随后150ms，添加类名<code>trigger-enter-active</code>。</li>
-<li>白背景也要同时显示，所以添加类名<code>open</code></li>
-<li>利用<code>getBoundingClientRect()</code>属性获取元素的宽高和位置信息。<u>这是本项目的难点的实现机制，根据下拉菜单大小动态显示。</u></li>
-<li>白背景的显示位置是相对于已定位的<code>nav</code>元素，所以其<code>top</code>位置是下拉菜单的<code>top</code>位置减去<code>nav</code>的<code>top</code>位置。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> triggers = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.cool &gt; li&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> background  = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.dropdownBackground&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> nav  = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.top&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.classList.add(<span class="string">&#x27;trigger-enter&#x27;</span>);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="built_in">this</span>.classList.contains(<span class="string">&#x27;trigger-enter&#x27;</span>) &amp;&amp; <span class="built_in">this</span>.classList.add(<span class="string">&#x27;trigger-enter-active&#x27;</span>), <span class="number">150</span>);</span><br><span class="line">    background.classList.add(<span class="string">&#x27;open&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> dropdown = <span class="built_in">this</span>.querySelector(<span class="string">&#x27;.dropdown&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> dropdownCoords = dropdown.getBoundingClientRect();</span><br><span class="line">    <span class="keyword">const</span> navCoords = nav.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> coords = &#123;</span><br><span class="line">        <span class="attr">height</span>: dropdownCoords.height,</span><br><span class="line">        <span class="attr">width</span>: dropdownCoords.width,</span><br><span class="line">        <span class="attr">top</span>: dropdownCoords.top - navCoords.top,</span><br><span class="line">        <span class="attr">left</span>: dropdownCoords.left - navCoords.left</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    background.style.setProperty(<span class="string">&#x27;width&#x27;</span>, <span class="string">`<span class="subst">$&#123;coords.width&#125;</span>px`</span>);</span><br><span class="line">    background.style.setProperty(<span class="string">&#x27;height&#x27;</span>, <span class="string">`<span class="subst">$&#123;coords.height&#125;</span>px`</span>);</span><br><span class="line">    background.style.setProperty(<span class="string">&#x27;transform&#x27;</span>, <span class="string">`translate(<span class="subst">$&#123;coords.left&#125;</span>px, <span class="subst">$&#123;coords.top&#125;</span>px)`</span>);</span><br><span class="line">&#125;</span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span> trigger.addEventListener(<span class="string">&#x27;mouseenter&#x27;</span>, handleEnter));</span><br></pre></td></tr></table></figure></li>
-<li><p>鼠标移除导航栏菜单时。删除类名<code>trigger-enter</code>，<code>trigger-enter-active</code>，<code>open</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleLeave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.classList.remove(<span class="string">&#x27;trigger-enter&#x27;</span>, <span class="string">&#x27;trigger-enter-active&#x27;</span>);</span><br><span class="line">    background.classList.remove(<span class="string">&#x27;open&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span> trigger.addEventListener(<span class="string">&#x27;mouseleave&#x27;</span>, handleLeave));</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">getBoundingClientRect()</a></h4><p>返回DOMRect对象，包含元素的大小和相对视口的位置信息。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">domRect = element.getBoundingClientRect();</span><br></pre></td></tr></table></figure>
 
-<h4 id="will-change-opacity"><a href="#will-change-opacity" class="headerlink" title="will-change: opacity"></a>will-change: opacity</h4><p>提醒浏览器该元素的opacity特性将会改变</p>
-<h4 id="A-gt-B"><a href="#A-gt-B" class="headerlink" title="A &gt; B"></a>A &gt; B</h4><p>匹配A的所有直接后代B</p>
-<blockquote>
-<p>JS30的第26个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#56;&#x30;&#x33;&#x31;&#48;&#53;&#53;&#51;&#56;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;">&#x31;&#56;&#x30;&#x33;&#x31;&#48;&#53;&#53;&#51;&#56;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-27T06:09:03.000Z" title="2022/2/27 下午2:09:03">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-02-27T06:46:46.949Z" title="2022/2/27 下午2:46:46">2022-02-27</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">4 分钟读完 (大约541个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/27/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Event-Capture-25/">【原生javascript项目】Event Capture 25</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第25天的“语音合成”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/25%20eventCapture/index.html">https://github.com/janice143/JavaScript30Program/tree/master/25%20eventCapture/index.html</a></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目主要目的是理解事件的捕获、传播、冒泡、单次触发等机制。首先提供3个尺寸颜色不一的<code>&lt;div&gt;</code>元素，通过点击事件来理解上述内容。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>capture</code></li>
-<li><code>once</code></li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><ul>
-<li><p><strong>冒泡</strong></p>
-<p>当点击某个<code>div</code>时，自该<code>div</code>起以及其外层的<code>div</code>也将监听到点击事件。</p>
-<p>例如，点击第3个div（最内层的），控制台显示的结果是three,two,one。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">textLog</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span>=&gt;</span>div.addEventListener(<span class="string">&#x27;click&#x27;</span>,textLog));</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>捕获</strong></p>
-<p>点击某个<code>div</code>时，从不具体的<code>div</code>元素到最具体的元素（被点击的元素）从上到下监听到点击事件。</p>
-<p>例如，点击第3个<code>div</code>（最内层的），控制台显示的结果是one,two,three。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">divs.forEach(<span class="function"><span class="params">div</span>=&gt;</span>div.addEventListener(<span class="string">&#x27;click&#x27;</span>,textLog,&#123;</span><br><span class="line">  <span class="attr">capture</span>: <span class="literal">true</span></span><br><span class="line"> &#125;));</span><br></pre></td></tr></table></figure></li>
-<li><p>停止事件继续传递</p>
-<p>在冒泡的基础上，加上<code>e.stopPropagation();</code>来设置不再继续传播</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">textLog</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.classList.value);</span><br><span class="line">    e.stopPropagation();</span><br><span class="line">&#125;</span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span>=&gt;</span>div.addEventListener(<span class="string">&#x27;click&#x27;</span>,textLog,&#123;</span><br><span class="line">    <span class="attr">capture</span>: <span class="literal">false</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></li>
-<li><p>Once：允许事件触发一次，之后相当于<code>removeEventListener</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">textLog</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span>=&gt;</span>div.addEventListener(<span class="string">&#x27;click&#x27;</span>,textLog,&#123;</span><br><span class="line">    <span class="attr">capture</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">once</span>:<span class="literal">true</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>事件开始由最精确的元素触发，逐级向上传播到其他节点</p>
-<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>事件由不太具体的节点传播到最具体的节点</p>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://tsejx.github.io/javascript-guidebook/document-object-model/events/event-flow">事件流</a></li>
-</ol>
-<p>JS30的第25个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#56;&#48;&#x33;&#x31;&#x30;&#x35;&#x35;&#x33;&#56;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#49;&#56;&#48;&#x33;&#x31;&#x30;&#x35;&#x35;&#x33;&#56;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a>.</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-26T11:46:22.000Z" title="2022/2/26 下午7:46:22">2022-02-26</time>发表</span><span class="level-item"><time dateTime="2022-02-27T08:15:01.013Z" title="2022/2/27 下午4:15:01">2022-02-27</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">3 分钟读完 (大约507个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/26/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Sticky-Nav-24/">【原生javascript项目】Sticky Nav 24</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第246天的“粘贴导航栏”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/24%20stickyNav/index.html">https://github.com/janice143/JavaScript30Program/tree/master/24%20stickyNav/index.html</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_Nav.png?raw=true"></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目主要亮点在于实现导航栏的位置粘贴固定，此外，当鼠标滚动导航栏（本来）消失时，除了要固定导航栏，还要加一点其他样式。</p>
-<p>技术要点是通过<code>scroll</code>事件中，判断窗口位置和当前导航栏的位置，如果前者大于或等于后者，则通过添加一个类名<code>&#39;fixed-nav&#39;</code>（其样式事先在CSS中完善），来实现上述两亮点。</p>
-<p>当前者小于后者，则移除<code>&#39;fixed-nav&#39;</code>类名。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>scroll</code>事件</li>
-<li><code>window.scrollY </code>&gt;= <code>topOfNav</code></li>
-<li> <code>nav.offsetTop</code></li>
-<li><code>document.body.classList.add()</code></li>
-<li><code>document.body.classList.remove()</code></li>
-<li><code>position: fixed</code></li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><ul>
-<li><code>header</code>标题</li>
-<li><code>nav</code>导航栏菜单</li>
-<li><code>.site-wrap</code>正文</li>
-</ul>
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>JS的大致思路是：</p>
-<ol>
-<li>监听页面滚动事件</li>
-<li>判断页面当前滚动位置，如果大于等于导航栏距离窗口顶部位置时，则通过添加类名</li>
-<li>否则移除类名</li>
-<li>该类名的样式在CSS中设置好，原理在于position设置为fix</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nav = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#main&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> topOfNav = nav.offsetTop;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fixNav</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.scrollY &gt;= topOfNav) &#123;</span><br><span class="line">        <span class="comment">// document.body.style.paddingTop = nav.offsetHeight + &#x27;px&#x27;;</span></span><br><span class="line">        <span class="built_in">document</span>.body.classList.add(<span class="string">&#x27;fixed-nav&#x27;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.body.classList.remove(<span class="string">&#x27;fixed-nav&#x27;</span>);</span><br><span class="line">        <span class="built_in">document</span>.body.style.paddingTop = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;scroll&#x27;</span>, fixNav);</span><br></pre></td></tr></table></figure>
+  
 
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="text-align-justify"><a href="#text-align-justify" class="headerlink" title="text-align: justify"></a>text-align: justify</h4><p>均匀分布，有点像word软件的“两端对齐”。</p>
-<blockquote>
-<p>JS30的第24个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#x30;&#x33;&#x31;&#48;&#x35;&#x35;&#x33;&#56;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x31;&#x38;&#x30;&#x33;&#x31;&#48;&#x35;&#x35;&#x33;&#56;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-25T12:59:39.000Z" title="2022/2/25 下午8:59:39">2022-02-25</time>发表</span><span class="level-item"><time dateTime="2022-02-26T12:43:38.705Z" title="2022/2/26 下午8:43:38">2022-02-26</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">9 分钟读完 (大约1304个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/25/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Speech-Synthesis-23/">【原生javascript项目】Speech Synthesis 23</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第23天的“语音合成”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/23%20speechSynthesis/index.html">https://github.com/janice143/JavaScript30Program/tree/master/23%20speechSynthesis/index.html</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_speechSynthesis.png?raw=true"></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>利用<code>SpeechSynthesisUtterance</code>接口等实现的语音合成项目，其中设有<code>rate</code>和<code>pitch</code>滑块可改变朗读速度和音高，<code>stop</code>和<code>speech</code>按钮用来控制朗读的开始和暂停。朗读的文本内容可以在文本框中自行输入。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>SpeechSynthesisUtterance</code>接口<ul>
-<li><code>speechSynthesisUtterance.lang</code></li>
-<li><code>SpeechSynthesisUtterance.pitch</code></li>
-<li><code>SpeechSynthesisUtterance.rate</code></li>
-<li><code>SpeechSynthesisUtterance.text</code></li>
-<li>``SpeechSynthesisUtterance.name`</li>
-</ul>
-</li>
-<li><code>SpeechSynthesis</code>接口<ul>
-<li><code>voiceschanged</code>事件</li>
-<li><code>SpeechSynthesis.getVoices()</code></li>
-<li><code>speechSynthesis.cancel()</code></li>
-<li><code>SpeechSynthesis.speak()</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><ul>
-<li><p><code>h1</code>标签</p>
-</li>
-<li><p><code>select</code>多选菜单</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;voice&quot;</span> <span class="attr">id</span>=<span class="string">&quot;voices&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>Select A Voice<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>两个范围<code>input</code>控件，用来调控<code>rate</code>和<code>speed</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;rate&quot;</span>&gt;</span>Rate:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;rate&quot;</span> <span class="attr">type</span>=<span class="string">&quot;range&quot;</span> <span class="attr">min</span> = <span class="string">0</span> <span class="attr">max</span> = <span class="string">&quot;3&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span> <span class="attr">step</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;pitch&quot;</span>&gt;</span>Rate:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;pitch&quot;</span> <span class="attr">type</span>=<span class="string">&quot;range&quot;</span> <span class="attr">min</span>=<span class="string">&quot;0&quot;</span> <span class="attr">max</span>=<span class="string">&quot;2&quot;</span> <span class="attr">step</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>输入文本框，朗读内容</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;text&quot;</span>&gt;</span>Hey, my name is Iaine, nice to meet you<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>两个按钮，用来暂停朗读和开始朗读</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;stop&quot;</span>&gt;</span>Stop<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;speak&quot;</span>&gt;</span>Speak<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>JS的大致思路是：</p>
-<ol>
-<li><p>使用相应WebAPI接口获得浏览器支持的语言种类列表，填充至下拉菜单中；</p>
-</li>
-<li><p>在文本域中输入对应语言的文字，点击<code>speak</code>按钮后浏览器会阅读输入的文字；</p>
-</li>
-<li><p>在浏览器阅读时，点击<code>stop</code>按钮，浏览器会停止阅读；</p>
-</li>
-<li><p>拖动<code>rate</code>和<code>pitch</code>滑块可改变阅读速度和音高。</p>
-</li>
-</ol>
-<ul>
-<li><p>取得<code>speechSynthesis</code>对象，获取浏览器支持朗读语言，将所有选项动态添加至下拉列表</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speechSynthesis = <span class="built_in">window</span>.speechSynthesis;</span><br><span class="line"><span class="keyword">let</span> voices=[];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">populateVoices</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    voices = <span class="built_in">this</span>.getVoices();</span><br><span class="line">    voicesDropdown.innerHTML = voices</span><br><span class="line">        .map(<span class="function"><span class="params">voice</span> =&gt;</span> <span class="string">`&lt;option value=&quot;<span class="subst">$&#123;voice.name&#125;</span>&quot;&gt;<span class="subst">$&#123;voice.name&#125;</span> (<span class="subst">$&#123;voice.lang&#125;</span>)&lt;/option&gt;`</span>)</span><br><span class="line">        .join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(voices)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> speechSynthesis.addEventListener(<span class="string">&#x27;voiceschanged&#x27;</span>, populateVoices);</span><br></pre></td></tr></table></figure></li>
-<li><p>设置下拉列表当前显示的语言，选择好语言后触发朗读</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> voicesDropdown = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;[name = &quot;voice&quot;]&#x27;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setVoice</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    msg.voice = voices.find(<span class="function"><span class="params">voice</span> =&gt;</span> voice.name === <span class="built_in">this</span>.value);</span><br><span class="line">    toggle();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//   发出语音</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggle</span>(<span class="params">startOver = <span class="literal">true</span></span>) </span>&#123;</span><br><span class="line">    speechSynthesis.cancel();</span><br><span class="line">    <span class="keyword">if</span> (startOver) &#123;</span><br><span class="line">        speechSynthesis.speak(msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">voicesDropdown.addEventListener(<span class="string">&#x27;change&#x27;</span>, setVoice);</span><br></pre></td></tr></table></figure></li>
-<li><p>点击<code>speech</code>按钮朗读，<code>stop</code>按钮停止</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> speakButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#speak&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> stopButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#stop&#x27;</span>);</span><br><span class="line">speakButton.addEventListener(<span class="string">&#x27;click&#x27;</span>, toggle);</span><br><span class="line">stopButton.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> toggle(<span class="literal">false</span>));</span><br></pre></td></tr></table></figure></li>
-<li><p>构建<code>SpeechSynthesisUtterance</code>实例，添加<code>pitch</code>,<code>text</code>, <code>speed</code>,<code>name</code>属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = <span class="keyword">new</span> SpeechSynthesisUtterance();</span><br><span class="line">msg.text = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;[name=&quot;text&quot;]&#x27;</span>).value;</span><br><span class="line"><span class="keyword">const</span> options = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;[type=&quot;range&quot;],[type = &quot;text&quot;]&#x27;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setOption</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    msg[<span class="built_in">this</span>.name] = <span class="built_in">this</span>.value;</span><br><span class="line">    toggle();</span><br><span class="line">&#125;</span><br><span class="line">options.forEach(<span class="function"><span class="params">option</span> =&gt;</span> option.addEventListener(<span class="string">&#x27;change&#x27;</span>, setOption));</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateText</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    msg.text = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;[name=&quot;text&quot;]&#x27;</span>).value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&#x27;[name=&quot;text&quot;]&#x27;</span>).addEventListener(<span class="string">&#x27;change&#x27;</span>, updateText);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="SpeechSynthesisUtterance接口"><a href="#SpeechSynthesisUtterance接口" class="headerlink" title="SpeechSynthesisUtterance接口"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesisUtterance">SpeechSynthesisUtterance</a>接口</h4><p>属于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> 的一个接口，可以发出speech请求。</p>
-<h5 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpeechSynthesisUtterance.SpeechSynthesisUtterance()</span><br></pre></td></tr></table></figure>
+  
 
-<p>返回一个新的 <code>SpeechSynthesisUtterance</code> 实例对象。</p>
-<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ul>
-<li><p><code>SpeechSynthesisUtterance.lang</code> (en-US)</p>
-<p>获取或设置朗读的语言</p>
-</li>
-<li><p><code>SpeechSynthesisUtterance.pitch</code> (en-US)</p>
-<p>获取或设置朗读的音调</p>
-</li>
-<li><p><code>SpeechSynthesisUtterance.rate</code> (en-US)</p>
-<p>获取或设置朗读的速率</p>
-</li>
-<li><p><code>SpeechSynthesisUtterance.text</code> (en-US)</p>
-<p>获取或设置朗读的文本内容</p>
-</li>
-<li><p><code>SpeechSynthesisUtterance.voice</code></p>
-<p>获取或设置朗读的voice</p>
-</li>
-<li><p><code>SpeechSynthesisUtterance.volume</code> (en-US)</p>
-<p>获取或设置朗读的音量</p>
-</li>
-</ul>
-<h4 id="SpeechSynthesis-接口"><a href="#SpeechSynthesis-接口" class="headerlink" title="SpeechSynthesis 接口"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">SpeechSynthesis</a> 接口</h4><p>属于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> 的一个<strong>控制</strong>speech服务的接口，可以返回设备合成声音的信息，开始或者暂停speech等。</p>
-<h5 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h5><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/paused"><code>SpeechSynthesis.paused</code></a> ：SpeechSynthesis对象是否暂停状态</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending"><code>SpeechSynthesis.pending</code></a> ： utterance queue 是都还有没有余留没有读的 utterance。</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking"><code>SpeechSynthesis.speaking</code></a>：一个utterance是否在被读的阶段</p>
-<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ul>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/cancel"><code>SpeechSynthesis.cancel()</code></a></p>
-<p>移除utterance queue队列中所有的utterances</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices"><code>SpeechSynthesis.getVoices()</code></a></p>
-<p>返回现有设备所有可用的voices的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice"><code>SpeechSynthesisVoice</code></a> 对象</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pause"><code>SpeechSynthesis.pause()</code></a></p>
-<p>把 <code>SpeechSynthesis</code> 对象放在暂停状态</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/resume"><code>SpeechSynthesis.resume()</code></a></p>
-<p>把 <code>SpeechSynthesis</code> 对象放在重新打开状态</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speak"><code>SpeechSynthesis.speak()</code></a></p>
-<p>在utterance queue队列中增加一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance"><code>utterance</code></a> </p>
-</li>
-</ul>
-<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/voiceschanged_event"><code>voiceschanged</code></a></p>
-<p>在<code>SpeechSynthesis.getVoices()</code>方法返回的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice"><code>SpeechSynthesisVoice</code></a> 对象变化的时候触发</p>
-<p><u><strong>注意</strong>：<code>SpeechSynthesisUtterance</code>接口和<code>SpeechSynthesis</code>接口的关系</u></p>
-<ol>
-<li>二者都属于Web Speech API 接口</li>
-<li>前者是设置朗读的配置参数，包括语言，速度，语调，内容等</li>
-<li>后者是控制朗读的行为，包括获取浏览器支持的朗读语言，文本朗读，暂停，停止等</li>
-</ol>
-<h4 id="CSS知识补充"><a href="#CSS知识补充" class="headerlink" title="CSS知识补充"></a>CSS知识补充</h4><ul>
-<li><h5 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type()"></a>:nth-of-type()</h5><p>伪类选择器，匹配相同类型（也就是相同标签）的元素</p>
-<p>和<code>:nth-child</code>区别在于后者不是同类。</p>
-</li>
-<li><p><code>calc()</code>方法 允许计算</p>
-</li>
-</ul>
-<blockquote>
-<p>JS30的第23个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#56;&#48;&#x33;&#x31;&#x30;&#53;&#53;&#51;&#56;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#49;&#56;&#48;&#x33;&#x31;&#x30;&#53;&#53;&#51;&#56;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-25T06:10:10.000Z" title="2022/2/25 下午2:10:10">2022-02-25</time>发表</span><span class="level-item"><time dateTime="2022-02-25T07:19:36.979Z" title="2022/2/25 下午3:19:36">2022-02-25</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">6 分钟读完 (大约897个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/25/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Link-Highlighter-22/">【原生javascript项目】Link Highlighter 22</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第22天的“链接高亮显示”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/22%20linkHighlighter/index.html">https://github.com/janice143/JavaScript30Program/tree/master/22%20linkHighlighter/index.html</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_HighLighter.png?raw=true"></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目页面主要有一个导航栏菜单和正文内容组成。页面实现的效果是：当鼠标进入<code>a</code>标签时，背景颜色以白色高亮显示，当鼠标移到下一个<code>a</code>标签时，白色高亮块上一个<code>a</code>标签中移动下来。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>Element.getBoundingClientRect()</code></li>
-<li><code>window.scrollY</code></li>
-<li><code>mouseenter</code>事件</li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><ul>
-<li><p><code>nav</code>标签包裹的导航栏菜单</p>
-<ul>
-<li><code>ul</code>标签<ul>
-<li>5个<code>li</code>标签，为菜单内容</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>类名为<code>wrapper</code>的<code>div</code>标签包含了正文内容</p>
-</li>
-<li><p>链接用<code>a</code>标签标记，在JS中要实现高亮显示</p>
-</li>
-</ul>
-<h4 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h4><p>使用如下技巧将外边距和内边距重置为零</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*, *:before, *:after &#123;</span><br><span class="line">  box-sizing: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
-<p>高亮块的CSS样式，基本思路是加上绝对定位（相对于最近定位的父元素定位，在这里父元素是body），通过在JS中改变<code>top</code>和<code>left</code>以及<code>width</code>和<code>height</code>属性，来呈现不同链接选中的状态。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.highlight</span>&#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.2s</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">2px</span> solid white;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>JS的大致思路是：</p>
-<ol>
-<li><p>获取链接标签，以及创建<code>span</code>标签，用来添加<code>highlight</code>样式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> triggers = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> highlight = <span class="built_in">document</span>.createElement(<span class="string">&#x27;span&#x27;</span>);</span><br><span class="line">highlight.classList.add(<span class="string">&#x27;highlight&#x27;</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(highlight);</span><br></pre></td></tr></table></figure></li>
-<li><p>获取当前鼠标进入的链接元素的位置信息</p>
-</li>
-<li><p>修改类名为<code>highlight</code>的样式</p>
-</li>
-<li><p>给<code>a</code>标签添加鼠标进入<code>mouseenter</code>事件</p>
-</li>
-</ol>
-<ul>
-<li>获取链接标签，以及创建<code>span</code>标签，用来添加<code>highlight</code>样式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">highlightter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> link = <span class="built_in">this</span>.getBoundingClientRect();</span><br><span class="line">    <span class="built_in">console</span>.log(link);</span><br><span class="line">    <span class="keyword">const</span> linkCoordinates =&#123;</span><br><span class="line">        <span class="attr">width</span>:link.width,</span><br><span class="line">        <span class="attr">height</span>:link.height,</span><br><span class="line">        <span class="attr">top</span>:link.top+<span class="built_in">window</span>.scrollY,</span><br><span class="line">        <span class="attr">left</span>:link.left+<span class="built_in">window</span>.scrollX</span><br><span class="line">    &#125;;</span><br><span class="line">    highlight.style.width = <span class="string">`<span class="subst">$&#123;linkCoordinates.width&#125;</span>px`</span>;</span><br><span class="line">    highlight.style.height = <span class="string">`<span class="subst">$&#123;linkCoordinates.height&#125;</span>px`</span>;</span><br><span class="line">    highlight.style.transform = <span class="string">`translate(<span class="subst">$&#123;linkCoordinates.left&#125;</span>px,<span class="subst">$&#123;linkCoordinates.top&#125;</span>px)`</span>;</span><br><span class="line">&#125;</span><br><span class="line">triggers.forEach(<span class="function"><span class="params">a</span> =&gt;</span> a.addEventListener(<span class="string">&#x27;mouseenter&#x27;</span>, highlightter));</span><br></pre></td></tr></table></figure>
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
 
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="Element-getBoundingClientRect"><a href="#Element-getBoundingClientRect" class="headerlink" title="Element.getBoundingClientRect()"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">Element.getBoundingClientRect()</a></h4><p>返回一个DOMRect对象，包含了元素的大小、相对于视口的位置信息。</p>
-<p><strong>DOMRect相关只读属性</strong></p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>height</td>
-<td>矩形盒子的高度</td>
-</tr>
-<tr>
-<td>width</td>
-<td>矩形盒子的宽度</td>
-</tr>
-<tr>
-<td>top</td>
-<td>Y 轴，相对于视口原点（viewport origin）顶部</td>
-</tr>
-<tr>
-<td>left</td>
-<td>X 轴，相对于视口原点左侧</td>
-</tr>
-<tr>
-<td>bottom</td>
-<td>Y 轴，相对于视口原点底部</td>
-</tr>
-<tr>
-<td>right</td>
-<td>X 轴，相对于视口原点右侧</td>
-</tr>
-<tr>
-<td>x</td>
-<td>盒子左上角位置的X轴横坐标</td>
-</tr>
-<tr>
-<td>y</td>
-<td>盒子左上角位置的Y轴横坐标</td>
-</tr>
-</tbody></table>
-<h4 id="window-scrollY"><a href="#window-scrollY" class="headerlink" title="window.scrollY"></a>window.scrollY</h4><p>鼠标滑动的垂直距离</p>
-<p>window.scrollX 鼠标滑动的水平距离</p>
-<h4 id="mousemove-mouseenter-和mouseover区别"><a href="#mousemove-mouseenter-和mouseover区别" class="headerlink" title="mousemove, mouseenter 和mouseover区别"></a>mousemove, mouseenter 和mouseover区别</h4><p>mousemove：鼠标指针进入<code>div</code>以及其子元素时触发；</p>
-<p> mouseenter：鼠标指针进入<code>div</code>时触发；</p>
-<p>mouseover：鼠标每次滑过<code>div</code>时触发</p>
-<p>点击此链接体验三者的效果 👉 <a target="_blank" rel="noopener" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseenter_mouseover#:~:text=mouseenter%20and%20mouseover.-,The%20mouseover%20event%20triggers%20when%20the%20mouse%20pointer%20enters%20the,moved%20over%20the%20div%20element.">体验</a></p>
-<blockquote>
-<p>JS30的第22个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#x35;&#x35;&#x33;&#x38;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#109;">&#x31;&#x38;&#x30;&#x33;&#49;&#x30;&#x35;&#x35;&#x33;&#x38;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#109;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-24T13:43:51.000Z" title="2022/2/24 下午9:43:51">2022-02-24</time>发表</span><span class="level-item"><time dateTime="2022-02-25T05:55:44.518Z" title="2022/2/25 下午1:55:44">2022-02-25</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">3 分钟读完 (大约523个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/24/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Geolocation-21/">【原生javascript项目】Geolocation 21</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第21天的“地理位置”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/21%20geoLocation/index.html">https://github.com/janice143/JavaScript30Program/tree/master/21%20geoLocation/index.html</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_geoLocation21.png?raw=true"></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目是一个可视化的指南，利用网络地址位置<code>Web Geolocation API</code>获取的地理位置和速度。</p>
-<p>本项目的JS代码相对比较简单，但是由于电脑一般没有速度及方向传感器，所以实际的功能并没显示出来，只是提供了一种实现途径。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><code>Geolocation.watchPosition()</code> API<ul>
-<li><code>.coords.speed</code></li>
-<li><code>.coords.heading</code></li>
-</ul>
-</li>
-<li>CSS <code>radial-gradient</code></li>
-<li><code>background-attachment</code>设置背景图是否固定不到</li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><ul>
-<li><code>svg</code>图片元素</li>
-<li><code>h1</code>元素<ul>
-<li>类名为<code>speed-value</code> <code>span</code>标签</li>
-<li>类名为<code>speed-unit</code> <code>span</code>标签</li>
-</ul>
-</li>
-</ul>
-<h4 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h4><ul>
-<li>设置背景图片</li>
-</ul>
-<p><code>radial-gradient</code>由圆心向外的径向的颜色渐变</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">radial-gradient(rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,.<span class="number">1</span>) <span class="number">15%</span>, transparent <span class="number">20%</span>) <span class="number">0</span> <span class="number">1px</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>JS的大致思路是：</p>
-<ol>
-<li>请求调用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation">Geolocation接口</a> </li>
-<li>获取当前的地理位置信息data</li>
-<li>显示速度信息 <code>data.coords.speed</code></li>
-<li>改变页面中指南针的朝向 <code>data.coords.heading</code></li>
-</ol>
-<p>具体代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.watchPosition(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    speed.textContent = data.coords.speed;</span><br><span class="line">    arrow.style.transform = <span class="string">`rotate(<span class="subst">$&#123;data.coords.heading&#125;</span>deg)`</span>;</span><br><span class="line">&#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<script src="/myblog.github.io/js/activeNav.js"></script>
 
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="Geolocation接口-：获取设备的地理位置信息"><a href="#Geolocation接口-：获取设备的地理位置信息" class="headerlink" title="Geolocation接口 ：获取设备的地理位置信息"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation">Geolocation接口</a> ：获取设备的地理位置信息</h4><p>方法 1：<code>Geolocation.getCurrentPosition()</code> 获取当前的位置信息</p>
-<p>方法 2：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition"><code>Geolocation.watchPosition()</code></a> 返回位置变化后的最新信息</p>
-<p>方法 3：<code>Geolocation.clearWatch()</code> 删除使用<code>watchPosition()</code>后的句柄</p>
-<blockquote>
-<p>JS30的第21个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#56;&#48;&#x33;&#49;&#x30;&#x35;&#x35;&#51;&#x38;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#49;&#56;&#48;&#x33;&#49;&#x30;&#x35;&#x35;&#51;&#x38;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a>.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-22T12:56:50.000Z" title="2022/2/22 下午8:56:50">2022-02-22</time>发表</span><span class="level-item"><time dateTime="2022-02-24T02:57:30.950Z" title="2022/2/24 上午10:57:30">2022-02-24</time>更新</span><span class="level-item"><a class="link-muted" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">30个原生javascript项目</a></span><span class="level-item">8 分钟读完 (大约1211个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/myblog.github.io/2022/02/22/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Speech-Detetion-20/">【原生javascript项目】Speech Detetion 20</a></h1><div class="content"><blockquote>
-<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
-<p>本项目为第20天的“语音检测”项目。Have fun with the website! ♪(^∇^*)</p>
-</blockquote>
-<p>源代码：<a target="_blank" rel="noopener" href="https://github.com/janice143/JavaScript30Program/tree/master/20%20speechDetection/index.html">https://github.com/janice143/JavaScript30Program/tree/master/20%20speechDetection/index.html</a></p>
-<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目是一个语音识别系统，网页首先会向用户请求麦克风权限，允许后可识别出用户的speech（语言为每个英语<code>en-US&#39;</code>)，并显示在网页中。</p>
-<p>本项目用到的语音识别系统是<code>Web Speech API</code>，只能在 Chrome浏览器上使用，而且功能也一直在完善中，因此，本项目只是提供一种语音识别系统的解决思路，以便参考。</p>
-<h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
-<li><p><code>Web Speech API</code></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"><code>SpeechRecognition</code></a> 接口<ul>
-<li><code>SpeechRecognition.interimResults</code></li>
-<li><code>SpeechRecognition.lang</code></li>
-<li><code>SpeechRecognition.start()</code></li>
-<li><code>new SpeechRecognition()</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>result</code>事件</p>
-<ul>
-<li><code>e.results</code></li>
-<li><code>result.transcript</code></li>
-<li><code>e.results[0].isFinal</code></li>
-</ul>
-</li>
-<li><p><code>p.textContent </code></p>
-</li>
-<li><p><code>end</code>事件</p>
-</li>
-</ul>
-<h2 id="项目过程"><a href="#项目过程" class="headerlink" title="项目过程"></a>项目过程</h2><h4 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h4><p>只有一个<code>div</code>元素，可编辑<code>contenteditable</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;words&quot;</span> <span class="attr">contenteditable</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><p>JS的大致思路是：</p>
-<ol>
-<li>添加Chrome support</li>
-<li>定义语音识别实例</li>
-<li>开启语音识别功能</li>
-<li>监听<code>result</code>事件，实时获取捕获到的speech，并通过创建元素的方法显示到网页中</li>
-<li>监听<code>end</code>事件，当语音捕获结束后，重新开启语音识别功能</li>
-</ol>
-<ul>
-<li><p>Chrome support</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"><code>SpeechRecognition</code></a> 接口只能在 Chrome浏览器上使用，，因此需要适配Chrome浏览器的对象以及未来其他浏览器也能使用的一些修正</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.SpeechRecognition = <span class="built_in">window</span>.SpeechRecognition || <span class="built_in">window</span>.webkitSpeechRecognition;</span><br></pre></td></tr></table></figure></li>
-<li><p>定义语音识别实例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> recognition = <span class="keyword">new</span> SpeechRecognition();</span><br></pre></td></tr></table></figure></li>
-<li><p>创建一个<code>p</code>元素，后面可以讲识别到的语音放进去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> words = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.words&#x27;</span>);</span><br><span class="line">words.appendChild(p);</span><br></pre></td></tr></table></figure></li>
-<li><p>打开语音识别功能，监听<code>result</code>事件，实时获取捕获到的speech，并显示到网页中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">recognition.addEventListener(<span class="string">&#x27;result&#x27;</span>,<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> transcript = <span class="built_in">Array</span>.from(e.results)</span><br><span class="line">    .map(<span class="function"><span class="params">result</span> =&gt;</span> result[<span class="number">0</span>])</span><br><span class="line">    .map(<span class="function"><span class="params">result</span> =&gt;</span> result.transcript)</span><br><span class="line">    .join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    p.textContent = transcript;</span><br><span class="line">    <span class="comment">// console.log(e.results[0].transcript)</span></span><br><span class="line">    <span class="keyword">if</span> (e.results[<span class="number">0</span>].isFinal) &#123;</span><br><span class="line">        p = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>);</span><br><span class="line">        words.appendChild(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">recognition.start(); <span class="comment">// 打开语音功能</span></span><br></pre></td></tr></table></figure></li>
-<li><p>监听<code>end</code>事件，当语音捕获结束后，重新开启语音识别功能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recognition.addEventListener(<span class="string">&#x27;end&#x27;</span>, recognition.start);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="Web-Speech-API-语音识别和语音输出"><a href="#Web-Speech-API-语音识别和语音输出" class="headerlink" title="Web Speech API 语音识别和语音输出"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Web Speech API</a> 语音识别和语音输出</h4><p>主要的语音识别接口是<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"><code>SpeechRecognition</code></a> 接口，只能在 Chrome浏览器上使用</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"><code>SpeechRecognition</code></a> 接口的一些属性：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/interimResults"><code>SpeechRecognition.interimResults</code></a>：设置语音识别系统是否返回中间结果，还是最终结果</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/lang"><code>SpeechRecognition.lang</code></a>: 设置语音识别系统的语言</p>
-</li>
-</ul>
-<h4 id="innerText、textContent和innerHTML三者的区别"><a href="#innerText、textContent和innerHTML三者的区别" class="headerlink" title="innerText、textContent和innerHTML三者的区别"></a>innerText、textContent和innerHTML三者的区别</h4><p><code>innerText</code>、<code>textContent</code>和<code>innerHTML</code>可以设置标签中的文本内容。</p>
-<p><strong>不同点</strong></p>
-<p><code>innerHTML</code>可以将内容中的标签为标签，而其他两个则不行，只是纯文本</p>
-<p><code>innerText</code>，<code>textContent</code>获取的是该标签和该标签下子标签中的文本内容</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;mylinks&quot;</span>&gt;</span></span><br><span class="line">  This is my <span class="tag">&lt;<span class="name">b</span>&gt;</span>link collection<span class="tag">&lt;/<span class="name">b</span>&gt;</span>:</span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.borland.com&quot;</span>&gt;</span>Bye bye <span class="tag">&lt;<span class="name">b</span>&gt;</span>Borland<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.microfocus.com&quot;</span>&gt;</span>Welcome to <span class="tag">&lt;<span class="name">b</span>&gt;</span>Micro Focus<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> dv = <span class="built_in">document</span>.getElementById(<span class="string">&quot;mylinks&quot;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(dv.textContent);        </span></span><br><span class="line"><span class="javascript">    <span class="comment">// This is my link collection:</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// Bye bye Borland </span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// Welcome to Micro Focus</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(dv.innerText);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// This is my link collection:</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// Bye bye Borland</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// Welcome to Micro Focus</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(dv.innerHTML);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// This is my &lt;b&gt;link collection&lt;/b&gt;:</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &lt;ul&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &lt;li&gt;&lt;a href=&quot;www.borland.com&quot;&gt;Bye bye &lt;b&gt;Borland&lt;/b&gt; &lt;/a&gt;&lt;/li&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &lt;li&gt;&lt;a href=&quot;www.microfocus.com&quot;&gt;Welcome to &lt;b&gt;Micro Focus&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &lt;/ul&gt;       </span></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="let-var-const区别"><a href="#let-var-const区别" class="headerlink" title="let var const区别"></a>let var const区别</h4><p>var 声明会变量提升</p>
-<p>let 块级作用域，声明不会变量提升</p>
-<p>const 块级作用域声明的变量为常量，值不可修改</p>
-<p><strong>更多内容见参考博客[2-4]</strong></p>
-<h4 id="CSS-position"><a href="#CSS-position" class="headerlink" title="CSS position"></a>CSS position</h4><table>
-<thead>
-<tr>
-<th>值</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>relative</td>
-<td>相对自己原来（正常文档流）的位置</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td>脱离文档流，相对于最近的已定位父元素</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>脱离文档流，相对于浏览器窗口是固定位置</td>
-</tr>
-<tr>
-<td>sticky</td>
-<td>基于用户的滚动位置来定位。行为就像 relative，而当页面滚动超出目标区域时，它的表现就像 fixed，固定在目标位置。</td>
-</tr>
-<tr>
-<td>static</td>
-<td>HTML 元素的默认值，即没有定位，遵循正常的文档流对象。</td>
-</tr>
-</tbody></table>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903684317380616">innerText、textContent和innerHTML三者的区别</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6925641096152399880">一看就懂的var、let、const三者区别</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JobsOfferings/p/varLetConst.html">var、let和const的区别详解</a></li>
-<li><a target="_blank" rel="noopener" href="https://tsejx.github.io/javascript-guidebook/core-modules/executable-code-and-execution-contexts/compilation/blocks-as-scopes">块作用域</a></li>
-</ol>
-<blockquote>
-<p>JS30的第20个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#x38;&#x30;&#51;&#49;&#48;&#53;&#x35;&#x33;&#56;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#49;&#x38;&#x30;&#51;&#49;&#48;&#53;&#x35;&#x33;&#56;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;</a>.</p>
-</blockquote>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/page/0/">上一页</a></div><div class="pagination-next"><a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/page/2/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">1</a></li><li><a class="pagination-link" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/page/2/">2</a></li><li><a class="pagination-link" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myblog.github.io/img/avatar.png" alt="iaine"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">iaine</p><p class="is-size-6 is-block">Explorer.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myblog.github.io/archives"><p class="title">58</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myblog.github.io/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myblog.github.io/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/janice143?tab=repositories" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="level-start"><span class="level-item">30个原生javascript项目</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/ejs-js/"><span class="level-start"><span class="level-item">ejs.js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/node-js/"><span class="level-start"><span class="level-item">node.js</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myblog.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">前端面试基础</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-15T08:37:35.000Z">2022-10-15</time></p><p class="title"><a href="/myblog.github.io/2022/10/15/React-%E5%AD%A6%E4%B9%A001/">React 学习01</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T14:19:15.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%BA%8C%E6%AC%A1vue-nodejs-mongodb%E9%A1%B9%E7%9B%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">记录第二次vue-nodejs-mongodb项目服务器部署</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T13:43:03.000Z">2022-09-17</time></p><p class="title"><a href="/myblog.github.io/2022/09/17/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8B%96%E6%8B%BD%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%88%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E9%A1%B9%E7%9B%AE%EF%BC%89/">可视化拖拽平台——低代码编辑器（第四届字节青训营项目）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T04:21:46.000Z">2022-08-20</time></p><p class="title"><a href="/myblog.github.io/2022/08/20/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%91%E5%B8%83npm/">第一次发布npm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T12:33:33.000Z">2022-08-19</time></p><p class="title"><a href="/myblog.github.io/2022/08/19/vue-cli3%E4%BD%BF%E7%94%A8-webpack-bundle-analyzer%E6%8F%92%E4%BB%B6/">第一次在vue-cli3 使用 webpack-bundle-analyzer 插件</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/CSS/"><span class="tag">CSS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/HTML/"><span class="tag">HTML</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JS30-30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">JS30;30个原生javascript项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="tag">JavaScript知识点</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/React/"><span class="tag">React</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/ejs-js/"><span class="tag">ejs.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/js/"><span class="tag">js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/vuejs/"><span class="tag">vuejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/"><span class="tag">原生javascript项目</span><span class="tag">27</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myblog.github.io/">Iaine&#039;s page</a><p class="is-size-7"><span>&copy; 2022 iaine</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>
-                            	var now = new Date();
-                                function createtime() {
-                                        var grt= new Date("9/1/2020 16:23:00");//此处修改你的建站时间或者网站上线时间
-                                    now.setTime(now.getTime()+250);
-                                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-                                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-                                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-                                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-                                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-                                    document.getElementById("timeDate").innerHTML = "| 本站已运行 "+dnum+" 天 ";
-                                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-                                }
-                                setInterval("createtime()",250);
-                            		</script></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
+      <div class="flex-container">
+        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
+
+<div class="container tag-details">
+  <div class="content-title">
+    <h2>
+      <span>原生javascript项目</span>
+    </h2>
+  </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Countdown Timer 29">
+        <span class="time-m-d">2022-03-11</span>
+        <a href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Countdown-Timer-29/">
+          <span>【原生javascript项目】Countdown Timer 29</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Video Speed Controller 28">
+        <span class="time-m-d">2022-03-11</span>
+        <a href="/myblog.github.io/2022/03/11/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Video-Speed-Controller-28/">
+          <span>【原生javascript项目】Video Speed Controller 28</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Click and drag 27">
+        <span class="time-m-d">2022-03-05</span>
+        <a href="/myblog.github.io/2022/03/05/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Click-and-drag-27/">
+          <span>【原生javascript项目】Click and drag 27</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Strip follow along nav 26">
+        <span class="time-m-d">2022-02-27</span>
+        <a href="/myblog.github.io/2022/02/27/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Strip-follow-along-nav-26/">
+          <span>【原生javascript项目】Strip follow along nav 26</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Event Capture 25">
+        <span class="time-m-d">2022-02-27</span>
+        <a href="/myblog.github.io/2022/02/27/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Event-Capture-25/">
+          <span>【原生javascript项目】Event Capture 25</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Sticky Nav 24">
+        <span class="time-m-d">2022-02-26</span>
+        <a href="/myblog.github.io/2022/02/26/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Sticky-Nav-24/">
+          <span>【原生javascript项目】Sticky Nav 24</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Speech Synthesis 23">
+        <span class="time-m-d">2022-02-25</span>
+        <a href="/myblog.github.io/2022/02/25/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Speech-Synthesis-23/">
+          <span>【原生javascript项目】Speech Synthesis 23</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Link Highlighter 22">
+        <span class="time-m-d">2022-02-25</span>
+        <a href="/myblog.github.io/2022/02/25/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Link-Highlighter-22/">
+          <span>【原生javascript项目】Link Highlighter 22</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Geolocation 21">
+        <span class="time-m-d">2022-02-24</span>
+        <a href="/myblog.github.io/2022/02/24/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Geolocation-21/">
+          <span>【原生javascript项目】Geolocation 21</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="post-list">
+      <div class="post-item" title="【原生javascript项目】Speech Detetion 20">
+        <span class="time-m-d">2022-02-22</span>
+        <a href="/myblog.github.io/2022/02/22/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Speech-Detetion-20/">
+          <span>【原生javascript项目】Speech Detetion 20</span>
+        </a>
+      </div>
+    </div>
+  
+  <nav class="post-navigation">
+    
+    <span class="page-num">1 / 3</span>
+    
+      <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/page/2/"><i class="iconfont icon-angleright"></i></a>
+    
+  </nav>
+</div>
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/myblog.github.io/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
             }
-        };</script><script src="/myblog.github.io/js/column.js"></script><script src="/myblog.github.io/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myblog.github.io/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
         },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
       });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myblog.github.io/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myblog.github.io/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/myblog.github.io/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/myblog.github.io/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+  
+<script src="/myblog.github.io/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
