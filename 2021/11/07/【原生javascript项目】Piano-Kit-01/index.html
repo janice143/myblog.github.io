@@ -1,177 +1,280 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN" color-mode="light">
-
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="iaine" />
-  <meta name="description" content="" />
-  
-  
-  <title>
-    
-      【原生javascript项目】Piano-Kit-01 
-      
-      
-      |
-    
-     iaine&#39;s blog
-  </title>
-
-  
-    <link rel="apple-touch-icon" href="/images/favicon.png">
-    <link rel="icon" href="/images/favicon.png">
-  
-
-  <!-- Raleway-Font -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-  <!-- hexo site css -->
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
-  <!-- 代码块风格 -->
-  
-
-  <!-- jquery3.3.1 -->
-  
-    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
-  
-
-  <!-- fancybox -->
-  
-    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
-    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
-  
-  
-<script src="/myblog.github.io/js/fancybox.js"></script>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog.github.io/img/favicon.ico">
+  <link rel="icon" href="/myblog.github.io/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="iaine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="引言本文介绍如何用javascripty语法写一个简单的琴键(drum ang piano)网页，通过敲击特定键盘（音键），可以发出不同音调。 网址为(https:&#x2F;&#x2F;janice143.github.io&#x2F;musicKit.github.io&#x2F;) 正文1网页布局与功能网页整体分为3个部分： 1是最顶上居中排布的乐器切换(Drum Kit, Piano Kit)组块，选中响应的kit，背景图和琴键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【原生javascript项目】Piano-Kit-01">
+<meta property="og:url" content="http://iainespace.work/portfolio/2021/11/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Piano-Kit-01/index.html">
+<meta property="og:site_name" content="iaine&#39;s blog">
+<meta property="og:description" content="引言本文介绍如何用javascripty语法写一个简单的琴键(drum ang piano)网页，通过敲击特定键盘（音键），可以发出不同音调。 网址为(https:&#x2F;&#x2F;janice143.github.io&#x2F;musicKit.github.io&#x2F;) 正文1网页布局与功能网页整体分为3个部分： 1是最顶上居中排布的乐器切换(Drum Kit, Piano Kit)组块，选中响应的kit，背景图和琴键">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-07T11:44:12.000Z">
+<meta property="article:modified_time" content="2023-06-21T13:43:45.725Z">
+<meta property="article:author" content="iaine">
+<meta property="article:tag" content="原生javascript项目">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>【原生javascript项目】Piano-Kit-01 - iaine&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/myblog.github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/myblog.github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/myblog.github.io/css/highlight-dark.css" />
   
 
-  
 
-  <script>
-    var html = document.documentElement
-    const colorMode = localStorage.getItem('color-mode')
-    if (colorMode) {
-      document.documentElement.setAttribute('color-mode', colorMode)
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"iainespace.work","root":"/myblog.github.io/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/myblog.github.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
+  <script  src="/myblog.github.io/js/utils.js" ></script>
+  <script  src="/myblog.github.io/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
-  <body>
-    <div id="app">
-      <div class="header">
-  <div class="avatar">
-    <a href="/">
-      <!-- 头像取消懒加载，添加no-lazy -->
-      
-        <img src="/images/avatar.png" alt="">
-      
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/myblog.github.io/">
+      <strong>Fluid</strong>
     </a>
-    <div class="nickname"><a href="/">Oranges</a></div>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
   </div>
-  <div class="navbar">
-    <ul>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/myblog.github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【原生javascript项目】Piano-Kit-01"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-07 19:44" pubdate>
+          2021年11月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          10k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          85 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
       
-        <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
-        </li>
-      
-        <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
-        </li>
-      
-        <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/friends/">
-          <a href="/friends/">Friends</a>
-        </li>
-      
-        <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
-        </li>
-      
-    </ul>
+    </div>
   </div>
 </div>
 
+</div>
 
-<script src="/myblog.github.io/js/activeNav.js"></script>
+  </header>
 
+  <main>
+    
+      
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
 
-      <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+    </div>
 
-
-  <!-- LaTex Display -->
-
-  
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
-  
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    }
-  </script>
-
-
-
-
-
-  <!-- clipboard -->
-
-  
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
-  
-  
-<script src="/myblog.github.io/js/codeCopy.js"></script>
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">【原生javascript项目】Piano-Kit-01</div>
-      <div class="post-attach">
-        <span class="post-pubtime">
-          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2021-11-07 19:44:12
-        </span>
-        
-              <span class="post-tags">
-                <i class="iconfont icon-tags mr-10" title="标签"></i>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【原生javascript项目】Piano-Kit-01</h1>
+            
+            
+              <div class="markdown-body">
                 
-                <span class="span--tag mr-8">
-                  <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" title="原生javascript项目">
-                    #原生javascript项目
-                  </a>
-                </span>
-                
-              </span>
-          
-      </div>
-      <div class="markdown-body">
-        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>本文介绍如何用javascripty语法写一个简单的琴键(drum ang piano)网页，通过敲击特定键盘（音键），可以发出不同音调。</p>
+                <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>本文介绍如何用javascripty语法写一个简单的琴键(drum ang piano)网页，通过敲击特定键盘（音键），可以发出不同音调。</p>
 <p>网址为(<a target="_blank" rel="noopener" href="https://janice143.github.io/musicKit.github.io/">https://janice143.github.io/musicKit.github.io/</a>)</p>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="1网页布局与功能"><a href="#1网页布局与功能" class="headerlink" title="1网页布局与功能"></a>1网页布局与功能</h4><p>网页整体分为3个部分：</p>
 <p>1是最顶上居中排布的乐器切换(Drum Kit, Piano Kit)组块，选中响应的kit，背景图和琴键切换为响应的内容，同时kit字体变为白色；</p>
@@ -180,17 +283,17 @@
 <p>琴键可以通过鼠标点击或者按下响应的键盘来操作，可以发出对应的音效（黄色字体表示音效的名称）。琴键被点击按下后，加以一定的css动画（黄色高亮边框）来区分。</p>
 <h4 id="2实现原理"><a href="#2实现原理" class="headerlink" title="2实现原理"></a>2实现原理</h4><p>一、 html代码</p>
 <p>1 乐器切换组块：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;switch&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;drum chosen&quot;</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;addChosenDrum()&quot;</span>&gt;</span>Drum Kit<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;piano&quot;</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;addChosen()&quot;</span>&gt;</span>Piano Kit<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;switch&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;drum chosen&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;addChosenDrum()&quot;</span>&gt;</span>Drum Kit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;piano&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;addChosen()&quot;</span>&gt;</span>Piano Kit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>2 Drum Kit:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;pianoKit&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key1 key&quot;</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(65)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>DO<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key2 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(83)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>RE<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key3 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(68)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>MI<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key4 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(70)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>FA<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;71&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key5 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(71)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>G<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>SOL<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;72&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key6 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(72)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>H<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>LA<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;74&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key7 key&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(74)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>SI<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/1.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/2.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/3.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/4.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;71&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/5.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;72&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/6.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;74&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/7.MP3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pianoKit&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key1 key&quot;</span> &gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(65)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>DO<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;83&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key2 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(83)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>S<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>RE<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;68&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key3 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(68)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>MI<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;70&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key4 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(70)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>F<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>FA<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;71&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key5 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(71)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>G<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>SOL<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;72&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key6 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(72)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>H<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>LA<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;74&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key7 key&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(74)&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>J<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>SI<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/1.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;83&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/2.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;68&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/3.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;70&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/4.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;71&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/5.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;72&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/6.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;74&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/7.MP3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <br></code></pre></td></tr></table></figure>
 
 <p>3 Piano Kit</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;drumKit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;chosen&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key1 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(65)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>CLAP<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key2 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(83)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>HIHAT<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key3 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(68)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>KICK<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key4 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(70)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>OPENHAP<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;71&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key5 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(71)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>G<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>BOOM<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;72&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key6 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(72)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>H<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>RIDE<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;74&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key7 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(74)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>SNARE<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;75&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key7 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(75)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>TOM<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;76&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key7 key&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#1&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clickPlaySound(76)&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-ABC&quot;</span>&gt;</span>L<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;key-tune&quot;</span>&gt;</span>TINK<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/clap.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/hihat.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/kick.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/openhat.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;71&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/boom.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;72&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/ride.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;74&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/snare.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;75&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/tom.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">&quot;76&quot;</span> <span class="attr">src</span>=<span class="string">&quot;sounds/tink.wav&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs html"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;drumKit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;chosen&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key1 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(65)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>CLAP<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;83&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key2 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(83)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>S<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>HIHAT<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;68&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key3 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(68)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>KICK<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;70&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key4 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(70)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>F<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>OPENHAP<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;71&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key5 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(71)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>G<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>BOOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;72&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key6 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(72)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>H<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>RIDE<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;74&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key7 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(74)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>J<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>SNARE<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;75&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key7 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(75)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>K<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>TOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;76&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key7 key&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#1&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;clickPlaySound(76)&quot;</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-ABC&quot;</span>&gt;</span>L<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;key-tune&quot;</span>&gt;</span>TINK<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/clap.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;83&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/hihat.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;68&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/kick.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;70&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/openhat.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;71&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/boom.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;72&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/ride.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;74&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/snare.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;75&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/tom.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">data-key</span>=<span class="hljs-string">&quot;76&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sounds/tink.wav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>二、css代码</p>
 <p>1 实现顶部的切换组块（Drum Kit, Piano Kit)固定在窗口的某个位置，不占位置，脱离标准文档流；居中排布</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>: fixed;</span><br><span class="line"><span class="attribute">left</span>:<span class="number">0</span>;  </span><br><span class="line"><span class="attribute">right</span>:<span class="number">0</span>;  </span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span> auto; </span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">position</span>: fixed;<br><span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;  <br><span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;  <br><span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br></code></pre></td></tr></table></figure>
 
 <p>2 实现琴键居中排布：用Flex 布局实现垂直、水平居中。</p>
 <p>任何一个容器都可以指定为 Flex 布局（flex容器），display: flex即可实现。采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”Item”。</p>
@@ -201,383 +304,397 @@
 <p>· justify-content:定义了item在主轴（水平方向上）的对齐方式</p>
 <p>·align-items：定义了item在垂直方向上的对齐方式</p>
 <p>· align-content：定义了多跟轴线的对齐方式</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#drumKit</span>,<span class="selector-id">#pianoKit</span>&#123;</span><br><span class="line">    <span class="comment">/* background-color: red; */</span></span><br><span class="line">    <span class="comment">/* 在需要垂直居中的父元素上，设置display:flex和align-items：center。要求：父元素必须显示设置height值 */</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex</span>:<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">90vh</span>; <span class="comment">/*vh 就是当前屏幕可见高度的100% 		</span></span><br><span class="line"><span class="comment">    align-items: center; /*子元素水平居中*/</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center; <span class="comment">/*子元素垂直居中*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#drumKit</span>,<span class="hljs-selector-id">#pianoKit</span>&#123;<br>    <span class="hljs-comment">/* background-color: red; */</span><br>    <span class="hljs-comment">/* 在需要垂直居中的父元素上，设置display:flex和align-items：center。要求：父元素必须显示设置height值 */</span><br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>;<br>    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">90vh</span>; <span class="hljs-comment">/*vh 就是当前屏幕可见高度的100% 		</span><br><span class="hljs-comment">    align-items: center; /*子元素水平居中*/</span><br>    <span class="hljs-attribute">justify-content</span>: center; <span class="hljs-comment">/*子元素垂直居中*/</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>90vh表示占窗口（当前页面窗口）大小的90%。</p>
 <p>3 键盘被点击时，js会添加playing类，其css布局为</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.playing</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.playing</span>&#123;<br>    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.1</span>);<br>    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#ffc600</span>;<br>    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1rem</span> <span class="hljs-number">#ffc600</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>4 drum kit 和piano kit被选中时，js会添加chosen类名。设置css代码让选中字体变为白色以区分</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#switch</span> <span class="selector-class">.chosen</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#switch</span> <span class="hljs-selector-class">.chosen</span>&#123;<br>    <span class="hljs-attribute">color</span>:white;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>三、 javascript代码</p>
 <p>1 切换键盘(drum kit, piano kit)</p>
 <p>对于drum kit：点击drum，添加.chosen，同时去掉piano kit 的.chosen类名；显示drum琴键，隐藏piano琴键；显示响应背景background-image。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 点击a标签，切换键盘:点击piano键盘，添加chosen class，去掉drum的class; 显示对应的piano键盘;在对应的键盘中添加chosen，这样audio也可以对应</span></span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">addChosen</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">const</span> chosen =  <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;piano&quot;</span>);</span><br><span class="line">       <span class="keyword">const</span> notChosen = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;drum&quot;</span>);</span><br><span class="line">       chosen[<span class="number">0</span>].classList.add(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       notChosen[<span class="number">0</span>].classList.remove(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       <span class="keyword">const</span> notChosenKit = <span class="built_in">document</span>.getElementById(<span class="string">&quot;drumKit&quot;</span>);</span><br><span class="line">       notChosenKit.classList.remove(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       notChosenKit.style.display = <span class="string">&quot;none&quot;</span>; </span><br><span class="line">       <span class="keyword">const</span> chosenKit = <span class="built_in">document</span>.getElementById(<span class="string">&quot;pianoKit&quot;</span>);</span><br><span class="line">       chosenKit.style.display = <span class="string">&quot;flex&quot;</span>;</span><br><span class="line">       chosenKit.classList.add(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       <span class="comment">// 换钢琴壁纸</span></span><br><span class="line">       <span class="keyword">const</span> wallpaper = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;html&quot;</span>);</span><br><span class="line">       wallpaper[<span class="number">0</span>].style.backgroundImage=<span class="string">&quot;url(./pianoback.jpg)&quot;</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">addChosenDrum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">const</span> chosen =  <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;drum&quot;</span>);</span><br><span class="line">       <span class="keyword">const</span> notChosen = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;piano&quot;</span>);</span><br><span class="line">       chosen[<span class="number">0</span>].classList.add(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       notChosen[<span class="number">0</span>].classList.remove(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       <span class="keyword">const</span> notChosenKit = <span class="built_in">document</span>.getElementById(<span class="string">&quot;pianoKit&quot;</span>);</span><br><span class="line">       notChosenKit.classList.remove(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       notChosenKit.style.display = <span class="string">&quot;none&quot;</span>; </span><br><span class="line">       <span class="keyword">const</span> chosenKit = <span class="built_in">document</span>.getElementById(<span class="string">&quot;drumKit&quot;</span>);</span><br><span class="line">       chosenKit.style.display = <span class="string">&quot;flex&quot;</span>;</span><br><span class="line">       chosenKit.classList.add(<span class="string">&#x27;chosen&#x27;</span>);</span><br><span class="line">       <span class="comment">// 换鼓壁纸</span></span><br><span class="line">       <span class="keyword">const</span> wallpaper = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;html&quot;</span>);</span><br><span class="line">       wallpaper[<span class="number">0</span>].style.backgroundImage=<span class="string">&quot;url(./drumback.jpg)&quot;</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 点击a标签，切换键盘:点击piano键盘，添加chosen class，去掉drum的class; 显示对应的piano键盘;在对应的键盘中添加chosen，这样audio也可以对应</span><br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addChosen</span>(<span class="hljs-params"></span>)</span>&#123;<br>       <span class="hljs-keyword">const</span> chosen =  <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;piano&quot;</span>);<br>       <span class="hljs-keyword">const</span> notChosen = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;drum&quot;</span>);<br>       chosen[<span class="hljs-number">0</span>].classList.add(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       notChosen[<span class="hljs-number">0</span>].classList.remove(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       <span class="hljs-keyword">const</span> notChosenKit = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;drumKit&quot;</span>);<br>       notChosenKit.classList.remove(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       notChosenKit.style.display = <span class="hljs-string">&quot;none&quot;</span>; <br>       <span class="hljs-keyword">const</span> chosenKit = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;pianoKit&quot;</span>);<br>       chosenKit.style.display = <span class="hljs-string">&quot;flex&quot;</span>;<br>       chosenKit.classList.add(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       <span class="hljs-comment">// 换钢琴壁纸</span><br>       <span class="hljs-keyword">const</span> wallpaper = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;html&quot;</span>);<br>       wallpaper[<span class="hljs-number">0</span>].style.backgroundImage=<span class="hljs-string">&quot;url(./pianoback.jpg)&quot;</span>;<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addChosenDrum</span>(<span class="hljs-params"></span>)</span>&#123;<br>       <span class="hljs-keyword">const</span> chosen =  <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;drum&quot;</span>);<br>       <span class="hljs-keyword">const</span> notChosen = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;piano&quot;</span>);<br>       chosen[<span class="hljs-number">0</span>].classList.add(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       notChosen[<span class="hljs-number">0</span>].classList.remove(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       <span class="hljs-keyword">const</span> notChosenKit = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;pianoKit&quot;</span>);<br>       notChosenKit.classList.remove(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       notChosenKit.style.display = <span class="hljs-string">&quot;none&quot;</span>; <br>       <span class="hljs-keyword">const</span> chosenKit = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;drumKit&quot;</span>);<br>       chosenKit.style.display = <span class="hljs-string">&quot;flex&quot;</span>;<br>       chosenKit.classList.add(<span class="hljs-string">&#x27;chosen&#x27;</span>);<br>       <span class="hljs-comment">// 换鼓壁纸</span><br>       <span class="hljs-keyword">const</span> wallpaper = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;html&quot;</span>);<br>       wallpaper[<span class="hljs-number">0</span>].style.backgroundImage=<span class="hljs-string">&quot;url(./drumback.jpg)&quot;</span>;<br>   &#125;<br></code></pre></td></tr></table></figure>
 
 <p>2 键盘敲击琴键，用keycode标注，给对应琴键添加.playing类名。设置audio.play发出音效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 点击键盘字母时，对应的键添加class属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSound</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`.chosen audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);</span><br><span class="line">    <span class="comment">// console.log(audio);</span></span><br><span class="line">    <span class="keyword">if</span> (!audio) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.chosen div[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);</span><br><span class="line">    key.classList.add(<span class="string">&#x27;playing&#x27;</span>);<span class="comment">//添加playing类属性</span></span><br><span class="line">    audio.currentTime = <span class="number">0</span>; <span class="comment">//音频重头播放</span></span><br><span class="line"></span><br><span class="line">    audio.play();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 点击键盘字母时，对应的键添加class属性</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">playSound</span>(<span class="hljs-params">e</span>)</span>&#123;<br>    <span class="hljs-keyword">const</span> audio = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">`.chosen audio[data-key=&quot;<span class="hljs-subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);<br>    <span class="hljs-comment">// console.log(audio);</span><br>    <span class="hljs-keyword">if</span> (!audio) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">const</span> key = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">`.chosen div[data-key=&quot;<span class="hljs-subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);<br>    key.classList.add(<span class="hljs-string">&#x27;playing&#x27;</span>);<span class="hljs-comment">//添加playing类属性</span><br>    audio.currentTime = <span class="hljs-number">0</span>; <span class="hljs-comment">//音频重头播放</span><br><br>    audio.play();<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>3 如果连续敲击多个琴键，多个琴键都会显示过渡特效（黄色Border,放大1.2倍），为了让最后一个琴键之前的琴键过滤样式去掉，可以利用transitionend事件，让已经过渡的琴键去掉.playing类名。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 去掉playing 类属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.propertyName !=<span class="string">&#x27;transform&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">this</span>.classList.remove(<span class="string">&#x27;playing&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> keys = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.key&#x27;</span>);</span><br><span class="line">keys.forEach(<span class="function"><span class="params">key</span>=&gt;</span>key.addEventListener(<span class="string">&#x27;transitionend&#x27;</span>,removeTransition));</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;keydown&#x27;</span>,playSound);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 去掉playing 类属性</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeTransition</span>(<span class="hljs-params">e</span>)</span>&#123;<br>    <span class="hljs-keyword">if</span> (e.propertyName !=<span class="hljs-string">&#x27;transform&#x27;</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-built_in">this</span>.classList.remove(<span class="hljs-string">&#x27;playing&#x27;</span>);<br>&#125;<br><br><span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;.key&#x27;</span>);<br>keys.forEach(<span class="hljs-function"><span class="hljs-params">key</span>=&gt;</span>key.addEventListener(<span class="hljs-string">&#x27;transitionend&#x27;</span>,removeTransition));<br><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;keydown&#x27;</span>,playSound);<br><br></code></pre></td></tr></table></figure>
 
 <p>4 鼠标点击也可以实现琴键发出音效。设置onclick事件，传入keycode参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clickPlaySound</span>(<span class="params">keycode</span>)</span>&#123;</span><br><span class="line">       <span class="comment">// data-key=keycode;</span></span><br><span class="line">       <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`.chosen audio[data-key=&quot;<span class="subst">$&#123;keycode&#125;</span>&quot;]`</span>);</span><br><span class="line">       <span class="keyword">if</span> (!audio) <span class="keyword">return</span>;</span><br><span class="line">       <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.chosen div[data-key=&quot;<span class="subst">$&#123;keycode&#125;</span>&quot;]`</span>);</span><br><span class="line">       key.classList.add(<span class="string">&#x27;playing&#x27;</span>);<span class="comment">//添加playing类属性</span></span><br><span class="line">       audio.currentTime = <span class="number">0</span>; <span class="comment">//音频重头播放</span></span><br><span class="line">       audio.play();</span><br><span class="line">       <span class="comment">// console.log(audio);</span></span><br><span class="line">   &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickPlaySound</span>(<span class="hljs-params">keycode</span>)</span>&#123;<br>       <span class="hljs-comment">// data-key=keycode;</span><br>       <span class="hljs-keyword">const</span> audio = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">`.chosen audio[data-key=&quot;<span class="hljs-subst">$&#123;keycode&#125;</span>&quot;]`</span>);<br>       <span class="hljs-keyword">if</span> (!audio) <span class="hljs-keyword">return</span>;<br>       <span class="hljs-keyword">const</span> key = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">`.chosen div[data-key=&quot;<span class="hljs-subst">$&#123;keycode&#125;</span>&quot;]`</span>);<br>       key.classList.add(<span class="hljs-string">&#x27;playing&#x27;</span>);<span class="hljs-comment">//添加playing类属性</span><br>       audio.currentTime = <span class="hljs-number">0</span>; <span class="hljs-comment">//音频重头播放</span><br>       audio.play();<br>       <span class="hljs-comment">// console.log(audio);</span><br>   &#125;;<br><br></code></pre></td></tr></table></figure>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>完整代码放在了<a target="_blank" rel="noopener" href="https://github.com/janice143/musicKit.github.io.git">Github</a>上，如果读者有兴趣，不妨试一试。</p>
 
-      </div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-        <div class="prev-or-next">
-          <div class="post-foot-next">
-            
-              <a href="/myblog.github.io/2021/09/02/%E3%80%90python%E3%80%91%E6%B8%85%E7%90%86%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>上一页</span>
-              </a>
-            
-          </div>
-          <div class="post-attach">
-            <span class="post-pubtime">
-              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2021-11-07 19:44:12
-            </span>
-            
-                  <span class="post-tags">
-                    <i class="iconfont icon-tags mr-10" title="标签"></i>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" title="原生javascript项目">
-                        #原生javascript项目
-                      </a>
-                    </span>
-                    
-                  </span>
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" class="category-chain-item">30个原生javascript项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">#原生javascript项目</a>
+      
+    </div>
+  
+</div>
+
+
               
-          </div>
-          <div class="post-foot-prev">
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【原生javascript项目】Piano-Kit-01</div>
+      <div>http://iainespace.work/portfolio/2021/11/07/【原生javascript项目】Piano-Kit-01/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>iaine</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年11月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
-              <a href="/myblog.github.io/2021/11/12/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Real-time-clock-02/" target="_self">
-                <span>下一页</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
           </div>
         </div>
       
     </div>
-    
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">目录</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%9F%E8%83%BD"><span class="toc-text">1网页布局与功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">2实现原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
-      
-    </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
-  
-<script src="/myblog.github.io/js/catalog.js"></script>
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2021/11/12/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Real-time-clock-02/" title="【原生javascript项目】Real time clock 02">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【原生javascript项目】Real time clock 02</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2021/09/02/%E3%80%90python%E3%80%91%E6%B8%85%E7%90%86%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/" title="【python】清理重复图片">
+                        <span class="hidden-mobile">【python】清理重复图片</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
-
-    
-      <div class="comments-container">
-        
-
-
-
-
-
-
-
+            
+          </article>
+        </div>
       </div>
-    
-  </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
 
-        
-<div class="footer">
-  <div class="social">
-    <ul>
-      
-        <li>
-          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
-            <i class="iconfont icon-github"></i>
-          </a>
-        </li>
-      
-    </ul>
+
+  </aside>
+
+
+    </div>
   </div>
+</div>
+
+
+
+
+
   
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
-        
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
-    
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
-        
-    </div>
+  
   
   
 </div>
 
-      </div>
+  </footer>
 
-      <div class="tools-bar">
-        <div class="back-to-top tools-bar-item hidden">
-  <a href="javascript: void(0)">
-    <i class="iconfont icon-chevronup"></i>
-  </a>
-</div>
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-<script src="/myblog.github.io/js/backtotop.js"></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/myblog.github.io/js/events.js" ></script>
+<script  src="/myblog.github.io/js/plugins.js" ></script>
 
 
-
-        
-  <div class="search-icon tools-bar-item" id="search-icon">
-    <a href="javascript: void(0)">
-      <i class="iconfont icon-search"></i>
-    </a>
-  </div>
-
-  <div class="search-overlay hidden">
-    <div class="search-content" tabindex="0">
-      <div class="search-title">
-        <span class="search-icon-input">
-          <a href="javascript: void(0)">
-            <i class="iconfont icon-search"></i>
-          </a>
-        </span>
-        
-          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
-        
-        <span class="search-close-icon" id="search-close-icon">
-          <a href="javascript: void(0)">
-            <i class="iconfont icon-close"></i>
-          </a>
-        </span>
-      </div>
-      <div class="search-result" id="search-result"></div>
-    </div>
-  </div>
-
-  <script type="text/javascript">
-    var inputArea = document.querySelector("#search-input")
-    var searchOverlayArea = document.querySelector(".search-overlay")
-
-    inputArea.onclick = function() {
-      getSearchFile()
-      this.onclick = null
-    }
-
-    inputArea.onkeydown = function() {
-      if(event.keyCode == 13)
-        return false
-    }
-
-    function openOrHideSearchContent() {
-      let isHidden = searchOverlayArea.classList.contains('hidden')
-      if (isHidden) {
-        searchOverlayArea.classList.remove('hidden')
-        document.body.classList.add('hidden')
-        // inputArea.focus()
-      } else {
-        searchOverlayArea.classList.add('hidden')
-        document.body.classList.remove('hidden')
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
-    }
-
-    function blurSearchContent(e) {
-      if (e.target === searchOverlayArea) {
-        openOrHideSearchContent()
-      }
-    }
-
-    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
-    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
-    searchOverlayArea.addEventListener("click", blurSearchContent, false)
-
-    var searchFunc = function (path, search_id, content_id) {
-      'use strict';
-      var $input = document.getElementById(search_id);
-      var $resultContent = document.getElementById(content_id);
-      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
-      $.ajax({
-        // 0x01. load xml file
-        url: path,
-        dataType: "xml",
-        success: function (xmlResponse) {
-          // 0x02. parse xml file
-          var datas = $("entry", xmlResponse).map(function () {
-            return {
-              title: $("title", this).text(),
-              content: $("content", this).text(),
-              url: $("url", this).text()
-            };
-          }).get();
-          $resultContent.innerHTML = "";
-
-          $input.addEventListener('input', function () {
-            // 0x03. parse query to keywords list
-            var str = '<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length <= 0) {
-              return;
-            }
-            // 0x04. perform local searching
-            datas.forEach(function (data) {
-              var isMatch = true;
-              var content_index = [];
-              if (!data.title || data.title.trim() === '') {
-                data.title = "Untitled";
-              }
-              var orig_data_title = data.title.trim();
-              var data_title = orig_data_title.toLowerCase();
-              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
-              var data_content = orig_data_content.toLowerCase();
-              var data_url = data.url;
-              var index_title = -1;
-              var index_content = -1;
-              var first_occur = -1;
-              // only match artiles with not empty contents
-              if (data_content !== '') {
-                keywords.forEach(function (keyword, i) {
-                  index_title = data_title.indexOf(keyword);
-                  index_content = data_content.indexOf(keyword);
-
-                  if (index_title < 0 && index_content < 0) {
-                    isMatch = false;
-                  } else {
-                    if (index_content < 0) {
-                      index_content = 0;
-                    }
-                    if (i == 0) {
-                      first_occur = index_content;
-                    }
-                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
-                  }
-                });
-              } else {
-                isMatch = false;
-              }
-              // 0x05. show search results
-              if (isMatch) {
-                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
-                var content = orig_data_content;
-                if (first_occur >= 0) {
-                  // cut out 100 characters
-                  var start = first_occur - 20;
-                  var end = first_occur + 80;
-
-                  if (start < 0) {
-                    start = 0;
-                  }
-
-                  if (start == 0) {
-                    end = 100;
-                  }
-
-                  if (end > content.length) {
-                    end = content.length;
-                  }
-
-                  var match_content = content.substr(start, end);
-
-                  // highlight all keywords
-                  keywords.forEach(function (keyword) {
-                    var regS = new RegExp(keyword, "gi");
-                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
-                  });
-
-                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
-                }
-                str += "</li>";
-              }
-            });
-            str += "</ul>";
-            if (str.indexOf('<li>') === -1) {
-              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
-            }
-            $resultContent.innerHTML = str;
-          });
-        },
-        error: function(xhr, status, error) {
-          $resultContent.innerHTML = ""
-          if (xhr.status === 404) {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
-          } else {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
-          }
-        }
-      });
-      $(document).on('click', '#search-close-icon', function() {
-        $('#search-input').val('');
-        $('#search-result').html('');
-      });
-    }
-
-    var getSearchFile = function() {
-        var path = "/search.xml";
-        searchFunc(path, 'search-input', 'search-result');
-    }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
   </script>
 
 
 
 
-        
-  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
-    <a href="javascript: void(0)">
-      <i id="theme-icon" class="iconfont icon-moon"></i>
-    </a>
-  </div>
+  
+    <script  src="/myblog.github.io/js/img-lazyload.js" ></script>
+  
+
+
+
 
   
-<script src="/myblog.github.io/js/colorscheme.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
 
 
-
-        
   
-    <div class="share-icon tools-bar-item">
-      <a href="javascript: void(0)" id="share-icon">
-        <i class="iconfont iconshare"></i>
-      </a>
-      <div class="share-content hidden">
-        
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Piano-Kit-01 + '&url=' + http%3A%2F%2Fiainespace.work%2Fportfolio%2F2021%2F11%2F07%2F%25E3%2580%2590%25E5%258E%259F%25E7%2594%259Fjavascript%25E9%25A1%25B9%25E7%259B%25AE%25E3%2580%2591Piano-Kit-01%2F + '" target="_blank" title="Twitter">
-            <i class="iconfont icon-twitter"></i>
-          </a>
-        
-        
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://iainespace.work/portfolio/2021/11/07/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Piano-Kit-01/" target="_blank" title="Facebook">
-            <i class="iconfont icon-facebooksquare"></i>
-          </a>
-        
-      </div>
-    </div>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
   
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/myblog.github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/myblog.github.io/js/boot.js" ></script>
+
+
   
-<script src="/myblog.github.io/js/shares.js"></script>
 
-
-
-      </div>
-    </div>
-  </body>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
 </html>

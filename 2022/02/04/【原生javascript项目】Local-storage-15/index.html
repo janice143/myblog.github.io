@@ -1,182 +1,287 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN" color-mode="light">
-
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="iaine" />
-  <meta name="description" content="" />
-  
-  
-  <title>
-    
-      【原生javascript项目】Local storage 15 
-      
-      
-      |
-    
-     iaine&#39;s blog
-  </title>
-
-  
-    <link rel="apple-touch-icon" href="/images/favicon.png">
-    <link rel="icon" href="/images/favicon.png">
-  
-
-  <!-- Raleway-Font -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-  <!-- hexo site css -->
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
-  <!-- 代码块风格 -->
-  
-
-  <!-- jquery3.3.1 -->
-  
-    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
-  
-
-  <!-- fancybox -->
-  
-    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
-    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
-  
-  
-<script src="/myblog.github.io/js/fancybox.js"></script>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog.github.io/img/favicon.ico">
+  <link rel="icon" href="/myblog.github.io/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="iaine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="作者：©Iaine 万一简介：30 Day Challenge是 Wes Bos 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。 本项目为第15天的“JS window属性： localStorage ”项目。Have fun with the website! ♪(^∇^*)  网页效果： https:&#x2F;&#x2F;jani">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【原生javascript项目】Local storage 15">
+<meta property="og:url" content="http://iainespace.work/portfolio/2022/02/04/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Local-storage-15/index.html">
+<meta property="og:site_name" content="iaine&#39;s blog">
+<meta property="og:description" content="作者：©Iaine 万一简介：30 Day Challenge是 Wes Bos 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。 本项目为第15天的“JS window属性： localStorage ”项目。Have fun with the website! ♪(^∇^*)  网页效果： https:&#x2F;&#x2F;jani">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/js30_LocalStorage15.png?raw=true">
+<meta property="article:published_time" content="2022-02-04T12:21:57.000Z">
+<meta property="article:modified_time" content="2023-06-21T13:43:45.718Z">
+<meta property="article:author" content="iaine">
+<meta property="article:tag" content="原生javascript项目">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://github.com/janice143/myblog.github.io/blob/master/images/js30_LocalStorage15.png?raw=true">
+  
+  
+  
+  <title>【原生javascript项目】Local storage 15 - iaine&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/myblog.github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/myblog.github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/myblog.github.io/css/highlight-dark.css" />
   
 
-  
 
-  <script>
-    var html = document.documentElement
-    const colorMode = localStorage.getItem('color-mode')
-    if (colorMode) {
-      document.documentElement.setAttribute('color-mode', colorMode)
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"iainespace.work","root":"/myblog.github.io/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/myblog.github.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
+  <script  src="/myblog.github.io/js/utils.js" ></script>
+  <script  src="/myblog.github.io/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
-  <body>
-    <div id="app">
-      <div class="header">
-  <div class="avatar">
-    <a href="/">
-      <!-- 头像取消懒加载，添加no-lazy -->
-      
-        <img src="/images/avatar.png" alt="">
-      
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/myblog.github.io/">
+      <strong>Fluid</strong>
     </a>
-    <div class="nickname"><a href="/">Oranges</a></div>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
   </div>
-  <div class="navbar">
-    <ul>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/myblog.github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【原生javascript项目】Local storage 15"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-02-04 20:21" pubdate>
+          2022年2月4日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          46 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
       
-        <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
-        </li>
-      
-        <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
-        </li>
-      
-        <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/friends/">
-          <a href="/friends/">Friends</a>
-        </li>
-      
-        <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
-        </li>
-      
-    </ul>
+    </div>
   </div>
 </div>
 
+</div>
 
-<script src="/myblog.github.io/js/activeNav.js"></script>
+  </header>
 
+  <main>
+    
+      
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
 
-      <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+    </div>
 
-
-  <!-- LaTex Display -->
-
-  
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
-  
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    }
-  </script>
-
-
-
-
-
-  <!-- clipboard -->
-
-  
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
-  
-  
-<script src="/myblog.github.io/js/codeCopy.js"></script>
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">【原生javascript项目】Local storage 15</div>
-      <div class="post-attach">
-        <span class="post-pubtime">
-          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2022-02-04 20:21:57
-        </span>
-        
-              <span class="post-tags">
-                <i class="iconfont icon-tags mr-10" title="标签"></i>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【原生javascript项目】Local storage 15</h1>
+            
+            
+              <div class="markdown-body">
                 
-                <span class="span--tag mr-8">
-                  <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" title="原生javascript项目">
-                    #原生javascript项目
-                  </a>
-                </span>
-                
-              </span>
-          
-      </div>
-      <div class="markdown-body">
-        <blockquote>
+                <blockquote>
 <p>作者：©<a target="_blank" rel="noopener" href="https://github.com/janice143?tab=repositories">Iaine 万一</a><br>简介：<a target="_blank" rel="noopener" href="https://courses.wesbos.com/account">30 Day Challenge</a>是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 设计的一个 30 天原生js编程挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。</p>
 <p>本项目为第15天的“JS window属性： localStorage ”项目。Have fun with the website! ♪(^∇^*)</p>
 </blockquote>
 <p>网页效果： <a target="_blank" rel="noopener" href="https://janice143.github.io/localStorage/">https://janice143.github.io/localStorage/</a></p>
-<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_LocalStorage15.png?raw=true"></p>
+<p><img src="https://github.com/janice143/myblog.github.io/blob/master/images/js30_LocalStorage15.png?raw=true" srcset="/myblog.github.io/img/loading.gif" lazyload></p>
 <h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p>本项目是一个可添加项目的点菜清单，刷新网页时，菜单信息不会清空。实现该功能的主要技术是JavaScript Window 对象的localStorage属性。</p>
 <h4 id="项目重点"><a href="#项目重点" class="headerlink" title="项目重点"></a>项目重点</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage">localStorage</a></p>
@@ -215,34 +320,34 @@
 <li><p>菜单项目<code>&lt;ul&gt;</code></p>
 </li>
 <li><p>添加菜品表单<code>&lt;form&gt;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>LOCAL TAPAS<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;plates&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>Loading Tapas...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;add-items&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;item&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Item Name&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;+ Add Item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>LOCAL TAPAS<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;plates&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Loading Tapas...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span> <br>        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;add-items&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;item&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Item Name&quot;</span> <span class="hljs-attr">required</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;+ Add Item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
 <h4 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h4><ul>
 <li><p>菜品项目添加后默认复选框⬜️没有checked</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.plates</span> <span class="selector-tag">input</span> + <span class="selector-tag">label</span>:before &#123;</span><br><span class="line">content: <span class="string">&quot;⬜️&quot;</span>;</span><br><span class="line"><span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.plates</span> <span class="hljs-selector-tag">input</span> + <span class="hljs-selector-tag">label</span>:before &#123;<br>content: <span class="hljs-string">&quot;⬜️&quot;</span>;<br><span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>菜品项目checked后方框变成其他图标</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.plates</span> <span class="selector-tag">input</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span>:before &#123;</span><br><span class="line">content: <span class="string">&quot;🌮&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.plates</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:checked</span> + <span class="hljs-selector-tag">label</span>:before &#123;<br>content: <span class="hljs-string">&quot;🌮&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h4><ul>
 <li><p>form表单中若有type 属性是 “submit”的元素，则具有<code>submit</code> 事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addItem</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">addItems.addEventListener(<span class="string">&#x27;submit&#x27;</span>, addItem);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addItem</span>(<span class="hljs-params"></span>)</span>&#123;<br>   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;hello&#x27;</span>)<br>&#125;<br>addItems.addEventListener(<span class="hljs-string">&#x27;submit&#x27;</span>, addItem);<br></code></pre></td></tr></table></figure></li>
 <li><p>当点击form中的提交按钮时，会提交表单并且刷新页面（可在控制台中看出闪现hello），这种默认行为可以通过 e.preventDefault来阻止</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addItem</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addItem</span>(<span class="hljs-params">e</span>)</span>&#123;<br>    e.preventDefault();<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>下面开始正式编写addItem函数，用来获取form中添加的元素，然后放到items变量中存储起来</p>
 <ul>
 <li><code>this.querySelector(&#39;[name=item]&#39;)</code>选择type为text元素的值（输入框输入的内容）</li>
 <li>构造一个对象 item 来存储这个信息</li>
 <li>把item push到提前创建的items（所有菜单）中</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> text = (<span class="built_in">this</span>.querySelector(<span class="string">&#x27;[name=item]&#x27;</span>)).value;</span><br><span class="line"><span class="comment">// 构造一个对象 item 来存储这个信息</span></span><br><span class="line">item = &#123;</span><br><span class="line">    text, <span class="comment">// ES6中对 text: text, 的简写</span></span><br><span class="line">    <span class="attr">done</span>:<span class="literal">false</span> <span class="comment">// 标记有没有checked</span></span><br><span class="line">&#125;</span><br><span class="line">items.push(item);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> text = (<span class="hljs-built_in">this</span>.querySelector(<span class="hljs-string">&#x27;[name=item]&#x27;</span>)).value;<br><span class="hljs-comment">// 构造一个对象 item 来存储这个信息</span><br>item = &#123;<br>    text, <span class="hljs-comment">// ES6中对 text: text, 的简写</span><br>    <span class="hljs-attr">done</span>:<span class="hljs-literal">false</span> <span class="hljs-comment">// 标记有没有checked</span><br>&#125;<br>items.push(item);<br></code></pre></td></tr></table></figure>
 <ul>
 <li>执行populateList(items, itemsList)函数，把新添加的菜品显示到页面中</li>
 <li>更新localStorage中的items数据</li>
 <li>重置输入框的值</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">populateList(items, itemsList);</span><br><span class="line"><span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;items&#x27;</span>, <span class="built_in">JSON</span>.stringify(items));</span><br><span class="line"><span class="built_in">this</span>.reset();</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript">populateList(items, itemsList);<br><span class="hljs-built_in">localStorage</span>.setItem(<span class="hljs-string">&#x27;items&#x27;</span>, <span class="hljs-built_in">JSON</span>.stringify(items));<br><span class="hljs-built_in">this</span>.reset();<br></code></pre></td></tr></table></figure></li>
 <li><p> 编写populateList函数，实现将items中的信息挂载到DOM树上</p>
 </li>
 <li><p><code>&lt;input&gt;</code>标签实现的复选框</p>
@@ -253,7 +358,7 @@
 <li><p><code>&lt;label&gt;</code>标签记录菜单的文字</p>
 </li>
 </ul>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">populateList</span>(<span class="params">plates = [], platesList</span>) </span>&#123;</span><br><span class="line">    platesList.innerHTML = plates.map(<span class="function">(<span class="params">plate, i</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;li&gt;</span></span><br><span class="line"><span class="string">          &lt;input type=&quot;checkbox&quot; data-index=<span class="subst">$&#123;i&#125;</span> id=&quot;item<span class="subst">$&#123;i&#125;</span>&quot; <span class="subst">$&#123;plate.done ? <span class="string">&#x27;checked&#x27;</span> : <span class="string">&#x27;&#x27;</span>&#125;</span> /&gt;</span></span><br><span class="line"><span class="string">          &lt;label for=&quot;item<span class="subst">$&#123;i&#125;</span>&quot;&gt;<span class="subst">$&#123;plate.text&#125;</span>&lt;/label&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">      `</span>;</span><br><span class="line">    &#125;).join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">populateList</span>(<span class="hljs-params">plates = [], platesList</span>) </span>&#123;<br>    platesList.innerHTML = plates.map(<span class="hljs-function">(<span class="hljs-params">plate, i</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`</span><br><span class="hljs-string">        &lt;li&gt;</span><br><span class="hljs-string">          &lt;input type=&quot;checkbox&quot; data-index=<span class="hljs-subst">$&#123;i&#125;</span> id=&quot;item<span class="hljs-subst">$&#123;i&#125;</span>&quot; <span class="hljs-subst">$&#123;plate.done ? <span class="hljs-string">&#x27;checked&#x27;</span> : <span class="hljs-string">&#x27;&#x27;</span>&#125;</span> /&gt;</span><br><span class="hljs-string">          &lt;label for=&quot;item<span class="hljs-subst">$&#123;i&#125;</span>&quot;&gt;<span class="hljs-subst">$&#123;plate.text&#125;</span>&lt;/label&gt;</span><br><span class="hljs-string">        &lt;/li&gt;</span><br><span class="hljs-string">      `</span>;<br>    &#125;).join(<span class="hljs-string">&#x27;&#x27;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>程序写到这里基本完成，但是仔细观察会发现，如果checked每个菜品，刷新页面后，这个状态会被刷新（不被保留），这是因为我们并没有更新items中done的值</p>
@@ -264,7 +369,7 @@
 <li><code>!items[index].done</code>否操作</li>
 <li>更新localStorage和HTML页面</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleDone</span>(<span class="params">e</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (!e.target.matches(<span class="string">&#x27;input&#x27;</span>)) <span class="keyword">return</span>; <span class="comment">// skip this unless it&#x27;s an input</span></span><br><span class="line">    <span class="comment">// console.log(e.target)</span></span><br><span class="line">    <span class="keyword">const</span> el = e.target;</span><br><span class="line">    <span class="keyword">const</span> index = el.dataset.index;</span><br><span class="line">    items[index].done = !items[index].done;</span><br><span class="line">    <span class="built_in">localStorage</span>.setItem(<span class="string">&#x27;items&#x27;</span>, <span class="built_in">JSON</span>.stringify(items));</span><br><span class="line">    populateList(items, itemsList);</span><br><span class="line">  &#125;</span><br><span class="line">itemsList.addEventListener(<span class="string">&#x27;click&#x27;</span>, toggleDone);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleDone</span>(<span class="hljs-params">e</span>) </span>&#123; <br>    <span class="hljs-keyword">if</span> (!e.target.matches(<span class="hljs-string">&#x27;input&#x27;</span>)) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// skip this unless it&#x27;s an input</span><br>    <span class="hljs-comment">// console.log(e.target)</span><br>    <span class="hljs-keyword">const</span> el = e.target;<br>    <span class="hljs-keyword">const</span> index = el.dataset.index;<br>    items[index].done = !items[index].done;<br>    <span class="hljs-built_in">localStorage</span>.setItem(<span class="hljs-string">&#x27;items&#x27;</span>, <span class="hljs-built_in">JSON</span>.stringify(items));<br>    populateList(items, itemsList);<br>  &#125;<br>itemsList.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, toggleDone);<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="项目补充"><a href="#项目补充" class="headerlink" title="项目补充"></a>项目补充</h2><h4 id="HTML-lt-input-gt-标签的-required-属性"><a href="#HTML-lt-input-gt-标签的-required-属性" class="headerlink" title="HTML &lt;input&gt; 标签的 required 属性"></a>HTML <code>&lt;input&gt; </code>标签的 required 属性</h4><p>required 属性规定必需在提交之前填写输入字段</p>
 <h4 id="JS-preventDefault-取消默认行为"><a href="#JS-preventDefault-取消默认行为" class="headerlink" title="JS-preventDefault() 取消默认行为"></a>JS-preventDefault() 取消默认行为</h4><p>语法：<code>event.preventDefault()</code></p>
@@ -282,24 +387,24 @@
 <ul>
 <li><code>JSON.parse()</code> 把一个JSON字符串转变成JS对象</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userStr = <span class="string">&#x27;&#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> userObj = <span class="built_in">JSON</span>.parse(userStr);</span><br><span class="line"><span class="built_in">console</span>.log(userObj);</span><br><span class="line"><span class="comment">// &#123;name: &#x27;Sammy&#x27;, email: &#x27;sammy@example.com&#x27;, plan: &#x27;Pro&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> userStr = <span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;&#x27;</span>;<br><span class="hljs-keyword">let</span> userObj = <span class="hljs-built_in">JSON</span>.parse(userStr);<br><span class="hljs-built_in">console</span>.log(userObj);<br><span class="hljs-comment">// &#123;name: &#x27;Sammy&#x27;, email: &#x27;sammy@example.com&#x27;, plan: &#x27;Pro&#x27;&#125;</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><code>JSON.parse()</code> 第二个参数可以是一个自定义函数，具有返回值</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userStr = <span class="string">&#x27;&#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> userObj = <span class="built_in">JSON</span>.parse(userStr, <span class="function">(<span class="params">key, value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="string">&#x27;string&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> value.toUpperCase();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(userObj);</span><br><span class="line"><span class="comment">// &#123;name: &#x27;SAMMY&#x27;, email: &#x27;SAMMY@EXAMPLE.COM&#x27;, plan: &#x27;PRO&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> userStr = <span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;&#x27;</span>;<br><span class="hljs-keyword">let</span> userObj = <span class="hljs-built_in">JSON</span>.parse(userStr, <span class="hljs-function">(<span class="hljs-params">key, value</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> value === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>    <span class="hljs-keyword">return</span> value.toUpperCase();<br>  &#125;<br>  <span class="hljs-keyword">return</span> value;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(userObj);<br><span class="hljs-comment">// &#123;name: &#x27;SAMMY&#x27;, email: &#x27;SAMMY@EXAMPLE.COM&#x27;, plan: &#x27;PRO&#x27;&#125;</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><code>JSON.stringify()</code> 把一个JS对象转变成JSON字符串</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userObj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Sammy&quot;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&quot;sammy@example.com&quot;</span>,</span><br><span class="line">  <span class="attr">plan</span>: <span class="string">&quot;Pro&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> userStr = <span class="built_in">JSON</span>.stringify(userObj);</span><br><span class="line"><span class="built_in">console</span>.log(userStr);</span><br><span class="line"><span class="comment">// &#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> userObj = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Sammy&quot;</span>,<br>  <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;sammy@example.com&quot;</span>,<br>  <span class="hljs-attr">plan</span>: <span class="hljs-string">&quot;Pro&quot;</span><br>&#125;;<br><span class="hljs-keyword">let</span> userStr = <span class="hljs-built_in">JSON</span>.stringify(userObj);<br><span class="hljs-built_in">console</span>.log(userStr);<br><span class="hljs-comment">// &#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;email&quot;:&quot;sammy@example.com&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>JSON.stringify()可以有两个额外参数</p>
 <ul>
 <li>一个replacer参数（是一个自定义函数，函数名为replacer)</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userObj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Sammy&quot;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&quot;sammy@example.com&quot;</span>,</span><br><span class="line">  <span class="attr">plan</span>: <span class="string">&quot;Pro&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replacer</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> value);</span><br><span class="line">  <span class="keyword">if</span> (key === <span class="string">&#x27;email&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> userStrReplacer = <span class="built_in">JSON</span>.stringify(userObj, replacer);</span><br><span class="line"><span class="built_in">console</span>.log(userStrReplacer);</span><br><span class="line"><span class="comment">// &#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> userObj = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Sammy&quot;</span>,<br>  <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;sammy@example.com&quot;</span>,<br>  <span class="hljs-attr">plan</span>: <span class="hljs-string">&quot;Pro&quot;</span><br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">replacer</span>(<span class="hljs-params">key, value</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> value);<br>  <span class="hljs-keyword">if</span> (key === <span class="hljs-string">&#x27;email&#x27;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> value;<br>&#125;<br><span class="hljs-keyword">let</span> userStrReplacer = <span class="hljs-built_in">JSON</span>.stringify(userObj, replacer);<br><span class="hljs-built_in">console</span>.log(userStrReplacer);<br><span class="hljs-comment">// &#123;&quot;name&quot;:&quot;Sammy&quot;,&quot;plan&quot;:&quot;Pro&quot;&#125;</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>一个是space参数（是 <code>String</code> 或者 <code>Number</code> 值），用来控制间距<ul>
@@ -308,7 +413,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(&#123; <span class="attr">uno</span>: <span class="number">1</span>, <span class="attr">dos</span>: <span class="number">2</span> &#125;, <span class="literal">null</span>, <span class="string">&#x27;\t&#x27;</span>);</span><br><span class="line"><span class="comment">// returns the string:</span></span><br><span class="line"><span class="comment">// &#x27;&#123;</span></span><br><span class="line"><span class="comment">//     &quot;uno&quot;: 1,</span></span><br><span class="line"><span class="comment">//     &quot;dos&quot;: 2</span></span><br><span class="line"><span class="comment">// &#125;&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">JSON</span>.stringify(&#123; <span class="hljs-attr">uno</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">dos</span>: <span class="hljs-number">2</span> &#125;, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;\t&#x27;</span>);<br><span class="hljs-comment">// returns the string:</span><br><span class="hljs-comment">// &#x27;&#123;</span><br><span class="hljs-comment">//     &quot;uno&quot;: 1,</span><br><span class="hljs-comment">//     &quot;dos&quot;: 2</span><br><span class="hljs-comment">// &#125;&#x27;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="map-和forEach-的区别和理解"><a href="#map-和forEach-的区别和理解" class="headerlink" title="map()和forEach()的区别和理解"></a>map()和forEach()的区别和理解</h4><p>两个方法都可以实现元素遍历，但是map方法可以用返回值，而forEach方法没有返回值</p>
 <h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ol>
@@ -318,361 +423,375 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/suwu150/article/details/111590409#:~:text=forEach()%E6%96%B9%E6%B3%95%E4%B8%8D%E4%BC%9A,%E6%89%A7%E8%A1%8C%E6%97%B6%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%EF%BC%89%E3%80%82">map()和forEach()的区别和理解</a></li>
 </ol>
 <blockquote>
-<p>JS30的第15个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#49;&#x38;&#x30;&#51;&#x31;&#x30;&#x35;&#53;&#x33;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#49;&#x38;&#x30;&#51;&#x31;&#x30;&#x35;&#53;&#x33;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a>.</p>
+<p>JS30的第15个项目圆满完成啦，感谢阅读，有问题联系我的邮箱<a href="mailto:&#x31;&#56;&#x30;&#51;&#x31;&#48;&#x35;&#53;&#x33;&#56;&#x40;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#x31;&#56;&#x30;&#51;&#x31;&#48;&#x35;&#53;&#x33;&#56;&#x40;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a>.</p>
 </blockquote>
 
-      </div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-        <div class="prev-or-next">
-          <div class="post-foot-next">
-            
-              <a href="/myblog.github.io/2022/01/31/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Reference-VS-copy-14/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>上一页</span>
-              </a>
-            
-          </div>
-          <div class="post-attach">
-            <span class="post-pubtime">
-              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2022-02-04 20:21:57
-            </span>
-            
-                  <span class="post-tags">
-                    <i class="iconfont icon-tags mr-10" title="标签"></i>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" title="原生javascript项目">
-                        #原生javascript项目
-                      </a>
-                    </span>
-                    
-                  </span>
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/myblog.github.io/categories/30%E4%B8%AA%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/" class="category-chain-item">30个原生javascript项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/myblog.github.io/tags/%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE/">#原生javascript项目</a>
+      
+    </div>
+  
+</div>
+
+
               
-          </div>
-          <div class="post-foot-prev">
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【原生javascript项目】Local storage 15</div>
+      <div>http://iainespace.work/portfolio/2022/02/04/【原生javascript项目】Local-storage-15/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>iaine</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年2月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
-              <a href="/myblog.github.io/2022/02/10/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Mouse-Move-Shadow-16/" target="_self">
-                <span>下一页</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
           </div>
         </div>
       
     </div>
-    
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">目录</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">项目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%87%8D%E7%82%B9"><span class="toc-text">项目重点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B"><span class="toc-text">项目过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML%E9%83%A8%E5%88%86"><span class="toc-text">HTML部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E9%83%A8%E5%88%86"><span class="toc-text">CSS部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS%E9%83%A8%E5%88%86"><span class="toc-text">JS部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%A1%A5%E5%85%85"><span class="toc-text">项目补充</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML-lt-input-gt-%E6%A0%87%E7%AD%BE%E7%9A%84-required-%E5%B1%9E%E6%80%A7"><span class="toc-text">HTML &lt;input&gt; 标签的 required 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS-preventDefault-%E5%8F%96%E6%B6%88%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-text">JS-preventDefault() 取消默认行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON-parse%E5%92%8CJSON-stringify"><span class="toc-text">JSON.parse和JSON.stringify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map-%E5%92%8CforEach-%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E7%90%86%E8%A7%A3"><span class="toc-text">map()和forEach()的区别和理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2"><span class="toc-text">参考博客</span></a></li></ol></li></ol></li></ol>
-      
-    </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
-  
-<script src="/myblog.github.io/js/catalog.js"></script>
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2022/02/10/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Mouse-Move-Shadow-16/" title="【原生javascript项目】Mouse Move Shadow 16">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【原生javascript项目】Mouse Move Shadow 16</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2022/01/31/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Reference-VS-copy-14/" title="【原生javascript项目】Reference VS copy 14">
+                        <span class="hidden-mobile">【原生javascript项目】Reference VS copy 14</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
-
-    
-      <div class="comments-container">
-        
-
-
-
-
-
-
-
+            
+          </article>
+        </div>
       </div>
-    
-  </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
 
-        
-<div class="footer">
-  <div class="social">
-    <ul>
-      
-        <li>
-          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
-            <i class="iconfont icon-github"></i>
-          </a>
-        </li>
-      
-    </ul>
+
+  </aside>
+
+
+    </div>
   </div>
+</div>
+
+
+
+
+
   
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
-        
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
-    
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
-        
-    </div>
+  
   
   
 </div>
 
-      </div>
+  </footer>
 
-      <div class="tools-bar">
-        <div class="back-to-top tools-bar-item hidden">
-  <a href="javascript: void(0)">
-    <i class="iconfont icon-chevronup"></i>
-  </a>
-</div>
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-<script src="/myblog.github.io/js/backtotop.js"></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/myblog.github.io/js/events.js" ></script>
+<script  src="/myblog.github.io/js/plugins.js" ></script>
 
 
-
-        
-  <div class="search-icon tools-bar-item" id="search-icon">
-    <a href="javascript: void(0)">
-      <i class="iconfont icon-search"></i>
-    </a>
-  </div>
-
-  <div class="search-overlay hidden">
-    <div class="search-content" tabindex="0">
-      <div class="search-title">
-        <span class="search-icon-input">
-          <a href="javascript: void(0)">
-            <i class="iconfont icon-search"></i>
-          </a>
-        </span>
-        
-          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
-        
-        <span class="search-close-icon" id="search-close-icon">
-          <a href="javascript: void(0)">
-            <i class="iconfont icon-close"></i>
-          </a>
-        </span>
-      </div>
-      <div class="search-result" id="search-result"></div>
-    </div>
-  </div>
-
-  <script type="text/javascript">
-    var inputArea = document.querySelector("#search-input")
-    var searchOverlayArea = document.querySelector(".search-overlay")
-
-    inputArea.onclick = function() {
-      getSearchFile()
-      this.onclick = null
-    }
-
-    inputArea.onkeydown = function() {
-      if(event.keyCode == 13)
-        return false
-    }
-
-    function openOrHideSearchContent() {
-      let isHidden = searchOverlayArea.classList.contains('hidden')
-      if (isHidden) {
-        searchOverlayArea.classList.remove('hidden')
-        document.body.classList.add('hidden')
-        // inputArea.focus()
-      } else {
-        searchOverlayArea.classList.add('hidden')
-        document.body.classList.remove('hidden')
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
-    }
-
-    function blurSearchContent(e) {
-      if (e.target === searchOverlayArea) {
-        openOrHideSearchContent()
-      }
-    }
-
-    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
-    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
-    searchOverlayArea.addEventListener("click", blurSearchContent, false)
-
-    var searchFunc = function (path, search_id, content_id) {
-      'use strict';
-      var $input = document.getElementById(search_id);
-      var $resultContent = document.getElementById(content_id);
-      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
-      $.ajax({
-        // 0x01. load xml file
-        url: path,
-        dataType: "xml",
-        success: function (xmlResponse) {
-          // 0x02. parse xml file
-          var datas = $("entry", xmlResponse).map(function () {
-            return {
-              title: $("title", this).text(),
-              content: $("content", this).text(),
-              url: $("url", this).text()
-            };
-          }).get();
-          $resultContent.innerHTML = "";
-
-          $input.addEventListener('input', function () {
-            // 0x03. parse query to keywords list
-            var str = '<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length <= 0) {
-              return;
-            }
-            // 0x04. perform local searching
-            datas.forEach(function (data) {
-              var isMatch = true;
-              var content_index = [];
-              if (!data.title || data.title.trim() === '') {
-                data.title = "Untitled";
-              }
-              var orig_data_title = data.title.trim();
-              var data_title = orig_data_title.toLowerCase();
-              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
-              var data_content = orig_data_content.toLowerCase();
-              var data_url = data.url;
-              var index_title = -1;
-              var index_content = -1;
-              var first_occur = -1;
-              // only match artiles with not empty contents
-              if (data_content !== '') {
-                keywords.forEach(function (keyword, i) {
-                  index_title = data_title.indexOf(keyword);
-                  index_content = data_content.indexOf(keyword);
-
-                  if (index_title < 0 && index_content < 0) {
-                    isMatch = false;
-                  } else {
-                    if (index_content < 0) {
-                      index_content = 0;
-                    }
-                    if (i == 0) {
-                      first_occur = index_content;
-                    }
-                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
-                  }
-                });
-              } else {
-                isMatch = false;
-              }
-              // 0x05. show search results
-              if (isMatch) {
-                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
-                var content = orig_data_content;
-                if (first_occur >= 0) {
-                  // cut out 100 characters
-                  var start = first_occur - 20;
-                  var end = first_occur + 80;
-
-                  if (start < 0) {
-                    start = 0;
-                  }
-
-                  if (start == 0) {
-                    end = 100;
-                  }
-
-                  if (end > content.length) {
-                    end = content.length;
-                  }
-
-                  var match_content = content.substr(start, end);
-
-                  // highlight all keywords
-                  keywords.forEach(function (keyword) {
-                    var regS = new RegExp(keyword, "gi");
-                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
-                  });
-
-                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
-                }
-                str += "</li>";
-              }
-            });
-            str += "</ul>";
-            if (str.indexOf('<li>') === -1) {
-              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
-            }
-            $resultContent.innerHTML = str;
-          });
-        },
-        error: function(xhr, status, error) {
-          $resultContent.innerHTML = ""
-          if (xhr.status === 404) {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
-          } else {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
-          }
-        }
-      });
-      $(document).on('click', '#search-close-icon', function() {
-        $('#search-input').val('');
-        $('#search-result').html('');
-      });
-    }
-
-    var getSearchFile = function() {
-        var path = "/search.xml";
-        searchFunc(path, 'search-input', 'search-result');
-    }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
   </script>
 
 
 
 
-        
-  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
-    <a href="javascript: void(0)">
-      <i id="theme-icon" class="iconfont icon-moon"></i>
-    </a>
-  </div>
+  
+    <script  src="/myblog.github.io/js/img-lazyload.js" ></script>
+  
+
+
+
 
   
-<script src="/myblog.github.io/js/colorscheme.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
 
 
-
-        
   
-    <div class="share-icon tools-bar-item">
-      <a href="javascript: void(0)" id="share-icon">
-        <i class="iconfont iconshare"></i>
-      </a>
-      <div class="share-content hidden">
-        
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Local%20storage%2015 + '&url=' + http%3A%2F%2Fiainespace.work%2Fportfolio%2F2022%2F02%2F04%2F%25E3%2580%2590%25E5%258E%259F%25E7%2594%259Fjavascript%25E9%25A1%25B9%25E7%259B%25AE%25E3%2580%2591Local-storage-15%2F + '" target="_blank" title="Twitter">
-            <i class="iconfont icon-twitter"></i>
-          </a>
-        
-        
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://iainespace.work/portfolio/2022/02/04/%E3%80%90%E5%8E%9F%E7%94%9Fjavascript%E9%A1%B9%E7%9B%AE%E3%80%91Local-storage-15/" target="_blank" title="Facebook">
-            <i class="iconfont icon-facebooksquare"></i>
-          </a>
-        
-      </div>
-    </div>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
   
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/myblog.github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/myblog.github.io/js/boot.js" ></script>
+
+
   
-<script src="/myblog.github.io/js/shares.js"></script>
 
-
-
-      </div>
-    </div>
-  </body>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
 </html>

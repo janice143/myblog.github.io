@@ -1,0 +1,671 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog.github.io/img/favicon.ico">
+  <link rel="icon" href="/myblog.github.io/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="iaine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="引言作为 react 框架内置的 hooks 之一，我们知道这个 hook 可以实现缓存，进而提升页面性能。那么这个 hook 究竟可以在什么场景下使用呢？本文针对这个问题进行了探讨。 用法123import &amp;#123; useCallback &amp;#125; from &quot;react&quot;;const cachedFn &#x3D; useCallback(fn, dependencies)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="useCallback使用讲解">
+<meta property="og:url" content="http://iainespace.work/portfolio/2023/05/28/useCallback%E4%BD%BF%E7%94%A8%E8%AE%B2%E8%A7%A3/index.html">
+<meta property="og:site_name" content="iaine&#39;s blog">
+<meta property="og:description" content="引言作为 react 框架内置的 hooks 之一，我们知道这个 hook 可以实现缓存，进而提升页面性能。那么这个 hook 究竟可以在什么场景下使用呢？本文针对这个问题进行了探讨。 用法123import &amp;#123; useCallback &amp;#125; from &quot;react&quot;;const cachedFn &#x3D; useCallback(fn, dependencies)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-28T11:57:00.000Z">
+<meta property="article:modified_time" content="2023-06-21T13:43:45.781Z">
+<meta property="article:author" content="iaine">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>useCallback使用讲解 - iaine&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/myblog.github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/myblog.github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/myblog.github.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"iainespace.work","root":"/myblog.github.io/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/myblog.github.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/myblog.github.io/js/utils.js" ></script>
+  <script  src="/myblog.github.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/myblog.github.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/myblog.github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="useCallback使用讲解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-28 19:57" pubdate>
+          2023年5月28日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          33 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">useCallback使用讲解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>作为 react 框架内置的 hooks 之一，我们知道这个 hook 可以实现缓存，进而提升页面性能。那么这个 hook 究竟可以在什么场景下使用呢？本文针对这个问题进行了探讨。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> &#123; useCallback &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;<br><br><span class="hljs-keyword">const</span> cachedFn = useCallback(fn, dependencies);<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，useCallback 的入参有两个：函数和依赖。返回的是一个函数定义。</p>
+<p>useCallback 可以缓存函数定义，只有当依赖中的数据更新后，才会重新创建函数，否则，使用的函数是上一次渲染时存储的函数。</p>
+<h2 id="理解-useCallback"><a href="#理解-useCallback" class="headerlink" title="理解 useCallback"></a>理解 useCallback</h2><ol>
+<li>普通的函数定义</li>
+</ol>
+<p>通过点击按钮让数字增加的时候，由于 cnt 的 state 更新，导致整个组件重新渲染，函数 increment 重新创建。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2Fpages%2Fnormal-fn.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;friendly-easley-m8f49g&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>普通函数包裹了 useCallback</li>
+</ol>
+<p>increment 函数被 useCallback 包裹，当点击按钮时，cnt 更新，组件重新渲染。但是 cnt 加到 1 后就无法继续增长。</p>
+<p>这是因为 useCallback 缓存了 increment 函数，每次点击按钮的时候，使用的是上一次缓存的函数，这个时候 cnt 的值都是 0，所以后面点击按钮时， cnt 无法继续往上加。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&amp;hidenavigation=1&amp;initialpath=useCallback-case&amp;module=%2Fsrc%2Fpages%2FuseCallback-case.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;friendly-easley-m8f49g&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+
+<p>如果想让 cnt 继续累加，可以在 useCallback 的第二个参数上绑定依赖：<code>[cnt]</code>。</p>
+<p>但是这个做法并没有体现 useCallback 的缓存优势，更糟糕的是，这种错误使用 useCallback，需要额外产生监视 cnt 变化的性能消耗。</p>
+<p>但是好在我们观察到了使用 useCallback 和不使用的区别。这是理解 useCallback 的第一步。</p>
+<ol start="3">
+<li>useCallback 缓存的是什么</li>
+</ol>
+<p>缓存的是具有相同内存地址的函数定义。每次重新创建一个函数，该变量都会指向不同的内存地址，useCallback 缓存的上上一个创建函数时的内存指针。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-string">&quot;string&quot;</span> === <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// true</span><br><span class="hljs-number">0</span> === <span class="hljs-number">0</span> <span class="hljs-comment">// true</span><br><span class="hljs-literal">true</span> === <span class="hljs-literal">true</span> <span class="hljs-comment">// true</span><br>&#123;&#125; === &#123;&#125; <span class="hljs-comment">// false</span><br>[] === [] <span class="hljs-comment">// false</span><br><br><span class="hljs-keyword">const</span> f = <span class="hljs-function">() =&gt;</span> <span class="hljs-string">&#x27;Hi&#x27;</span><br><span class="hljs-keyword">const</span> f1 = f<br><span class="hljs-keyword">const</span> f2 = f<br><br>f1 === f1 <span class="hljs-comment">// true</span><br>f1 === f2 <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>为什么要缓存函数定义？</li>
+</ol>
+<p>如果函数作为 react 的 hooks 上的依赖，或者子组件的参数等场景，如果不使用 useCallback 进行缓存，每次函数创建都会返回一个新的函数定义（有点像创建一个变量，然后赋值空对象，这些对象执行的内存都不同，所以===时不相等），这样就会导致 hooks 内部重新执行或者子组件重新渲染。</p>
+<h2 id="useCallback-使用场景"><a href="#useCallback-使用场景" class="headerlink" title="useCallback 使用场景"></a>useCallback 使用场景</h2><ol>
+<li>减少组件重新渲染：子组件传入一个函数，且子组件被 React.memo 缓存了。</li>
+</ol>
+<p>shippingForm 是一个人为增加了性能的组件，每次 count 增加的时候，该组件都要重新渲染，每次渲染性能都消耗很大，所以可以看到，点击+的时候，页面会出现很卡的效果。</p>
+<p>但是当我们勾选（或取消）dark mode，发现这个页面切换是非流畅。这是因为 ShippingForm 并没有重新渲染。为什么呢？</p>
+<p>每次切换白天/黑夜背景的时候，theme 的状态更新导致 productPage 重新渲染，由于 useCallback 的使用，handleSubmit 函数没有重新创建，所以传递给子组件 ShippingForm 的 props 没有改变，由于 React.memo 的使用，ShippingForm 没有重新渲染。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs aside">&lt;aside&gt;<br>  💡  注：React.memo的用法是用来包裹整个组件，当props参数都不变（引用不变）时，组件不会重新渲染。<br>&lt;/aside&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/elegant-chatelet-5urqn7?fontsize=14&amp;hidenavigation=1&amp;module=%2FProductPage.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;elegant-chatelet-5urqn7&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>减少函数重新创建</li>
+</ol>
+<p>state 状态变化，导致页面重新渲染，为了减少函数创建，可以使用 useCallback 进行缓存</p>
+<p>只看下面代码中的 useEffect 和 addGuessedLetter 函数，每次触发按键事件，guessedLetters 的值会更新，使得页面渲染，如果不使用 useCallback，addGuessedLetter 函数会在每次渲染的时候重新创建。</p>
+<p>我们并不希望他重新创建，如果这个函数内部没有 setState，我们可以放到组件外面解决这个问题，但是这个函数有。为了减少函数创建，可以给这个函数包裹 useCallback，并且不要添加任何依赖。这样可以保证 addGuessedLetter 函数只被创建一次。尽管这个函数只被创建了一次，但是每次 setGuessedLetters 都会用到上一个 guessedLetters 的值，这是因为<code>setGuessedLetters((curLetters) =&gt; [...curLetters, letter]);</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>关于 useCallback 何时使用问题，其实主要把握一个点就行：useCallback 的功能就是缓存函数定义，如果你不希望函数由于重新创建产生新的定义，而导致多余渲染或者不必要重复执行，那就可以用 useCallback 进行缓存。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#examples-rerendering">react 文档官方示例</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/better-react-performance-usecallback-vs-usememo/">Better React Performance – When to Use the useCallback vs useMemo Hook</a></p>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>useCallback使用讲解</div>
+      <div>http://iainespace.work/portfolio/2023/05/28/useCallback使用讲解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>iaine</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2023/06/21/%E3%80%90%E5%8D%95%E6%B5%8B%E3%80%91%E5%8D%95%E6%B5%8B%E5%85%A5%E9%97%A8/" title="【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2023/05/23/leetcode124%20Binary%20Tree%20Maximum%20Path%20Sum/" title="【leetcode124】Binary Tree Maximum Path Sum">
+                        <span class="hidden-mobile">【leetcode124】Binary Tree Maximum Path Sum</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/myblog.github.io/js/events.js" ></script>
+<script  src="/myblog.github.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/myblog.github.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/myblog.github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/myblog.github.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

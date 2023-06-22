@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog.github.io/img/favicon.ico">
+  <link rel="icon" href="/myblog.github.io/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="iaine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="作为一个初学者，第一次接触单测的时候，我其实有很多疑问，单测是什么，为什么要做单测，如何做单测，最佳实践是什么。 怎么罗列测试用例，如何调试代码 本文就是一篇浅浅的入门指南。主要围绕上面这些问题做一些解答和记录。 单测是什么单测就是单元测试，属于软件开发中的一个测试方法。正如其名字一样，单元测试关注的是代码中比较小的单元，可能是一个函数，一个方法，甚至一个属性。只要在逻辑上可以独立存在的，都是单元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library">
+<meta property="og:url" content="http://iainespace.work/portfolio/2023/06/21/%E3%80%90%E5%8D%95%E6%B5%8B%E3%80%91%E5%8D%95%E6%B5%8B%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="iaine&#39;s blog">
+<meta property="og:description" content="作为一个初学者，第一次接触单测的时候，我其实有很多疑问，单测是什么，为什么要做单测，如何做单测，最佳实践是什么。 怎么罗列测试用例，如何调试代码 本文就是一篇浅浅的入门指南。主要围绕上面这些问题做一些解答和记录。 单测是什么单测就是单元测试，属于软件开发中的一个测试方法。正如其名字一样，单元测试关注的是代码中比较小的单元，可能是一个函数，一个方法，甚至一个属性。只要在逻辑上可以独立存在的，都是单元">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5038ccd6-04f5-4373-9086-6180b6292a03/Untitled.png">
+<meta property="article:published_time" content="2023-06-21T13:43:45.680Z">
+<meta property="article:modified_time" content="2023-06-21T13:43:45.680Z">
+<meta property="article:author" content="iaine">
+<meta property="article:tag" content="unit test">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5038ccd6-04f5-4373-9086-6180b6292a03/Untitled.png">
+  
+  
+  
+  <title>【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library - iaine&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/myblog.github.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/myblog.github.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/myblog.github.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"iainespace.work","root":"/myblog.github.io/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/myblog.github.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/myblog.github.io/js/utils.js" ></script>
+  <script  src="/myblog.github.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/myblog.github.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/myblog.github.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-21 21:43" pubdate>
+          2023年6月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>作为一个初学者，第一次接触单测的时候，我其实有很多疑问，单测是什么，为什么要做单测，如何做单测，最佳实践是什么。</p>
+<p>怎么罗列测试用例，如何调试代码</p>
+<p>本文就是一篇浅浅的入门指南。主要围绕上面这些问题做一些解答和记录。</p>
+<h2 id="单测是什么"><a href="#单测是什么" class="headerlink" title="单测是什么"></a>单测是什么</h2><p>单测就是单元测试，属于软件开发中的一个测试方法。正如其名字一样，单元测试关注的是代码中比较小的单元，可能是一个函数，一个方法，甚至一个属性。只要在逻辑上可以独立存在的，都是单元测试可进行的对象。</p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>减少上线bug，可以保证我们写的代码按照预想的执行。同时，对于代码维护也可得带来更高效率。</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><p>主要围绕如何进行javascript代码的单元测试讲解。（单元测试是软件工程里的概念，不应该只局限与前端，由于网上的资源看起来很繁杂，我暂时没有建立起一个完整的单测认识，所以这篇文章暂时只局限于unit test with javascript）</p>
+<h3 id="选择一个测试框架JavaScript-unit-testing-framework"><a href="#选择一个测试框架JavaScript-unit-testing-framework" class="headerlink" title="选择一个测试框架JavaScript unit testing framework"></a>选择一个测试框架JavaScript unit testing framework</h3><p>关于js的单测框架，目前使用最多的是Jest 和mocha，下面这张图给出了2016年到2021年框架使用比例图。（主要是js的发展很快，所以基于js的工具也要不断迭代和更新）</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5038ccd6-04f5-4373-9086-6180b6292a03/Untitled.png" srcset="/myblog.github.io/img/loading.gif" lazyload alt="Untitled"></p>
+<p>如果第一次接触单测，肯定要选择使用最多的，因为参考资料多，不管是学习好还是开发过程中遇到问题，都能很容易找到相关的资料。还有一个好处是，使用多意味着这个工具被维护的可能性更高且更持久。</p>
+<h3 id="Jest测试框架"><a href="#Jest测试框架" class="headerlink" title="Jest测试框架"></a>Jest测试框架</h3><p>有两个网站我推荐看，我相信会有很多收获。</p>
+<p><a target="_blank" rel="noopener" href="https://jestjs.io/docs/getting-started">Getting Started · Jest</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.softwaretestinghelp.com/jest-testing-tutorial/">Jest Tutorial - JavaScript Unit Testing Using Jest Framework</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.lambdatest.com/jest">Jest Tutorial: Complete Guide to Jest Testing</a></p>
+<p>第三个文档我只简易看目录。具体内容我觉得他写的很简陋，所以不简易看。</p>
+<p>首先根据官网的文档，可以着手写一个简单的单元测试。测试总的来说就是输入-预测输出-判断结果的过程（<strong>input - expected output - assert the result）</strong></p>
+<p>我认为一个技术官网上的东西初学的时候不需要全部看完，技术官网是一个工具网站，我们可以把他看成是一个字典，遇到不认识的字的时候再使用它。对于一个技术网站，首先就是要快速了解这个技术最基本的几个东西是什么，比如说jest，最基本的就是如何输入命令使用、积累一些常用的matchers。如何判断哪些最基本，你可以根据js的基本知识来学习，在学js的时候，逻辑运算、字符串什么都是是常用的，所以学习jest的时候你需要了解一些对应的匹配器；页面上的交互经常涉及到一些click,change事件，这是jest有一些mock函数需要了解。等等。</p>
+<h3 id="测什么"><a href="#测什么" class="headerlink" title="测什么"></a>测什么</h3><p>How do I know what to test?当你对jest有个初步的实操之后，下一个关注的问题是测什么？</p>
+<p>如果是写一个页面的话，页面上每个组件、每个交互理论上都需要测试。如果自己罗列，难免有遗漏的地方，所以在jest中有个coverage的概念（<strong><strong>Code coverage in Jest）</strong></strong>，可以把它理解为Jest的一个命令或者工具，可以告诉我们代码中哪些需要测的地方。执行完这个命令后，甚至有一个可视化的Html页面可以直观地看到测试覆盖率。</p>
+<h3 id="test-React-with-Jest"><a href="#test-React-with-Jest" class="headerlink" title="test React with Jest"></a><strong><strong>test React with Jest</strong></strong></h3><p>了解到这里，我们知道了简单的基于js的单元测试，使用的单测框架是jest。为了最佳实践，下一步我们要把单测和前端框架结合，以react框架为例，还是因为react使用的最多。</p>
+<p>针对react组件库的测试，需要用到另一个有用工具</p>
+<p><a target="_blank" rel="noopener" href="https://testing-library.com/docs/react-testing-library/intro">React Testing Library | Testing Library</a></p>
+<p>另外推荐阅读这两篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.softwaretestinghelp.com/testing-react-apps-using-jest/">Jest React Tutorial - How To Test React Apps Using Jest Framework</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.valentinog.com/blog/testing-react/">Testing React Components with react-test-renderer, and the Act API</a></p>
+<p>我目前还是有疑问，snapshot到底在什么时候推荐使用。这个问题我还在思考中。尽管我搜索了不少答案，甚至问了chatgpt，我还是没有一个具体答案。</p>
+<h3 id="如何调试"><a href="#如何调试" class="headerlink" title="如何调试"></a>如何调试</h3><p>不重要但是必不可少的是我们得知道如何调试代码。</p>
+<p><a target="_blank" rel="noopener" href="https://www.softwaretestinghelp.com/jest-configuration-and-debugging/">Jest Configuration And Debugging Jest Based Tests</a></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a><strong>Conclusion</strong></h2><p>have fun！这篇文章并没有给出具体的命令，也没有代码实例，只是给出了一些初步的理解，以及如何找到最佳实践，其中给了一些参考博客。我觉得对于一个有基础的前端开发基础，但是缺乏软件工程完整体系，且想了解单侧的同学来说，这篇文章会有一点点帮助。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/myblog.github.io/categories/unit-test/" class="category-chain-item">unit test</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/myblog.github.io/tags/unit-test/">#unit test</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library</div>
+      <div>http://iainespace.work/portfolio/2023/06/21/【单测】单测入门/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>iaine</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/myblog.github.io/2023/05/28/useCallback%E4%BD%BF%E7%94%A8%E8%AE%B2%E8%A7%A3/" title="useCallback使用讲解">
+                        <span class="hidden-mobile">useCallback使用讲解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/myblog.github.io/js/events.js" ></script>
+<script  src="/myblog.github.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/myblog.github.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/myblog.github.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/myblog.github.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
