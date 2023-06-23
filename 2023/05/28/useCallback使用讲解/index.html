@@ -24,7 +24,7 @@
 <meta property="og:description" content="引言作为 react 框架内置的 hooks 之一，我们知道这个 hook 可以实现缓存，进而提升页面性能。那么这个 hook 究竟可以在什么场景下使用呢？本文针对这个问题进行了探讨。 用法123import &amp;#123; useCallback &amp;#125; from &quot;react&quot;;const cachedFn &#x3D; useCallback(fn, dependencies)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-28T11:57:00.000Z">
-<meta property="article:modified_time" content="2023-06-21T13:43:45.781Z">
+<meta property="article:modified_time" content="2023-06-23T14:48:06.741Z">
 <meta property="article:author" content="iaine">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -94,7 +94,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/myblog.github.io/">
-      <strong>Fluid</strong>
+      <strong>iaineisalsoyan</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          2.2k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          33 分钟
+          19 分钟
         
       </span>
     
@@ -282,14 +282,24 @@
 <li>普通的函数定义</li>
 </ol>
 <p>通过点击按钮让数字增加的时候，由于 cnt 的 state 更新，导致整个组件重新渲染，函数 increment 重新创建。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2Fpages%2Fnormal-fn.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;friendly-easley-m8f49g&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+<iframe src="https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fpages%2Fnormal-fn.js&theme=dark"
+  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;"
+  title="friendly-easley-m8f49g"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 <ol>
 <li>普通函数包裹了 useCallback</li>
 </ol>
 <p>increment 函数被 useCallback 包裹，当点击按钮时，cnt 更新，组件重新渲染。但是 cnt 加到 1 后就无法继续增长。</p>
 <p>这是因为 useCallback 缓存了 increment 函数，每次点击按钮的时候，使用的是上一次缓存的函数，这个时候 cnt 的值都是 0，所以后面点击按钮时， cnt 无法继续往上加。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&amp;hidenavigation=1&amp;initialpath=useCallback-case&amp;module=%2Fsrc%2Fpages%2FuseCallback-case.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;friendly-easley-m8f49g&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+<iframe src="https://codesandbox.io/embed/friendly-easley-m8f49g?fontsize=14&hidenavigation=1&initialpath=useCallback-case&module=%2Fsrc%2Fpages%2FuseCallback-case.js&theme=dark"
+  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;"
+  title="friendly-easley-m8f49g"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 <p>如果想让 cnt 继续累加，可以在 useCallback 的第二个参数上绑定依赖：<code>[cnt]</code>。</p>
 <p>但是这个做法并没有体现 useCallback 的缓存优势，更糟糕的是，这种错误使用 useCallback，需要额外产生监视 cnt 变化的性能消耗。</p>
@@ -312,7 +322,12 @@
 <p>每次切换白天/黑夜背景的时候，theme 的状态更新导致 productPage 重新渲染，由于 useCallback 的使用，handleSubmit 函数没有重新创建，所以传递给子组件 ShippingForm 的 props 没有改变，由于 React.memo 的使用，ShippingForm 没有重新渲染。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs aside">&lt;aside&gt;<br>  💡  注：React.memo的用法是用来包裹整个组件，当props参数都不变（引用不变）时，组件不会重新渲染。<br>&lt;/aside&gt;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs iframe">&lt;iframe src=&quot;https://codesandbox.io/embed/elegant-chatelet-5urqn7?fontsize=14&amp;hidenavigation=1&amp;module=%2FProductPage.js&amp;theme=dark&quot;<br>  style=&quot;width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;&quot;<br>  title=&quot;elegant-chatelet-5urqn7&quot;<br>  allow=&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&quot;<br>  sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure>
+<iframe src="https://codesandbox.io/embed/elegant-chatelet-5urqn7?fontsize=14&hidenavigation=1&module=%2FProductPage.js&theme=dark"
+  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;"
+  title="elegant-chatelet-5urqn7"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 <ol start="2">
 <li>减少函数重新创建</li>
@@ -334,6 +349,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/myblog.github.io/categories/React-Hooks/" class="category-chain-item">React Hooks</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
