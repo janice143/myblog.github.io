@@ -24,7 +24,7 @@
 <meta property="og:description" content="理论基础介绍动态规划（dynamic programing）是一种常用的算法，主要用于最优问题的求解。其思路是通过将原问题分解为子问题，子问题有一个最优解，再将子问题的最优解组合起来得到原问题的最优解。动态规划算法的时间复杂度通常为 O(n^2) （多项式）。 必要条件一个问题可以通过动态规划的思路解决，该问题具有两个必要条件：  具有最优子结构特性  问题的子问题的解是最优的，并且子问题的最优解">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-29T07:01:30.000Z">
-<meta property="article:modified_time" content="2023-06-29T13:43:32.378Z">
+<meta property="article:modified_time" content="2023-06-29T13:46:21.455Z">
 <meta property="article:author" content="iaine">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -345,11 +345,11 @@
 <p>你在第2阶梯时，上一步就是1阶梯，只有1种方法；</p>
 <p>你在第1阶梯时，没有上一步，只有1种方法。</p>
 <p>所以通过分析可知，处在n阶梯位置，要综合考虑n-1阶梯和n-2阶梯位置的方法，确切地说，就是这二者的和。我们可以用数学上的函数f(n)表示处在n阶梯上对应的方法数，那么f(n)=f(n-1)+f(n-2）。</p>
-<ol>
+<ol start="2">
 <li>考虑状态</li>
 </ol>
 <p>上面假设的f(n)就是状态，其实我们已经定义好了状态，就是处在n阶梯上对应的方法数，对于动态规划算法，一般状态我们用dp变量描述，此处的数据结构可以简单地使用数组即可。</p>
-<ol>
+<ol start="3">
 <li>考虑状态方程</li>
 </ol>
 <p>当前问题和子问题之间的递归关系式就是dp[n]=dp[n-1] +dp[n-2]。</p>
