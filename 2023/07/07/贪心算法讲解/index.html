@@ -16,22 +16,25 @@
   <meta name="author" content="iaine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="理论基础介绍动态规划（dynamic programing）是一种常用的算法，主要用于最优问题的求解。其思路是通过将原问题分解为子问题，子问题有一个最优解，再将子问题的最优解组合起来得到原问题的最优解。动态规划算法的时间复杂度通常为 O(n^2) （多项式）。 必要条件一个问题可以通过动态规划的思路解决，该问题具有两个必要条件：  具有最优子结构特性  问题的子问题的解是最优的，并且子问题的最优解">
+    <meta name="description" content="引言贪心算法的核心思想是通过每一步的局部最优解来达到全局最优解。本文将介绍贪心算法的原理、时间复杂度、思维框架、示例以及与动态规划的区别。 贪心算法原理关键字：贪心策略、局部最优。 贪心算法是一种基于贪心策略的算法，也就是说，在每一步选择时，都采取当前状态下的最优策略，即局部最优解。然而，局部最优解并不一定是全局最优解。思考下面这个问题：如何找到下面这个图的最长路径？ 如果用贪心策略来讲，  第一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态规划算法讲解">
-<meta property="og:url" content="http://iainespace.work/portfolio/2023/06/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/index.html">
+<meta property="og:title" content="贪心算法讲解">
+<meta property="og:url" content="http://iainespace.work/portfolio/2023/07/07/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/index.html">
 <meta property="og:site_name" content="iaine&#39;s blog">
-<meta property="og:description" content="理论基础介绍动态规划（dynamic programing）是一种常用的算法，主要用于最优问题的求解。其思路是通过将原问题分解为子问题，子问题有一个最优解，再将子问题的最优解组合起来得到原问题的最优解。动态规划算法的时间复杂度通常为 O(n^2) （多项式）。 必要条件一个问题可以通过动态规划的思路解决，该问题具有两个必要条件：  具有最优子结构特性  问题的子问题的解是最优的，并且子问题的最优解">
+<meta property="og:description" content="引言贪心算法的核心思想是通过每一步的局部最优解来达到全局最优解。本文将介绍贪心算法的原理、时间复杂度、思维框架、示例以及与动态规划的区别。 贪心算法原理关键字：贪心策略、局部最优。 贪心算法是一种基于贪心策略的算法，也就是说，在每一步选择时，都采取当前状态下的最优策略，即局部最优解。然而，局部最优解并不一定是全局最优解。思考下面这个问题：如何找到下面这个图的最长路径？ 如果用贪心策略来讲，  第一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-29T07:01:30.000Z">
-<meta property="article:modified_time" content="2023-06-29T13:46:21.455Z">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/janice143/picx-images-hosting@master/20230707/Untitled.783qvgohjfo0.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/janice143/picx-images-hosting@master/20230707/download.4aucxnedy2g0.webp">
+<meta property="article:published_time" content="2023-07-07T14:57:34.000Z">
+<meta property="article:modified_time" content="2023-07-07T15:04:44.002Z">
 <meta property="article:author" content="iaine">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/janice143/picx-images-hosting@master/20230707/Untitled.783qvgohjfo0.webp">
   
   
   
-  <title>动态规划算法讲解 - iaine&#39;s blog</title>
+  <title>贪心算法讲解 - iaine&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="动态规划算法讲解"></span>
+            <span id="subtitle" data-typed-text="贪心算法讲解"></span>
           
         </div>
 
@@ -208,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-29 15:01" pubdate>
-          2023年6月29日 下午
+        <time datetime="2023-07-07 22:57" pubdate>
+          2023年7月7日 晚上
         </time>
       </span>
     
@@ -220,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          739 字
         
       </span>
     
@@ -231,7 +234,7 @@
         
         
         
-          18 分钟
+          7 分钟
         
       </span>
     
@@ -269,93 +272,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">动态规划算法讲解</h1>
+            <h1 style="display: none">贪心算法讲解</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>动态规划（dynamic programing）是一种常用的算法，主要用于最优问题的求解。其思路是通过将原问题分解为子问题，子问题有一个最优解，再将子问题的最优解组合起来得到原问题的最优解。动态规划算法的时间复杂度通常为 O(n^2) （多项式）。</p>
-<h3 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h3><p>一个问题可以通过动态规划的思路解决，该问题具有两个必要条件：</p>
-<ul>
-<li>具有<code>最优子结构</code>特性</li>
-</ul>
-<p>问题的子问题的解是最优的，并且子问题的最优解可以推到问题的最优解，就称该问题具有最优子结构特性</p>
-<ul>
-<li>具有<code>重复子问题</code>特性</li>
-</ul>
-<p>求解当前子问题时存在重复特性，该子问题被分为多个子问题，有些子问题已经被计算过。换句话说，求解f(n)和f(n-1)都要求解f(n-2)，而且求解f(n)还要求解f(n-1)，所以存在重复求解f(n-2)的情况。</p>
-<h3 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h3><p>关于动态规划的解题步骤，我们需要先明白几个定义：</p>
-<ul>
-<li>状态</li>
-</ul>
-<p>求解dp问题可以理解为求解dp数组。状态可以理解为数组的每个元素dp[i]，动态规划解题的关键之一在于定义状态的含义。</p>
-<ul>
-<li>状态转移方程</li>
-</ul>
-<p>可以理解为描述问题和子问题关系的数学公式，例如，$f(n)=g(f(n-1))$</p>
-<ul>
-<li>自顶向下和自底向上</li>
-</ul>
-<p>自顶向下就是先求f(n)，再求f(n-1)，再求f(n-2)。存在重复求解的缺点，所以可以用<code>备忘表</code>（Memoization）优化。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">函数f(n)：<br><br><span class="hljs-keyword">if</span>(n === <span class="hljs-number">0</span>)<br> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i=<span class="hljs-number">1</span> to n<br> dp[i] = f(n-i)<br><span class="hljs-keyword">return</span> dp[n]<br></code></pre></td></tr></table></figure>
-
-<p>可以通过画节点来理解为什么是从顶到下。</p>
-<p>自底向上就是先求f(1)，f(2)，再求f(n)。子问题按顺序求解，当求解某个子问题时，所依赖的更小子问题已经求解好了，可以直接使用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">函数f(n)：<br><br><span class="hljs-keyword">if</span>(n === <span class="hljs-number">0</span>)<br> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i=<span class="hljs-number">1</span> to n<br> dp[i] = dp[i-<span class="hljs-number">1</span>]+dp[i-<span class="hljs-number">2</span>]<br><span class="hljs-keyword">return</span> dp[n]<br></code></pre></td></tr></table></figure>
-
-<p>自底向上的代码更简洁，所以可以作为首选。</p>
-<ul>
-<li>base case</li>
-</ul>
-<p>递归结束的条件。</p>
-<p><strong>解题步骤</strong></p>
-<ul>
-<li>定义状态</li>
-<li>确定转移方程</li>
-<li>列举base case</li>
-<li>计算最优解<ul>
-<li>自顶向下还是自底向上</li>
-<li>如何优化算法（剪枝，备忘录）</li>
-</ul>
-</li>
-</ul>
-<p>很多文章会分为5个步骤，而且描述也不同，但是这些文章本质都是解释同一类型的问题。大家在阅读的时候可以多看几篇相关的文章，总结出自己的理解模式。</p>
-<h2 id="算法讲解"><a href="#算法讲解" class="headerlink" title="算法讲解"></a>算法讲解</h2><p>理解动态规划的经典入门题就是求解斐波那契函数。如果没有学习动态规划，可能很多同学可以通过暴力递归求解。学习了动态规划后，你可以使用备忘录去存储已经计算过的结果，避免重复计算来优化算法。</p>
-<h3 id="暴力递归"><a href="#暴力递归" class="headerlink" title="暴力递归"></a>暴力递归</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> fib = <span class="hljs-function">(<span class="hljs-params">n</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br><br>  <span class="hljs-keyword">return</span> fib(n - <span class="hljs-number">1</span>) + fib(n - <span class="hljs-number">2</span>);<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<h3 id="备忘录（自顶向下）"><a href="#备忘录（自顶向下）" class="headerlink" title="备忘录（自顶向下）"></a>备忘录（自顶向下）</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> fib = <span class="hljs-function">(<span class="hljs-params">n, memo = &#123;&#125;</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">if</span> (n <span class="hljs-keyword">in</span> memo) <span class="hljs-keyword">return</span> memo[n];<br><br>  result = fib(n - <span class="hljs-number">1</span>, memo) + fib(n - <span class="hljs-number">2</span>, memo);<br>  memo[n] = result;<br><br>  <span class="hljs-keyword">return</span> result;<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<h3 id="自底向上"><a href="#自底向上" class="headerlink" title="自底向上"></a>自底向上</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> fib = <span class="hljs-function">(<span class="hljs-params">n</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> dp = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>    dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> dp[n];<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<p>可以看到，每次计算dp[n]的时候，dp[i-1]，dp[i-2]都是已知的。这就是自底向上，按顺序求解问题。</p>
-<h3 id="爬楼梯问题"><a href="#爬楼梯问题" class="headerlink" title="爬楼梯问题"></a>爬楼梯问题</h3><p>上述求解斐波那契函数可能还看不出动态规划算法里的状态和状态转移。接下来，我们通过举例”爬楼梯“的算法题来分析和理解什么是状态，什么是状态方程，以及体验如何拆分问题。</p>
-<p>刷过leetcode的同学都知道有一个比较经典的题目叫做<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">”爬楼梯“问题</a>。这个问题本质就是写斐波那契函数的求解方法，可以参考上一节，本节重点理解动态规划。</p>
-<aside>
-❓ 假设你正在爬楼梯。需要 `n` 阶你才能到达楼顶。
-
-<p>每次你可以爬 <code>1</code> 或 <code>2</code> 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
-</aside>
-
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>贪心算法的核心思想是通过每一步的局部最优解来达到全局最优解。本文将介绍贪心算法的原理、时间复杂度、思维框架、示例以及与动态规划的区别。</p>
+<h2 id="贪心算法原理"><a href="#贪心算法原理" class="headerlink" title="贪心算法原理"></a>贪心算法原理</h2><p>关键字：贪心策略、局部最优。</p>
+<p>贪心算法是一种基于贪心策略的算法，也就是说，在每一步选择时，都采取当前状态下的最优策略，即局部最优解。然而，局部最优解并不一定是全局最优解。思考下面这个问题：如何找到下面这个图的最长路径？</p>
+<p>如果用贪心策略来讲，</p>
 <ol>
-<li>怎么拆问题</li>
+<li>第一步我们遍历了根节点20，在这个位置上，我们最好的选择是3，因为3 &gt; 2。</li>
+<li>所以第二步我们选择了3，在这个位置上，我们最好的选择是1。该节点没有子节点，所以路径遍历完毕。</li>
+<li>但是这条路径[20, 3, 1]显然没有路径[20, 2, 10]长。</li>
 </ol>
-<p>思考如果你在第n个阶梯，你的上一步有两种情况：你在n-1阶梯，还要爬1阶；你在n-2阶梯，还要爬2阶。</p>
-<p>对于第1种情况，你在n-1阶梯，那么你的上一步又有两种情况：n-2或者n-3。</p>
-<p>以此类推，可以发现，你在第3个阶梯时，上一步的两种情况是在1阶梯或者2阶梯，有2种方法可以到达：1 → 2 → 3; 1 → 3。</p>
-<p>你在第2阶梯时，上一步就是1阶梯，只有1种方法；</p>
-<p>你在第1阶梯时，没有上一步，只有1种方法。</p>
-<p>所以通过分析可知，处在n阶梯位置，要综合考虑n-1阶梯和n-2阶梯位置的方法，确切地说，就是这二者的和。我们可以用数学上的函数f(n)表示处在n阶梯上对应的方法数，那么f(n)=f(n-1)+f(n-2）。</p>
-<ol start="2">
-<li>考虑状态</li>
+<p>所以贪心算法的局部最优解并不一定是全局最优解。</p>
+<p><img src="https://cdn.staticaly.com/gh/janice143/picx-images-hosting@master/20230707/Untitled.783qvgohjfo0.webp" srcset="/myblog.github.io/img/loading.gif" lazyload alt="graph"></p>
+<p>贪心算法的适用条件是，问题的最优解可以通过局部最优解来推导出来，并且问题具有无后效性，也就是说，某个状态以后的过程不会影响以前的状态。</p>
+<h3 id="贪心算法的思维框架"><a href="#贪心算法的思维框架" class="headerlink" title="贪心算法的思维框架"></a>贪心算法的思维框架</h3><p>贪心算法的思想在于每一步都是最优的选择，从而达到全局最优解。在实际应用中，贪心算法通常需要具备以下三个条件：</p>
+<p>(1)  问题的最优解可以通过局部最优解来推导出来。</p>
+<p>(2) 问题具有无后效性，后面的状态不会影响前面的状态（不可撤回）</p>
+<p>(3) 贪心策略的选择只看眼前，不能依赖于后面的策略。</p>
+<p><img src="https://cdn.staticaly.com/gh/janice143/picx-images-hosting@master/20230707/download.4aucxnedy2g0.webp" srcset="/myblog.github.io/img/loading.gif" lazyload alt="贪心算法流程图"></p>
+<h3 id="贪心算法和动态规划的区别"><a href="#贪心算法和动态规划的区别" class="headerlink" title="贪心算法和动态规划的区别"></a>贪心算法和动态规划的区别</h3><p>动态规划的思维框架是确认状态和状态转移方程，求解过程中需要保存中间结果来降低时间复杂度。贪心算法不需要保存结果，而是通过从底向上的每一步最优达到全局最优。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/greedy-algorithms/">https://www.geeksforgeeks.org/greedy-algorithms/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/greedy-algorithms/">https://www.freecodecamp.org/news/greedy-algorithms/</a></li>
 </ol>
-<p>上面假设的f(n)就是状态，其实我们已经定义好了状态，就是处在n阶梯上对应的方法数，对于动态规划算法，一般状态我们用dp变量描述，此处的数据结构可以简单地使用数组即可。</p>
-<ol start="3">
-<li>考虑状态方程</li>
-</ol>
-<p>当前问题和子问题之间的递归关系式就是dp[n]=dp[n-1] +dp[n-2]。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/20432061/">《算法导论》 Thomas</a></li>
-</ul>
 
                 
               </div>
@@ -401,8 +344,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>动态规划算法讲解</div>
-      <div>http://iainespace.work/portfolio/2023/06/29/动态规划算法讲解/</div>
+      <div>贪心算法讲解</div>
+      <div>http://iainespace.work/portfolio/2023/07/07/贪心算法讲解/</div>
     </div>
     <div class="license-meta">
       
@@ -414,7 +357,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月29日</div>
+          <div>2023年7月7日</div>
         </div>
       
       
@@ -446,18 +389,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/myblog.github.io/2023/07/07/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/" title="贪心算法讲解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">贪心算法讲解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/myblog.github.io/2023/06/21/%E3%80%90%E5%8D%95%E6%B5%8B%E3%80%91%E5%8D%95%E6%B5%8B%E5%85%A5%E9%97%A8/" title="【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library">
-                        <span class="hidden-mobile">【单测】单测入门 A Beginner&#39;s Guide to Writing Unit Tests for React Components with Jest and React Testing Library</span>
+                      <a href="/myblog.github.io/2023/06/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/" title="动态规划算法讲解">
+                        <span class="hidden-mobile">动态规划算法讲解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
